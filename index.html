@@ -779,6 +779,116 @@ footer a:hover{text-decoration:underline}
   .gslot { grid-column: span 1 !important; grid-row: span 1 !important; }
 }
 
+.alumni-group{
+
+margin-top:60px;
+}
+
+.alumni-title{
+
+margin-bottom:24px;
+}
+
+
+.alumni-wrapper{
+
+display:flex;
+
+align-items:center;
+
+gap:14px;
+}
+
+
+.alumni-scroll{
+
+display:flex;
+
+gap:24px;
+
+overflow:hidden;
+
+scroll-behavior:smooth;
+
+flex:1;
+}
+
+
+.student-card{
+
+min-width:320px;
+
+flex:0 0 auto;
+
+display:flex;
+
+align-items:center;
+
+gap:18px;
+
+padding:18px;
+
+border-radius:18px;
+
+background:#fff;
+
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+}
+
+
+.student-av{
+
+width:110px;
+
+height:110px;
+}
+
+
+.student-av img{
+
+width:100%;
+
+height:100%;
+
+object-fit:cover;
+
+border-radius:50%;
+}
+
+
+.alumni-btn{
+
+width:44px;
+
+height:44px;
+
+border:none;
+
+border-radius:50%;
+
+cursor:pointer;
+
+font-size:24px;
+
+background:#fff;
+
+box-shadow:0 4px 10px rgba(0,0,0,.1);
+}
+.alumni-group{
+  width:100%;
+  margin-bottom:50px;
+}
+
+.alumni-wrapper{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  width:100%;
+}
+#btech{
+  margin-top:0;
+}
+
 </style>
 </head>
 <body>
@@ -799,6 +909,7 @@ footer a:hover{text-decoration:underline}
     <li><a href="#team" class="nav-link">Team</a></li>
     <li><a href="#projects" class="nav-link">Projects</a></li>
     <li><a href="#gallery" class="nav-link">Gallery</a></li>
+    <li><a href="#alumni" class="nav-link">Almuni</a></li>
     <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
 </nav>
@@ -1045,7 +1156,7 @@ footer a:hover{text-decoration:underline}
         <div class="pub-card">
           <div class="pub-title">Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div>
           <div class="pub-authors">Palak Mishra, Rajat Bhardwaj, Yash Verma, Ramanjeet Singh, Rinku Shah</div>
-          <div class="pub-venue">ACM MemNetAI 2026, co-located with SIGCOMM 2026</div>
+          <div class="pub-venue">ACM SIGCOMM workshop on MemNetAI 2026</div>
           <div class="pub-links"><a href="#" class="pub-link">PDF</a><a href="#" class="pub-link">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The blistering pace of AI innovation demands a shift toward agile benchmarking methodologies, specifically targeting architectural simulators and emulators to guide early-stage hardware-software co-design. While workload standardization efforts like Chakra provide schemas for representing execution graphs and dependencies, they lack fine-grained memory-trace information. Such detailed traces are foundational for evaluating emerging distributed infrastructures, including GPU memory pooling and memory-semantic fabrics. Existing memory tracing tools are either too coarse-grained, highly invasive to workload behavior, dependent on source-code modification, or fail to scale. To bridge this gap, we introduce an execution trace generator that efficiently captures, represents, and replays the fine-grained memory operation behavior of large-scale AI/ML workloads. We demonstrate the temporal distribution and dominance of memory operation types, memory hierarchies, and stall reasons for nano-GPT-10M with data parallelism across two H100 GPUs, which can be used to generate memory benchmarks.</p></div></div></div>
         </div>
 
@@ -1270,37 +1381,262 @@ footer a:hover{text-decoration:underline}
         </div>
       </div>
     </div>
-    <div class="team-group-label">PhD Students</div>
-    <div class="students-grid fade-up">
-      <div class="student-card"><div class="student-av">SK</div><div><div class="student-name">Sumit Kumar</div><div class="student-since">PhD &middot; since October 2023 <br> Thesis: Simulating Next-Generation AI Network Infrastructure </div><div class="student-links-row"><a href="mailto:sumitk@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">AP</div><div><div class="student-name">Aditya Peer</div><div class="student-since">PhD &middot; since July 2025 <br> Thesis: Redesigning LLM Serving for UALink and CXL Fabrics </div><div class="student-links-row"><a href="mailto:adityap@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">PM</div><div><div class="student-name">Palak Mishra</div><div class="student-since">PhD &middot; since July 2025  <br> Thesis: Designing Tools for AI workload Tracing and Benchmarking </div><div class="student-links-row"><a href="mailto:palakm@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">RB</div><div><div class="student-name">Rajat Bhardwaj</div><div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div><div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">MA</div><div><div class="student-name">Mohammad Ali</div><div class="student-since">PhD &middot; since July 2026  <br> Thesis: TBD </div><div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">SB</div><div><div class="student-name">Shivansh Bhatnagar</div><div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div><div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-    </div>
-    <div class="team-group-label">MTech (Thesis / Capstone)</div>
-    <div class="students-grid fade-up">
-      <div class="student-card"><div class="student-av">SD</div><div><div class="student-name">Sayantan Dasgupta</div><div class="student-since">MTech &middot; May 2025</div><div class="student-links-row"><a href="mailto:sayantan24161@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">KM</div><div><div class="student-name">Kushal Mitra</div><div class="student-since">MTech &middot; May 2025</div><div class="student-links-row"><a href="mailto:kushal24151@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-    </div>
-    <div class="team-group-label">BTech Thesis</div>
-    <div class="students-grid fade-up">
-      <div class="student-card"><div class="student-av">VS</div><div><div class="student-name">Vaishnavi Srivastava</div><div class="student-since">BTech &middot; Jan 2026</div><div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
+      <div class="team-group-label">PhD Students</div>
+      <div class="students-grid fade-up">
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Sumit.jpeg" alt="Sumit Kumar"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Sumit Kumar</div>
+            <div class="student-since">PhD &middot; since October 2023 <br> Thesis: Simulating Next-Generation AI
+              Network Infrastructure</div>
+            <div class="student-links-row">
+              <a href="mailto:sumitk@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/sumit-kumaar/" class="slink" title="LinkedIn" target="_blank"><i
+                  class="fa-brands fa-linkedin"></i></a>
+              <a href="https://sumitkiiitd.github.io/website" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Aditya_Peer.jpeg" alt="Aditya Peer"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Aditya Peer</div>
+            <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Redesigning LLM Serving for UALink and
+              CXL Fabrics </div>
+            <div class="student-links-row"><a href="mailto:adityap@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/aditya-peer-787960224/" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://adityapeer77.github.io/" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Palak.jpeg" alt="Palak Mishra"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Palak Mishra</div>
+            <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Designing Tools for AI workload Tracing
+              and Benchmarking </div>
+            <div class="student-links-row"><a href="mailto:palakm@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/palak-mishra-937716192/" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="https://palakmishra-eq.github.io/" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Rajat.jpeg" alt="Rajat Bhardwaj"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Rajat Bhardwaj</div>
+            <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
+            <div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/rb777/" class="slink" title="LinkedIn" target="_blank"><i
+                class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/" alt="MA"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Mohammad Ali</div>
+            <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
+            <div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+            <a href="" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/" alt="SB"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Shivansh Bhatnagar</div>
+            <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
+            <div class="student-links-row"><a href="mailto:@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+            <a href="" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="team-group-label">MTech (Thesis / Capstone)</div>
+      <div class="students-grid fade-up">
+        <div class="student-card">
+          <div class="student-av"style="width:110px;height:110px;"><img src="images/Prakhar.jpeg" alt="PA"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Prakhar Agarwal</div>
+            <div class="student-since">MTech Research&middot; Jan 2026</div>
+            <div class="student-links-row">
+              <a href="mailto:prakhar25005@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/prakhar-agarwal-53a21222a/" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Aditya_Malik.jpeg" alt="AM"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Aditya Malik</div>
+            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-links-row">
+              <a href="mailto:aditya25011@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/aditya-malik-7035aa1ab/" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/" alt="HV"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Harsha Verma</div>
+            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-links-row">
+              <a href="mailto:harsha25024@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/" alt="AT"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Aditya Sai Teja</div>
+            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-links-row">
+              <a href="mailto:aditya25058@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
+              <a href="" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/" alt="AP"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Amisha Patel</div>
+            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-links-row">
+              <a href="mailto:amisha25061@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
+              <a href="" class="slink" title="LinkedIn"
+              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                class="fa-solid fa-globe"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Sayantan.jpeg" alt="Aditya Peer"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Sayantan Dasgupta</div>
+            <div class="student-since">MTech &middot; May 2025</div>
+            <div class="student-links-row">
+              <a href="mailto:sayantan24161@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
+              <a href="https://www.linkedin.com/in/dasguptas/" class="slink" title="LinkedIn" target="_blank"><i
+                class="fa-brands fa-linkedin"></i></a>
+              <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+              </div>
+          </div>
+        </div> -->
+        <!-- <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Kushal.jpeg" alt="Aditya Peer"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Kushal Mitra</div>
+            <div class="student-since">MTech &middot; May 2025</div>
+            <div class="student-links-row"><a href="mailto:kushal24151@iiitd.ac.in" class="slink"
+                title="Email">&#9993;</a>
+                <a href="" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+        <!-- </div> -->
+      </div> 
+      <div class="team-group-label">BTech Thesis</div>
+      <div class="students-grid fade-up">
+        <!-- <div class="student-card"><div class="student-av">VS</div><div><div class="student-name">Vaishnavi Srivastava</div><div class="student-since">BTech &middot; Jan 2026</div><div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
       <div class="student-card"><div class="student-av">DY</div><div><div class="student-name">Divyanshu Yadav</div><div class="student-since">BTech &middot; Jan 2026</div><div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
       <div class="student-card"><div class="student-av">SS</div><div><div class="student-name">Surat Sathi Samanta</div><div class="student-since">BTech &middot; Aug 2025</div><div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-    </div>
+       -->
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Vaishnavi.jpeg" alt="Vaishnavi Srivastava"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Vaishnavi Srivastava</div>
+            <div class="student-since">BTech &middot; Jan 2026</div>
+            <div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink"
+                title="Email">&#9993;</a>
+                <a href="https://www.linkedin.com/in/vaishnavi-srivastava-483369288" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+              </div>
+          </div>
+        </div>
+
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/Divyanshu_Yadav.jpeg" alt="Divyanshu Yadav"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Divyanshu Yadav</div>
+            <div class="student-since">BTech &middot; Jan 2026</div>
+            <div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink"
+                title="Email">&#9993;</a>
+                <a href="https://www.linkedin.com/in/scapesfear/" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+        </div>
+</div>
+
     <div class="recruit-box fade-up">
       <div>
-        <div class="recruit-title">Join NESt Lab</div>
-        <div class="recruit-sub">Looking for highly motivated PhD students passionate about next-generation networking &mdash; AI/ML infrastructure, programmable systems, and cloud. Strong foundation in computer networks, OS, and C/C++/Python required.</div>
-      </div>
-      <div class="recruit-btns">
-        <a href="mailto:rinku@iiitd.ac.in" class="btn-crimson">Apply Now &rarr;</a>
-        <a href="https://faculty.iiitd.ac.in/~rinku/students.html" class="btn-outline" style="color:#fff;border-color:rgba(255,255,255,0.3)" target="_blank">View Alumni</a>
+          <div class="recruit-title">Join NESt Lab</div>
+          <div class="recruit-sub">Looking for highly motivated PhD students passionate about next-generation networking
+            &mdash; AI/ML infrastructure, programmable systems, and cloud. Strong foundation in computer networks, OS,
+            and C/C++/Python required.</div>
+        </div>
+        <div class="recruit-btns">
+          <a href="mailto:rinku@iiitd.ac.in" class="btn-crimson">Apply Now &rarr;</a>
+          <a href="#alumni" class="btn-outline"
+            style="color:#fff;border-color:rgba(255,255,255,0.3)" target="_blank">View Alumni</a>
+        </div>
       </div>
     </div>
-  </div>
 </section>
 
 <!-- PROJECTS -->
@@ -1340,199 +1676,240 @@ Our goal is to make high-performance communication accessible to commodity cloud
 </section>
 
 
-<!-- GALLERY -->
-<section id="gallery" class="alt-bg gallery-section">
-  <div class="max-w">
-    <div class="section-header fade-up">
-      <p class="section-tag">Life at NESt</p>
-      <h2>Photo Gallery</h2>
-      <p class="section-sub">Conferences, lab events, awards, and team moments &mdash; cycling automatically</p>
-    </div>
+  <!-- GALLERY -->
+  <section id="gallery" class="alt-bg gallery-section">
+    <div class="max-w">
+      <div class="section-header fade-up">
+        <p class="section-tag">Life at NESt</p>
+        <h2>Photo Gallery</h2>
+        <p class="section-sub">Conferences, lab events, awards, and team moments &mdash; cycling automatically</p>
+      </div>
 
-    <div class="gallery-stage fade-up">
-      <div class="gallery-mosaic" id="galleryMosaic">
-    <div class="gslot" data-slot="0" onclick="glbOpen(0)">
-        <div class="gslot-frame gf-active" data-label="Lab Group Photo" data-sublabel="Annual Photo · NESt Lab" data-pidx="0">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Lab Group Photo</span>
-            <span class="gslot-ph-sublabel">Annual Photo · NESt Lab</span>
+      <div class="gallery-stage fade-up">
+        <div class="gallery-mosaic" id="galleryMosaic">
+          <div class="gslot" data-slot="0" onclick="glbOpen(0)">
+            <div class="gslot-frame gf-active" data-label="Lab Group Photo" data-sublabel="Annual Photo · NESt Lab"
+              data-pidx="0">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Lab Group Photo</span>
+                <span class="gslot-ph-sublabel">Annual Photo · NESt Lab</span>
+              </div>
+            </div>
+            <div class="gslot-frame " data-label="SmartNIC Testbed" data-sublabel="Lab Infrastructure · P4"
+              data-pidx="6">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">SmartNIC Testbed</span>
+                <span class="gslot-ph-sublabel">Lab Infrastructure · P4</span>
+              </div>
+            </div>
+            <div class="gslot-caption"><span>Lab Group Photo</span></div>
           </div>
-        </div>
-        <div class="gslot-frame " data-label="SmartNIC Testbed" data-sublabel="Lab Infrastructure · P4" data-pidx="6">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">SmartNIC Testbed</span>
-            <span class="gslot-ph-sublabel">Lab Infrastructure · P4</span>
+          <div class="gslot" data-slot="1" onclick="glbOpen(1)">
+            <div class="gslot-frame gf-active" data-label="SIGCOMM 2025" data-sublabel="Conference · Presentation"
+              data-pidx="1">
+              <img src="images/sigcomm_2025.jpeg" alt="SIGCOMM 2025">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">SIGCOMM 2025</span>
+                <span class="gslot-ph-sublabel">Conference · Presentation</span>
+              </div>
+            </div>
+            <div class="gslot-frame " data-label="IBM Research Visit" data-sublabel="OSCP Internship · 2024"
+              data-pidx="7">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">IBM Research Visit</span>
+                <span class="gslot-ph-sublabel">OSCP Internship · 2024</span>
+              </div>
+            </div>
+            <div class="gslot-caption"><span>SIGCOMM 2025</span></div>
           </div>
-        </div>
-      <div class="gslot-caption"><span>Lab Group Photo</span></div>
-    </div>
-    <div class="gslot" data-slot="1" onclick="glbOpen(1)">
-        <div class="gslot-frame gf-active" data-label="SIGCOMM 2025" data-sublabel="Conference · Presentation" data-pidx="1">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">SIGCOMM 2025</span>
-            <span class="gslot-ph-sublabel">Conference · Presentation</span>
+          <div class="gslot" data-slot="2" onclick="glbOpen(2)">
+            <div class="gslot-frame gf-active" data-label="Lab Meeting" data-sublabel="Weekly Research Sync"
+              data-pidx="2">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Lab Meeting</span>
+                <span class="gslot-ph-sublabel">Weekly Research Sync</span>
+              </div>
+            </div>
+            <!-- <div class="gslot-frame " data-label="Dagstuhl Seminar 2023" data-sublabel="Programmable Host Networking"
+              data-pidx="8">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Dagstuhl Seminar 2023</span>
+                <span class="gslot-ph-sublabel">Programmable Host Networking</span>
+              </div>
+            </div> -->
+            <div class="gslot-frame " data-label="HIPC 2025" data-sublabel="" data-pidx="11">
+              <img src="images/HIPC_2025.jpeg" alt="HIPC 2025">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">HIPC 2025</span>
+                <!-- <span class="gslot-ph-sublabel">Paper Accepted</span> -->
+              </div>
+            </div>
+            <div class="gslot-caption"><span>Lab Meeting</span></div>
           </div>
-        </div>
-        <div class="gslot-frame " data-label="IBM Research Visit" data-sublabel="OSCP Internship · 2024" data-pidx="7">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">IBM Research Visit</span>
-            <span class="gslot-ph-sublabel">OSCP Internship · 2024</span>
+          <div class="gslot" data-slot="3" onclick="glbOpen(3)">
+            <div class="gslot-frame gf-active" data-label="CoNEXT 2025" data-sublabel="Paper Presentation"
+              data-pidx="3">
+              <img src="images/CoNEXT_2025.jpeg" alt="CoNEXT 2025">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">CoNEXT 2025</span>
+                <span class="gslot-ph-sublabel">Paper Presentation</span>
+              </div>
+            </div>
+            <div class="gslot-frame " data-label="P4 Workshop" data-sublabel="Hands-on Session" data-pidx="9">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">P4 Workshop</span>
+                <span class="gslot-ph-sublabel">Hands-on Session</span>
+              </div>
+            </div>
+            <div class="gslot-caption"><span>CoNEXT 2025</span></div>
           </div>
-        </div>
-      <div class="gslot-caption"><span>SIGCOMM 2025</span></div>
-    </div>
-    <div class="gslot" data-slot="2" onclick="glbOpen(2)">
-        <div class="gslot-frame gf-active" data-label="Lab Meeting" data-sublabel="Weekly Research Sync" data-pidx="2">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Lab Meeting</span>
-            <span class="gslot-ph-sublabel">Weekly Research Sync</span>
+          <div class="gslot" data-slot="4" onclick="glbOpen(4)">
+            <div class="gslot-frame gf-active" data-label="Marvell Visit" data-sublabel="Industry Collaboration"
+              data-pidx="4">
+              <img src="images/Marvell_2025.jpeg" alt="CoNEXT 2025">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Marvell Visit</span>
+                <span class="gslot-ph-sublabel">Industry Collaboration</span>
+              </div>
+            </div>
+            <div class="gslot-frame " data-label="Google Networking Summit" data-sublabel="NESt Lab · 2024" data-pidx="10">
+              <img src="images/Google_Networking_summit.jpeg" alt="Google Networking Summit">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Google Networking Summit</span>
+                <span class="gslot-ph-sublabel">NESt Lab · 2025</span>
+              </div>
+            </div>
+            <div class="gslot-caption"><span>Marvell Visit</span></div>
           </div>
-        </div>
-        <div class="gslot-frame " data-label="Dagstuhl Seminar 2023" data-sublabel="Programmable Host Networking" data-pidx="8">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Dagstuhl Seminar 2023</span>
-            <span class="gslot-ph-sublabel">Programmable Host Networking</span>
+          <div class="gslot" data-slot="5" onclick="glbOpen(5)">
+            <div class="gslot-frame gf-active" data-label="Best Thesis Award"
+              data-sublabel="Aditya Peer · 14th Convocation" data-pidx="5">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">Best Thesis Award</span>
+                <span class="gslot-ph-sublabel">Aditya Peer · 14th Convocation</span>
+              </div>
+            </div>
+            <div class="gslot-frame " data-label="DSN 2025 Celebration" data-sublabel="Paper Accepted" data-pidx="11">
+              <div class="gslot-ph">
+                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
+                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
+                </svg>
+                <span class="gslot-ph-label">DSN 2025 Celebration</span>
+                <span class="gslot-ph-sublabel">Paper Accepted</span>
+              </div>
+            </div>
+            <div class="gslot-caption"><span>Best Thesis Award</span></div>
           </div>
-        </div>
-      <div class="gslot-caption"><span>Lab Meeting</span></div>
-    </div>
-    <div class="gslot" data-slot="3" onclick="glbOpen(3)">
-        <div class="gslot-frame gf-active" data-label="CoNEXT 2024" data-sublabel="Paper Presentation" data-pidx="3">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">CoNEXT 2024</span>
-            <span class="gslot-ph-sublabel">Paper Presentation</span>
-          </div>
-        </div>
-        <div class="gslot-frame " data-label="P4 Workshop" data-sublabel="Hands-on Session" data-pidx="9">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">P4 Workshop</span>
-            <span class="gslot-ph-sublabel">Hands-on Session</span>
-          </div>
-        </div>
-      <div class="gslot-caption"><span>CoNEXT 2024</span></div>
-    </div>
-    <div class="gslot" data-slot="4" onclick="glbOpen(4)">
-        <div class="gslot-frame gf-active" data-label="Marvell Visit" data-sublabel="Industry Collaboration" data-pidx="4">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Marvell Visit</span>
-            <span class="gslot-ph-sublabel">Industry Collaboration</span>
-          </div>
-        </div>
-        <div class="gslot-frame " data-label="Team Outing" data-sublabel="NESt Lab · 2024" data-pidx="10">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Team Outing</span>
-            <span class="gslot-ph-sublabel">NESt Lab · 2024</span>
-          </div>
-        </div>
-      <div class="gslot-caption"><span>Marvell Visit</span></div>
-    </div>
-    <div class="gslot" data-slot="5" onclick="glbOpen(5)">
-        <div class="gslot-frame gf-active" data-label="Best Thesis Award" data-sublabel="Aditya Peer · 14th Convocation" data-pidx="5">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">Best Thesis Award</span>
-            <span class="gslot-ph-sublabel">Aditya Peer · 14th Convocation</span>
-          </div>
-        </div>
-        <div class="gslot-frame " data-label="DSN 2025 Celebration" data-sublabel="Paper Accepted" data-pidx="11">
-          <div class="gslot-ph">
-            <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36" xmlns="http://www.w3.org/2000/svg">
-  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2"/>
-  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45"/>
-</svg>
-            <span class="gslot-ph-label">DSN 2025 Celebration</span>
-            <span class="gslot-ph-sublabel">Paper Accepted</span>
-          </div>
-        </div>
-      <div class="gslot-caption"><span>Best Thesis Award</span></div>
-    </div>
 
+        </div>
+      </div>
+
+      <div class="gallery-progress-bar">
+        <div class="gallery-progress-fill" id="galleryProgressFill"></div>
+      </div>
+
+      <div class="gallery-dots" id="galleryDots">
+        <button class="gdot active" onclick="glbGoto(0)" aria-label="Round 1"></button><button class="gdot"
+          onclick="glbGoto(1)" aria-label="Round 2"></button>
+      </div>
+
+      <div class="gallery-controls">
+        <button class="gctrl" id="gctrlPrev" onclick="glbGoto((galleryRound-1+galleryTotal)%galleryTotal)">&#8592;
+          Prev</button>
+        <button class="gctrl active-ctrl" id="gctrlPause" onclick="toggleGalleryPause()">&#9646;&#9646; Pause</button>
+        <span class="gctrl-sep">|</span>
+        <button class="gctrl" id="gctrlNext" onclick="glbGoto((galleryRound+1)%galleryTotal)">Next &#8594;</button>
       </div>
     </div>
-
-    <div class="gallery-progress-bar">
-      <div class="gallery-progress-fill" id="galleryProgressFill"></div>
-    </div>
-
-    <div class="gallery-dots" id="galleryDots">
-      <button class="gdot active" onclick="glbGoto(0)" aria-label="Round 1"></button><button class="gdot" onclick="glbGoto(1)" aria-label="Round 2"></button>
-    </div>
-
-    <div class="gallery-controls">
-      <button class="gctrl" id="gctrlPrev" onclick="glbGoto((galleryRound-1+galleryTotal)%galleryTotal)">&#8592; Prev</button>
-      <button class="gctrl active-ctrl" id="gctrlPause" onclick="toggleGalleryPause()">&#9646;&#9646; Pause</button>
-      <span class="gctrl-sep">|</span>
-      <button class="gctrl" id="gctrlNext" onclick="glbGoto((galleryRound+1)%galleryTotal)">Next &#8594;</button>
-    </div>
-  </div>
-</section>
+  </section>
 
 <!-- LIGHTBOX -->
 <div id="glb" role="dialog" aria-modal="true">
@@ -1542,6 +1919,707 @@ Our goal is to make high-performance communication accessible to commodity cloud
   <button id="glb-next" onclick="glbNav(1)" aria-label="Next">&#8594;</button>
   <div id="glb-caption"></div>
 </div>
+
+  <!-- ALUMNI -->
+<!-- ALUMNI -->
+
+<section id="alumni" class="alt-bg">
+
+  <div class="max-w">
+
+    <div class="section-header fade-up">
+
+      <p class="section-tag">Past Members</p>
+
+      <h2>Alumni</h2>
+
+      <p class="section-sub">
+
+        Students who have been part of NESt Lab.
+
+      </p>
+
+    </div>
+
+
+    <!-- MTech -->
+
+    <div class="alumni-group fade-up">
+      <h3 class="alumni-title">
+        MTech Alumni
+      </h3>
+      <div class="alumni-wrapper">
+        <button class="alumni-btn"
+          onclick="scrollAlumni('mtech',-1)">
+          &#10094;
+        </button>
+
+
+        <div class="alumni-scroll"
+
+          id="mtech">
+          <!-- STUDENT 1 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Sayantan.jpeg"
+                alt="Sayantan Dasgupta">
+            </div>
+            <div>
+              <div class="student-name">
+
+                Sayantan Dasgupta
+
+              </div>
+              <div class="student-since">
+                MTech &middot; May 2025 - Dec 2025
+              </div>
+
+              <div class="student-links-row">
+                <a href="mailto:sayantan24161@iiitd.ac.in"
+                  class="slink"
+                  title="Email">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/dasguptas/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+
+                <a href=""
+
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- STUDENT 2 -->
+
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Kushal.jpeg"
+                alt="Kushal Mitra">
+            </div>
+            <div>
+              <div class="student-name">
+                Kushal Mitra
+              </div>
+              <div class="student-since">
+                MTech &middot; May 2025 - Dec 2025
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:kushal24151@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ADD MORE STUDENTS HERE -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/arjun.jpeg"
+                alt="Arjun Temura">
+            </div>
+            <div>
+              <div class="student-name">
+                Arjun Temura
+              </div>
+              <div class="student-since">
+                MTech &middot; Jul 2023 - May 2025
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:arjun20497@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/arjun-temura/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- New stuent -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Shambhavi_Pathak.jpeg"
+                alt="Shambhavi Pathak">
+            </div>
+            <div>
+              <div class="student-name">
+                Shambhavi Pathak
+              </div>
+              <div class="student-since">
+                MTech &middot; May 2023 - May 2024
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:shambhavi22067@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/shambhavi-pathak/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- New stuent -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Siddharth_Nayak.jpeg"
+                alt="Siddharth Nayak">
+            </div>
+            <div>
+              <div class="student-name">
+                Siddharth Nayak
+              </div>
+              <div class="student-since">
+                MTech &middot; Jan 2023 - May 2024
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:siddharth22128@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/siddharth1297/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- New stuent -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Lasani_Hussain.jpeg"
+                alt="Lasani Hussain">
+            </div>
+            <div>
+              <div class="student-name">
+                Lasani Hussain
+              </div>
+              <div class="student-since">
+                MTech &middot; Jan 2022 - Dec 2022
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:klasani21042@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/lasani-hussain-a293ba121/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- New stuent -->
+          <div class="student-card">
+            <!-- <div class="student-av">
+              <img src="images/Kushal.jpeg"
+                alt="Arjun Temura">
+            </div> -->
+            <div class="student-av " style="width:110px;height:110px;">SK</div>
+            <div>
+              <div class="student-name">
+                Shaguftha Kottur
+              </div>
+              <div class="student-since">
+                MTech &middot; Jul 2021 - May 2023
+              </div>
+              <div class="student-links-row">
+                <a href="mailto:kushal24151@iiitd.ac.in"
+                  class="slink">
+                  &#9993;
+                </a>
+                <a href="https://www.linkedin.com/in/shaguftha-zk/"
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-brands fa-linkedin"></i>
+                </a>
+                <a href=""
+                  class="slink"
+                  target="_blank">
+                  <i class="fa-solid fa-globe"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+
+
+        <button class="alumni-btn"
+
+          onclick="scrollAlumni('mtech',1)">
+
+          &#10095;
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- BTech -->
+
+    <div class="alumni-group fade-up">
+
+      <h3 class="alumni-title">
+
+        BTech Alumni
+
+      </h3>
+
+      <div class="alumni-wrapper">
+
+        <button class="alumni-btn"
+
+          onclick="scrollAlumni('btech',-1)">
+
+          &#10094;
+
+        </button>
+
+        <!-- <div class="alumni-scroll"
+
+          id="btech"> -->
+
+          <!-- Add BTech students -->
+
+        <!-- </div> -->
+
+        <div class="alumni-scroll" id="btech">
+
+          <!-- 1 -->
+
+        <div class="student-card">
+          <div class="student-av" style="width:110px;height:110px;"><img src="images/surat.jpeg" alt="Surat Sathi Samanta"
+              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div>
+            <div class="student-name">Surat Sathi Samanta</div>
+            <div class="student-since">BTech &middot; Aug 2025 - Dec 2025</div>
+            <div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink"
+                title="Email">&#9993;</a>
+                <a href="https://www.linkedin.com/in/surat-sathi-samanta-01b973263/" class="slink" title="LinkedIn"
+                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink" title="Website" target="_blank"><i
+                  class="fa-solid fa-globe"></i></a>
+              </div>
+          </div>
+        </div>
+
+          <div class="student-card">
+            <div class="student-av" style="width:110px;height:110px;">RS</div>
+        
+            <div>
+              <div class="student-name">Ramanjeet Singh</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2024 - May 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/ramanjeet-singh-340754229/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2 -->
+          <div class="student-card">
+            <div class="student-av" style="width:110px;height:110px;">TG</div>
+        
+            <div>
+              <div class="student-name">Tushar Gupta</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2024 - Dec 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 2 -->
+          <div class="student-card">
+            <div class="student-av" style="width:110px;height:110px;">RB</div>
+        
+            <div>
+              <div class="student-name">Rohan Basugade</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2024 - Dec 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 3 -->
+          <div class="student-card">
+            <div class="student-av" style="width:110px;height:110px;">AS</div>
+        
+            <div>
+              <div class="student-name">Agamdeep Singh</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2024 - May 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 4 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/siddhant.jpeg"
+                alt="Siddhant">
+            </div>
+        
+            <div>
+              <div class="student-name">Siddhant</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2024 - May 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/siddhant1103/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 5 -->
+          <div class="student-card">
+            <div class="student-av" style="width:110px;height:110px;">RM</div>
+        
+            <div>
+              <div class="student-name">Rajorshi Mondal</div>
+        
+              <div class="student-since">
+                BTech &middot; Jan 2024 - May 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 6 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Kartikay_Dubey.jpeg"
+                alt="Kartikay Dubey">
+            </div>
+        
+            <div>
+              <div class="student-name">Kartikay Dubey</div>
+        
+              <div class="student-since">
+                BTech &middot; Jan 2024 - May 2025
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/kartikay-dubey/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 7 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Prateek_Kumar.jpeg"
+                alt="Prateek Kumar">
+            </div>
+        
+            <div>
+              <div class="student-name">Prateek Kumar</div>
+        
+              <div class="student-since">
+                BTech &middot; Aug 2023 - Dec 2024
+              </div>
+        
+              <div style="font-size:12px;color:#888;">
+                Coadvised with Sumit Darak
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/prateek0328/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 8 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Yukti_Rao.jpeg"
+                alt="Yukti Rao">
+            </div>
+        
+            <div>
+              <div class="student-name">Yukti Rao</div>
+        
+              <div class="student-since">
+                BTech &middot; Aug 2023 - May 2024
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/yukti-rao-9843a4212/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 9 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Vishesh_Rangwani.jpeg"
+                alt="Vishesh Rangwani">
+            </div>
+        
+            <div>
+              <div class="student-name">Vishesh Rangwani</div>
+        
+              <div class="student-since">
+                BTech &middot; Aug 2023 - May 2024
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/vishesh-rangwani-6ba263241/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 10 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Vedant_Bothra.jpeg"
+                alt="Vedant Bothra">
+            </div>
+        
+            <div>
+              <div class="student-name">Vedant Bothra</div>
+        
+              <div class="student-since">
+                BTech &middot; Aug 2023 - May 2024
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/vedantbothra/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 11 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Mohammed_Kaif.jpeg"
+                alt="Mohammed Kaif">
+            </div>
+        
+            <div>
+              <div class="student-name">Mohammed Kaif</div>
+        
+              <div class="student-since">
+                BTech &middot; Jan 2023 - Dec 2023
+              </div>
+        
+              <div style="font-size:12px;color:#888;">
+                Coadvised with Sujay Deb
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/mdkaif02/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 12 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Ritika_Nagar.png"
+                alt="Ritika Nagar">
+            </div>
+        
+            <div>
+              <div class="student-name">Ritika Nagar</div>
+        
+              <div class="student-since">
+                BTech &middot; Jan 2023 - Dec 2023
+              </div>
+        
+              <div style="font-size:12px;color:#888;">
+                Coadvised with Sumit Darak
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/ritikanagar09/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 13 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Shivansh_Mittal.png"
+                alt="Shivansh Mittal">
+            </div>
+        
+            <div>
+              <div class="student-name">Shivansh Mittal</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2022 - Dec 2023
+              </div>
+        
+              <div style="font-size:12px;color:#888;">
+                Coadvised with Sujay Deb
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/shivansh-mittal-a90636201/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        
+          <!-- 14 -->
+          <div class="student-card">
+            <div class="student-av">
+              <img src="images/Yashasvi_Chaurasia.jpeg"
+                alt="Yashasvi Chaurasia">
+            </div>
+        
+            <div>
+              <div class="student-name">Yashasvi Chaurasia</div>
+        
+              <div class="student-since">
+                BTech &middot; Jul 2022 - Dec 2023
+              </div>
+        
+              <div style="font-size:12px;color:#888;">
+                Coadvised with Sumit Darak
+              </div>
+        
+              <div class="student-links-row">
+                <a href="" class="slink">&#9993;</a>
+                <a href="https://www.linkedin.com/in/yashasvi-chaurasia-936259218/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+              </div>
+            </div>
+          </div>
+        
+        </div>
+
+        <button class="alumni-btn"
+
+          onclick="scrollAlumni('btech',1)">
+
+          &#10095;
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+  </div>
+
+</section>
 
 <!-- CONTACT -->
 <section id="contact">
@@ -1798,6 +2876,25 @@ window.addEventListener('scroll', function(){
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
 }, {passive: true});
+
+function scrollAlumni(id,direction){
+
+    const container = document.getElementById(id);
+
+    const card = container.querySelector('.student-card');
+
+    const distance = card.offsetWidth + 24;
+
+    container.scrollBy({
+
+      left: direction * distance,
+
+      behavior: 'smooth'
+
+    });
+
+}
+
 </script>
 </body>
 </html>
