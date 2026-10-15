@@ -169,6 +169,19 @@ h1 em{font-style:italic;color:var(--crimson)}
 }
 .btn-crimson:hover{background:var(--crimson2)}
 
+.hero-stats{display:flex;flex-wrap:wrap;gap:1rem 2.75rem;padding-top:1.75rem;border-top:1px solid var(--border);margin:0}
+.stat{display:flex;flex-direction:column}
+.stat-n{font-family:'IBM Plex Serif',serif;font-size:2.1rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-0.02em}
+.stat-l{font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin:.4rem 0 0}
+
+/* nav call-to-action */
+.nav-cta{
+  display:inline-block;font-size:14px;font-weight:700;letter-spacing:.01em;text-decoration:none;
+  color:#fff;background:var(--crimson);padding:7px 16px;border-radius:999px;
+  transition:background .2s,transform .2s;
+}
+.nav-cta:hover{background:var(--crimson2);transform:translateY(-1px)}
+
 /* ── CARD DECK (light) ── */
 .hero-deck-col{display:flex;align-items:center;justify-content:center;flex-shrink:0}
 .card-deck{position:relative;width:310px;height:390px;perspective:1400px}
@@ -328,6 +341,22 @@ h2{
 @keyframes slideDown{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
 .pub-abstract p{font-size:.95rem;color:var(--sub);line-height:1.75}
 
+.news-list:not(.expanded) .news-row.is-collapsed{display:none}
+.more-btn{display:block;margin:1.75rem auto 0;background:var(--card)}
+
+.pub-filter{display:flex;flex-wrap:wrap;gap:.5rem;margin:-1.25rem 0 2.25rem}
+.pf-pill{
+  font-family:'IBM Plex Mono',monospace;font-size:12.5px;font-weight:600;
+  padding:6px 14px;border-radius:999px;cursor:pointer;
+  border:1px solid var(--border2);background:var(--card);color:var(--navy);
+  transition:all .15s;
+}
+.pf-pill span{color:var(--muted);font-weight:500;margin-left:2px}
+.pf-pill:hover{border-color:var(--navy)}
+.pf-pill[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+.pf-pill[aria-pressed="true"] span{color:rgba(255,255,255,.7)}
+.pub-group[hidden]{display:none}
+
 /* ── PROJECTS ── */
 .proj-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .proj-card{
@@ -392,14 +421,7 @@ h2{
 }
 .team-group-label::before,.alumni-title::before{content:'';width:4px;height:1.1em;border-radius:2px;background:var(--crimson);flex-shrink:0}
 .team-group-label::after,.alumni-title::after{content:'';flex:1;height:1px;background:var(--border2)}
-.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,500px),1fr));gap:.75rem;margin-bottom:.5rem}
-.student-card{
-  background:var(--card);border:1px solid var(--border);border-radius:8px;
-  padding:.875rem 1.1rem;display:flex;align-items:center;gap:.875rem;
-  box-shadow:0 1px 2px rgba(26,35,64,0.04);
-  transition:border-color .2s,box-shadow .2s,transform .15s;
-}
-.student-card:hover{border-color:var(--border2);box-shadow:var(--shadow);transform:translateY(-1px)}
+.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem;margin-bottom:.5rem}
 .student-av{
   width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
   font-family:'IBM Plex Mono',monospace;font-size:12px;font-weight:700;
@@ -442,13 +464,34 @@ h2{
 .contact-btns{display:flex;gap:.875rem;justify-content:center;flex-wrap:wrap}
 
 /* ── FOOTER ── */
-footer{
-  position:relative;z-index:1;text-align:center;
-  padding:1.5rem;border-top:1px solid var(--border);background:var(--bg2);
-  font-family:'IBM Plex Mono',monospace;font-size:11px;font-weight:400;color:var(--muted);
+footer{position:relative;z-index:1;background:var(--navy);color:rgba(255,255,255,.72);font-size:.95rem}
+.footer-inner{
+  max-width:1160px;margin:auto;padding:3.5rem 5vw 2.5rem;
+  display:grid;grid-template-columns:1.3fr 1fr 1.2fr;gap:2.5rem;
 }
-footer a{color:var(--crimson);text-decoration:none}
-footer a:hover{text-decoration:underline}
+.footer-name{font-family:'IBM Plex Serif',serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.footer-name span{color:#e8a0a2}
+.footer-brand p,.footer-contact p{line-height:1.7}
+.footer-links{display:grid;grid-template-columns:1fr 1fr;gap:.5rem 1.5rem;align-content:start}
+.footer-links a,.footer-contact a{color:#fff;text-decoration:none;opacity:.85;transition:opacity .15s}
+.footer-links a:hover,.footer-contact a:hover{opacity:1;text-decoration:underline}
+.footer-contact{display:flex;flex-direction:column;gap:.35rem}
+.footer-contact p{margin-bottom:.35rem}
+.footer-bottom{
+  border-top:1px solid rgba(255,255,255,.12);padding:1.1rem 5vw;text-align:center;
+  font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,.55);
+}
+
+/* back to top */
+.to-top{
+  position:fixed;right:20px;bottom:20px;z-index:90;
+  width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  background:var(--navy);color:#fff;box-shadow:var(--shadow2);
+  opacity:0;visibility:hidden;transform:translateY(8px);
+  transition:opacity .2s,transform .2s,visibility .2s,background .2s;
+}
+.to-top.show{opacity:1;visibility:visible;transform:none}
+.to-top:hover{background:var(--crimson)}
 
 /* ── FADE IN ── */
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
@@ -476,166 +519,23 @@ footer a:hover{text-decoration:underline}
 
 
 
-/* ══════════════════════════════════
-   PHOTO GALLERY — Cycling Deck
-   ══════════════════════════════════ */
-.gallery-section { position: relative; }
-
-/* Main stage */
-.gallery-stage {
-  position: relative;
-  width: 100%;
-  height: 520px;
-  perspective: 1400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* ── GALLERY ── */
+.gallery-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:220px;gap:12px;
 }
-
-/* Each slot is a fixed position in the mosaic;
-   photos cycle through each slot independently */
-.gallery-mosaic {
-  display: grid;
-  grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  gap: 10px;
-  width: 100%;
-  height: 100%;
+.gitem{position:relative;margin:0;overflow:hidden;border-radius:var(--radius);background:var(--bg3);box-shadow:var(--shadow)}
+.gitem:first-child{grid-column:span 2;grid-row:span 2}
+.gitem-btn{display:block;width:100%;height:100%;padding:0;border:none;background:none;cursor:zoom-in}
+.gitem img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease}
+.gitem:hover img{transform:scale(1.04)}
+.gitem figcaption{
+  position:absolute;left:0;right:0;bottom:0;pointer-events:none;
+  padding:2.5rem 1rem .85rem;color:#fff;
+  background:linear-gradient(to top,rgba(26,35,64,.85),rgba(26,35,64,0));
+  display:flex;flex-direction:column;line-height:1.3;
 }
-
-.gslot {
-  position: relative;
-  overflow: hidden;
-  border-radius: 10px;
-  border: 1px solid var(--border);
-  background: var(--bg3);
-  cursor: pointer;
-}
-
-/* Layout — same asymmetric mosaic */
-.gslot:nth-child(1) { grid-column: span 5; grid-row: span 2; }
-.gslot:nth-child(2) { grid-column: span 4; grid-row: span 1; }
-.gslot:nth-child(3) { grid-column: span 3; grid-row: span 1; }
-.gslot:nth-child(4) { grid-column: span 3; grid-row: span 1; }
-.gslot:nth-child(5) { grid-column: span 4; grid-row: span 1; }
-.gslot:nth-child(6) { grid-column: span 5; grid-row: span 1; }
-
-/* Each slot holds a stack of photo layers; only one visible at a time */
-.gslot-frame {
-  position: absolute;
-  inset: 0;
-  opacity: 0;
-  transition: opacity 0.9s ease;
-  z-index: 1;
-}
-.gslot-frame.gf-active {
-  opacity: 1;
-  z-index: 2;
-}
-
-/* Photo inside frame */
-.gslot-frame img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* Placeholder inside frame */
-.gslot-ph {
-  width: 100%; height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  background: var(--bg2);
-  transition: background 0.2s;
-}
-.gslot:hover .gslot-ph { background: var(--bg3); }
-.gslot-ph-icon { opacity: 0.18; }
-.gslot-ph-label {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 9px; font-weight: 600;
-  letter-spacing: 0.1em; text-transform: uppercase;
-  color: var(--muted);
-}
-.gslot-ph-sublabel {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 7.5px; color: var(--border2);
-  letter-spacing: 0.06em; text-align: center;
-  padding: 0 1rem;
-  white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%;
-}
-
-/* Caption overlay */
-.gslot-caption {
-  position: absolute;
-  bottom: 0; left: 0; right: 0;
-  padding: 24px 14px 12px;
-  background: linear-gradient(to top, rgba(26,35,64,0.72) 0%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  z-index: 10;
-  pointer-events: none;
-}
-.gslot:hover .gslot-caption { opacity: 1; }
-.gslot-caption span {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px; font-weight: 500;
-  color: #fff; letter-spacing: 0.07em; text-transform: uppercase;
-}
-
-/* Progress dots */
-.gallery-dots {
-  display: flex; gap: 6px;
-  justify-content: center;
-  align-items: center;
-  margin-top: 1.25rem;
-}
-.gdot {
-  width: 6px; height: 6px; border-radius: 50%;
-  background: var(--border2);
-  cursor: pointer;
-  transition: background 0.25s, transform 0.25s;
-  border: none; padding: 0;
-}
-.gdot.active {
-  background: var(--crimson);
-  transform: scale(1.4);
-}
-
-/* Controls */
-.gallery-controls {
-  display: flex; align-items: center; justify-content: center;
-  gap: 1rem; margin-top: 1rem;
-}
-.gctrl {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase;
-  padding: 5px 14px; border-radius: 3px;
-  border: 1px solid var(--border2); color: var(--muted);
-  background: transparent; cursor: pointer;
-  transition: all 0.2s;
-}
-.gctrl:hover { border-color: var(--navy); color: var(--navy); }
-.gctrl.active-ctrl { border-color: var(--crimson); color: var(--crimson); background: #fef5f5; }
-.gctrl-sep { color: var(--border2); font-size: 14px; }
-
-/* Progress bar */
-.gallery-progress-bar {
-  height: 2px;
-  background: var(--border);
-  border-radius: 1px;
-  margin-top: 1rem;
-  overflow: hidden;
-}
-.gallery-progress-fill {
-  height: 100%;
-  background: linear-gradient(to right, var(--crimson), var(--navy));
-  border-radius: 1px;
-  width: 0%;
-  transition: width linear;
-}
+.gitem figcaption strong{font-family:'IBM Plex Serif',serif;font-size:1.05rem;font-weight:600}
+.gitem figcaption span{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.06em;text-transform:uppercase;opacity:.8;margin-top:.2rem}
 
 /* Lightbox */
 #glb {
@@ -650,17 +550,6 @@ footer a:hover{text-decoration:underline}
   border-radius: 10px;
   box-shadow: 0 32px 80px rgba(0,0,0,0.5);
   object-fit: contain;
-}
-.glb-ph {
-  width: 440px; max-width: 86vw; height: 320px;
-  background: rgba(255,255,255,0.05); border-radius: 10px;
-  display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem;
-}
-.glb-ph svg { opacity: 0.2; }
-.glb-ph p {
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 11px; color: rgba(255,255,255,0.35);
-  letter-spacing: 0.1em; text-transform: uppercase; text-align: center; padding: 0 2rem;
 }
 #glb-caption {
   position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
@@ -690,22 +579,21 @@ footer a:hover{text-decoration:underline}
 
 
 /* ── ALUMNI ── */
-.alumni-group{width:100%;margin-top:60px;margin-bottom:50px}
-.alumni-wrapper{display:flex;align-items:center;gap:20px;width:100%}
-.alumni-scroll{display:flex;gap:24px;flex:1;scroll-behavior:smooth}
-.alumni-scroll .student-card{min-width:320px;flex:0 0 auto}
-.alumni-btn{
-  width:44px;height:44px;border:none;border-radius:50%;cursor:pointer;
-  font-size:24px;background:#fff;box-shadow:0 4px 10px rgba(0,0,0,.1);
-}
+.alumni-group{width:100%}
+.alumni-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
 
-/* team + alumni member cards */
+/* team + alumni member cards: photo on top */
 .student-card{
-  display:flex;align-items:center;gap:18px;padding:18px;border-radius:18px;
-  background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  gap:1rem;padding:1.75rem 1.25rem 1.5rem;border-radius:var(--radius);
+  background:var(--card);border:1px solid var(--border);box-shadow:var(--shadow);
+  transition:transform .2s,box-shadow .2s,border-color .2s;
 }
-.student-av{width:110px;height:110px}
+.student-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:var(--border2)}
+.student-card .student-links-row{justify-content:center}
+.student-av{width:112px;height:112px;font-size:1.1rem;box-shadow:0 0 0 4px var(--card),0 0 0 5px var(--border)}
 .student-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.alumni-grid .student-av{width:88px;height:88px}
 .slink .ico{width:14px;height:14px}
 
 /* ══════════════════════════════════
@@ -725,11 +613,6 @@ nav.open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}
 nav.open .nav-toggle span:nth-child(2){opacity:0}
 nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
 
-/* alumni carousel: allow swipe, hide scrollbar */
-.alumni-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
-.alumni-scroll::-webkit-scrollbar{display:none}
-.alumni-scroll .student-card{scroll-snap-align:start}
-.alumni-btn{flex-shrink:0;color:var(--navy)}
 
 @media(max-width:1180px){
   nav ul{gap:1.4rem}
@@ -752,6 +635,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   nav ul li:last-child{border-bottom:none}
   nav a.nav-link{display:block;padding:.8rem 0;font-size:15px}
   nav a.nav-link::after{display:none}
+  nav ul li.nav-cta-item{border-bottom:none;padding-top:.75rem}
+  .nav-cta{display:block;text-align:center;padding:10px 16px}
 }
 
 @media(max-width:900px){
@@ -774,10 +659,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .pub-card{padding:1rem 1.1rem}
   .pub-card:hover{transform:none}
 
-  .gallery-stage{height:auto}
-  .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,160px)}
-  .gslot{grid-column:span 1 !important;grid-row:span 1 !important}
 
+  .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
   #glb{padding:1rem}
   #glb img{max-width:100%;max-height:72vh}
   #glb-prev,#glb-next{top:auto;bottom:1.25rem;transform:none;width:42px;height:42px}
@@ -812,9 +695,12 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .news-yr{padding-top:0}
 
   .pi-photo{width:160px;height:auto}
+  .pi-card::before{white-space:nowrap;font-size:9.5px}
 
-  .student-card{padding:14px;gap:14px;border-radius:14px}
-  .student-av{width:72px;height:72px}
+  .students-grid,.alumni-grid{grid-template-columns:1fr;gap:.75rem}
+  .student-card{flex-direction:row;text-align:left;padding:14px;gap:14px}
+  .student-card .student-links-row{justify-content:flex-start}
+  .student-av,.alumni-grid .student-av{width:72px;height:72px}
 
   .proj-card{padding:1.4rem 1.25rem}
   .proj-title{font-size:1.25rem}
@@ -823,18 +709,18 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .pub-title{font-size:1.04rem}
   body{font-size:16px}
   .proj-meta{flex-direction:column;align-items:flex-start}
+  .gallery-grid{grid-auto-rows:130px;gap:8px}
+  .gitem:first-child{grid-row:span 1}
+  .gitem figcaption{padding:1.75rem .7rem .6rem}
+  .gitem figcaption strong{font-size:.92rem}
 
-  .gallery-mosaic{grid-template-rows:repeat(3,120px);gap:8px}
-  .gallery-controls{gap:.5rem}
 
   .alumni-group{margin-top:36px;margin-bottom:32px}
-  .alumni-wrapper{gap:8px}
-  .alumni-btn{width:34px;height:34px;font-size:18px}
-  .alumni-scroll{gap:12px}
-  .alumni-scroll .student-card{min-width:min(280px,calc(100vw - 120px))}
 
   .contact-address{font-size:.74rem;line-height:2}
   .contact-btns > a{flex:1 1 auto;text-align:center}
+  .footer-inner{grid-template-columns:1fr;gap:1.75rem;padding:2.75rem 16px 2rem}
+  .to-top{right:14px;bottom:14px}
 }
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}
@@ -863,13 +749,14 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
     <span></span><span></span><span></span>
   </button>
   <ul id="nav-menu">
+    <li><a href="#projects" class="nav-link">Research</a></li>
     <li><a href="#news" class="nav-link">News</a></li>
-    <li><a href="#publications" class="nav-link">Publications</a></li>
     <li><a href="#team" class="nav-link">Team</a></li>
-    <li><a href="#projects" class="nav-link">Projects</a></li>
+    <li><a href="#publications" class="nav-link">Publications</a></li>
     <li><a href="#gallery" class="nav-link">Gallery</a></li>
     <li><a href="#alumni" class="nav-link">Alumni</a></li>
     <li><a href="#contact" class="nav-link">Contact</a></li>
+    <li class="nav-cta-item"><a href="mailto:rinku@iiitd.ac.in?subject=Joining%20NESt%20Lab" class="nav-cta">Join Us</a></li>
   </ul>
 </nav>
 
@@ -952,6 +839,13 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         <a href="mailto:rinku@iiitd.ac.in" class="btn-outline">Join NESt Lab</a>
         <a href="https://github.com/nest-iiitd" class="btn-outline" target="_blank" rel="noopener">GitHub</a>
       </div>
+      <!-- numbers are recounted from the page on load -->
+      <dl class="hero-stats">
+        <div class="stat"><dt class="stat-n" data-count="pubs">14</dt><dd class="stat-l">Publications</dd></div>
+        <div class="stat"><dt class="stat-n" data-count="members">13</dt><dd class="stat-l">Lab members</dd></div>
+        <div class="stat"><dt class="stat-n" data-count="alumni">23</dt><dd class="stat-l">Alumni</dd></div>
+        <div class="stat"><dt class="stat-n" data-count="projects">3</dt><dd class="stat-l">Research projects</dd></div>
+      </dl>
      
     </div>
     <div class="hero-deck-col">
@@ -1077,8 +971,36 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   </div>
 </div>-->
 
+<!-- PROJECTS -->
+<section id="projects" class="alt-bg">
+  <div class="max-w">
+    <div class="section-header fade-up">
+      <p class="section-tag">Research Directions</p>
+      <h2>Research Projects</h2>
+      <p class="section-sub">Industry and government funded projects</p>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card fade-up"><div class="proj-funder">Understanding the future of large-scale AI systems before they are built...</div><div class="proj-title">AI Infrastructure Simulation and Optimization</div>
+      <div class="proj-pi"><p>The exponential scaling of Large Language Models and multi-modal AI has triggered an unprecedented global compute crunch. 
+        To sustain these workloads, modern distributed AI data centers must tightly co-design their processing accelerators with highly evolving scale-up 
+        and scale-out networking fabrics. However, this massive design space induces complex interactions 
+        across the workload, system, and network layers. In production environments, 
+        identifying critical microarchitectural bottlenecks, communication "stalls," and tail-latency 
+        amplification is virtually impossible due to the non-deterministic nature of live clusters. 
+        Building or scaling physical AI infrastructure blindly is prohibitively expensive, 
+        yet state-of-the-art simulators (e.g., ASTRA-sim, Meta's Arcadia) fundamentally assume idealized, homogeneous infrastructure. 
+        This flaw obscures the real-world, fragmented asymmetries of modern hardware deployments, leading to suboptimal cluster configurations 
+        and multi-crore infrastructural inefficiencies. This project aims to develop an open-source, unified cross-layer simulation and benchmarking framework 
+        designed to architect and stress-test next-generation, heterogeneous compute, memory and network infrastructure.</p>
+      </div><div class="proj-meta"><span class="proj-period">Related Publications: ACM SIGCOMM Workshop on NAIC 2025, ACM SIGCOMM Workshop on MemNetAI 2026</span><span class="proj-grant">Funded by --  Marvell Technology</span></div></div>
+      <div class="proj-card fade-up"><div class="proj-funder">Moving intelligence into the network...</div><div class="proj-title">Programmable Networks and In-network Security</div><div class="proj-pi"><p>Modern networks are no longer limited to packet forwarding. Advances in programmable switches and SmartNICs enable application-specific functionality to be executed directly within network devices.</p><p>This project investigates how programmable data planes can accelerate networking, security, observability, and distributed systems workloads. We design and implement systems using P4-programmable switches, SmartNICs, and FPGA-based accelerators to improve network performance while maintaining line-rate operation.</p><p>Our research includes congestion control, telemetry, traffic engineering, in-network processing, and network acceleration for cloud and AI infrastructures.</p></div><div class="proj-meta"><span class="proj-period"><p>Related Publications: FlexMesh (ACM CoNEXT 2026), CoDel (IFIP Networking 2024), IEEE/ACM CCGRIDW 2023, ACM SIGCOMM Workshop on FFSPIN 2022 </p></span><span class="proj-grant">Funded by -- DST (C3iHub), DST (NIDHI PRAYAS), IBM </span></div></div>
+      <div class="proj-card fade-up"><div class="proj-funder">Eliminating inefficiencies in cloud software stacks...</div><div class="proj-title">High-Performance Cloud and Microservice Systems</div><div class="proj-pi"><p>Cloud applications increasingly consist of hundreds of interconnected microservices. Although individual services may execute in microseconds, communication overheads such as serialization, data movement, and protocol processing can dominate overall latency.</p><p>This project focuses on improving the efficiency of cloud-native software systems by reducing communication overheads across application, operating-system, and networking layers. We investigate serialization frameworks, transport protocols, kernel networking mechanisms, and communication abstractions that deliver high performance without requiring specialized hardware.</p><p>Our goal is to make high-performance communication accessible to commodity cloud deployments.</p></div><div class="proj-meta"><span class="proj-period">Related Publications: Poster @ ACM CoNeXT 2024</span><span class="proj-grant"><p></p></span></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- NEWS -->
-<section id="news" class="alt-bg">
+<section id="news">
   <div class="max-w">
     <div class="section-header fade-up">
       <p class="section-tag">Recent</p>
@@ -1098,227 +1020,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   </div>
 </section>
 
-<!-- PUBLICATIONS -->
-<section id="publications">
-  <div class="max-w">
-    <div class="section-header fade-up">
-      <p class="section-tag">Selected papers</p>
-      <h2>Publications</h2>
-      <p class="section-sub"> </p>
-      <!-- Visit <a href="https://scholar.google.com/citations?user=jNhSvOEAAAAJ&hl=en&oi=ao"> Google Scholar profile</a> for complete list.</p> -->
-    </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2026</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div>
-          <div class="pub-authors">Palak Mishra, Rajat Bhardwaj, Yash Verma, Ramanjeet Singh, Rinku Shah</div>
-          <div class="pub-venue">ACM SIGCOMM workshop on MemNetAI 2026</div>
-          <div class="pub-links"><a href="papers/2026-memnetai-vyuh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The blistering pace of AI innovation demands a shift toward agile benchmarking methodologies, specifically targeting architectural simulators and emulators to guide early-stage hardware-software co-design. While workload standardization efforts like Chakra provide schemas for representing execution graphs and dependencies, they lack fine-grained memory-trace information. Such detailed traces are foundational for evaluating emerging distributed infrastructures, including GPU memory pooling and memory-semantic fabrics. Existing memory tracing tools are either too coarse-grained, highly invasive to workload behavior, dependent on source-code modification, or fail to scale. To bridge this gap, we introduce an execution trace generator that efficiently captures, represents, and replays the fine-grained memory operation behavior of large-scale AI/ML workloads. We demonstrate the temporal distribution and dominance of memory operation types, memory hierarchies, and stall reasons for nano-GPT-10M with data parallelism across two H100 GPUs, which can be used to generate memory benchmarks.</p></div></div></div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title">Designing size-aware cryptographic primitives for FPGA-based accelerators</div>
-          <div class="pub-authors">Aditya Peer, Rohan, Siddhant, Neeraj, Amandeep, Praveen Tammana, Sumit Darak, Rinku Shah</div>
-          <div class="pub-venue">ACM CoNEXT 2026</div>
-          <div class="pub-links"><a href="papers/2026-conext-flexmesh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Telecom operators and military/defense applications (e.g., UAVs) prefer to offload compute-intensive cryptographic processing to FPGA-based cryptographic accelerators over fixed-function ASICs for reconfigurability and short deployment cycles. The state-of-the-art FPGA-based cryptographic accelerators are designed either for high throughput or power efficiency. We propose FlexMesh, a programmable, dynamically reconfigurable, and size-aware framework for 5G/6G cryptographic primitives. We design variable-sized FPGA-based cryptographic cores by varying the degree of parallelism, and demonstrate that if the cryptographic core is chosen wisely, we can achieve performance without trading resource or power efficiency for certain use cases. FlexMesh dynamically orchestrates multiple asymmetric cryptographic cores (i.e., variable-sized cores) based on the observed request size distribution. To efficiently utilize the deployed cryptographic cores, we design a workload-aware, dynamically configurable load balancer and a scheduler. We test our system over realistic 5G datasets, and our results demonstrate that asymmetric cryptographic cores reduce the request processing latency and improve resource and power efficiencies, compared to the baseline symmetric cryptographic cores.</p></div></div></div>
-        </div>
-
-
-      </div>
-    </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2025</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">Simulating LLM training workloads for heterogeneous compute and network infrastructure</div>
-          <div class="pub-authors">Sumit Kumar, Arjun, Naman, Ramanjeet, Meet, Praveen, Satananda, Abed, and Rinku</div>
-          <div class="pub-venue">ACM NAIC 2025, co-located with SIGCOMM 2025</div>
-          <div class="pub-links"><a href="papers/2025-naic-hetero-aisim.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.arxiv.org/abs/2508.05370" class="pub-link" target="_blank" rel="noopener">arXiv</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The growing demand for large-scale GPU clusters to train large language models (LLMs) poses a significant challenge to innovation due to high costs and limited accessibility. While state-of-the-art simulators address this issue, they assume a uniform infrastructure. However, device heterogeneity is unavoidable in cloud environments due to resource sharing, frequent updates in device generations, and the inherent intra-chip interconnect heterogeneity. We propose a heterogeneity-aware simulator for distributed LLM training that takes into account the real-world compute and network heterogeneity. Our simulator allows for custom configurations and models the impact of hardware diversity on training time.</p></div></div></div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title">Securing In-Network Traffic Control Systems with P4Auth</div>
-          <div class="pub-authors">Ranjitha K, Medha, Stavan, Karuturi, Sri Hari, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
-          <div class="pub-venue">IEEE/IFIP DSN 2025</div>
-          <div class="pub-links"><a href="papers/2025-dsn-p4auth.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>In-network traffic control systems built on programmable data planes enhance network performance. However, these systems also increase the attack surface and are vulnerable to attacks not seen before. We focus on a problem that stems from the fact that a programmable switch data plane trusts and processes the messages from upper layers in the switch software (OS, SDK, drivers) and from neighbor nodes in the network. Since these messages can update the state maintained in the data plane, which can influence traffic control decisions, it is important to protect such messages from adversaries aiming to degrade performance, compromise privacy, bypass security, or, worst case, network outage.In this paper, we present P4Auth, a key-based protection mechanism that ensures the authenticity and integrity of such messages in in-network systems making fast traffic control decisions. Our key idea is to move key-based security primitives to the switch data plane so that it reduces the trusted computing base and exposure to switch software vulnerabilities while enabling faster checks in the data plane. To realize this idea, we design and develop an authentication protocol, secure key exchange mechanism, and associated data plane primitives. We prototype P4Auth for Intel Tofino and understand the overheads of P4Auth. We also demonstrate how P4Auth protects two in-network systems from man-in-the-middle (MitM) adversaries.</p></div></div></div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title">Detecting Manipulation to Table Rules in the Programmable Data Planes</div>
-          <div class="pub-authors">Ranjitha K, Karuturi, Devansh, Stavan, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
-          <div class="pub-venue">IFIP/IEEE Networking 2025</div>
-          <div class="pub-links"><a href="papers/2025-ifipnet-p4tval.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management systems built on programmable data planes enhance network performance, security,
-                and reliability. However, these systems also increase the attack
-                surface and, hence, are vulnerable to attacks not seen before. We
-                focus on a problem that stems from the fact that a switch data
-                plane trusts the control messages (e.g., table update messages)
-                from upper layers in the switch control plane (OS, SDK, drivers).
-                Since these control messages define the packet forwarding behavior, unauthorized modification to the messages by an adversary
-                at any of these layers can lead to poor performance, privacy
-                compromise, security bypass, and network outage.
-                In this paper, we present P4TVal, a P4 Table rule Validation
-                system that detects unauthorized updates to table rules. Our key
-                idea is early detection, where a table rule update is promptly
-                followed by an authenticated rule validation. To realize this idea,
-                we craft and send custom packets to hit specific table rules in the
-                data plane and validate the table rules actually applied to them.
-                We prototype P4TVal for Intel Tofino and BMV2 and demonstrate
-                how P4TVal can detect unauthorized modifications to table rules.
-                Our evaluation shows that P4TVal's early detection reduces the
-                detection time by 10X compared to the state-of-the-art approach.
-                Index Terms—programmable data plane security, securing table
-                update, detecting forwarding table manipulation attack.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2024</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">Poster: Reducing Data Movement Tax for Serialization in Microservices</div>
-          <div class="pub-authors">Siddharth Nayak, Vishesh Rangwani, Kartikay Dubey, Rajorshi Mondal, Tushar Gupta, Rinku Shah</div>
-          <div class="pub-venue">ACM CoNEXT 2024</div>
-          <div class="pub-links"><a href="papers/2024_conext_muser.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Small-scale public cloud providers cannot adopt serialization datacopy optimizations that leverage hardware acceleration or kernelbypass zero-copy paradigm (e.g., DPDK) because of (1) accelerator
-                deployment costs, (2) securing kernel-bypass zero-copy serialization communication relies on encryption at the NIC hardware, and
-                (3) kernel-bypass solutions require developers to rewrite the business logic. We propose a serialization library that leverages the
-                kernel scatter-gather communication primitives to reduce serialization data copy costs without using custom hardware or a custom
-                network stack.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="pub-card">
-          <div class="pub-title">DL3: Adaptive Load Balancing for Latency-critical Edge Cloud Applications</div>
-          <div class="pub-authors">Prashanth, Ranjitha, Ankit, Arjun Temura, Rinku Shah, Praveen Tammana</div>
-          <div class="pub-venue">IEEE CNSM 2024</div>
-          <div class="pub-links"><a href="papers/2024_cnsm_dl3.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>On-premise edge cloud provides opportunities to enable ML-based latency-critical services to resource-constrained end devices. The edge services are deployed as loosely coupled microservices using cloud orchestrators like Kubernetes, and a load balancer distributes requests from an upstream microservice instance (client) across many downstream microservice instances (servers). However, in a shared environment, transient and sporadic delay events are common due to contention for host and network resources (e.g., high load on servers, high network queuing delays). To meet low latency requirements of edge services, the load balancer should quickly adapt to such delay events and adjust routing decisions (e.g., pick the best downstream instance among all). In this paper, we propose DL3, a distributed load balancer (LB) that quickly adapts to server load and network queuing delays by adjusting routing decisions so that the requests are forwarded to the best possible servers. The key idea is to enable LB with visibility into both servers’ load and transient delays on network paths toward the servers. We prototype DL3 on a Kubernetes-managed edge cloud cluster and evaluated its performance for a latency-sensitive ML-based object detection service. Our preliminary results show that DL3 improves tail response time by 33% compared to the state-of-the-art load balance mechanism.</p></div></div></div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title"><em>CoDel-ACT</em>: Realizing CoDel AQM for Programmable Switch ASIC</div>
-          <div class="pub-authors">Vedant Bothra, Aditya Peer, Vijay Kumar Singh, Mukulika Maity, Rinku Shah</div>
-          <div class="pub-venue">IFIP/IEEE Networking 2024</div>
-          <div class="pub-links"><a href="papers/2024_codelACT_IFIP.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2024-IFIPnet-codelACT-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Bufferbloat is a major issue in computer networks, caused by network devices such as switches and routers with large buffers, resulting in congested queues and high network delays. Active Queue Management (AQM) algorithms like RED, CoDel, and PIE have been developed to address Bufferbloat. Among these, CoDel is the most effective as it does not require parameter tuning. However, software-based AQM solutions cannot scale for high-speed networks, while traditional hardware switches are fixed-function. Programmable switch ASICs offer more flexibility but impose programming constraints to achieve line rates. Due to these limitations, previous research has been unsuccessful in implementing an RFC-compliant CoDel AQM on programmable switch ASICs. To solve this challenge, we have introduced CoDel-ACT, a redesign of CoDel that can handle the global state across switch pipeline stages, improves the accuracy of the math function, and fully implements CoDel within the data plane of an Intel Tofino switch. Our evaluations demonstrate that CoDel-ACT solves Bufferbloat, has negligible overheads, and reduces the average packet queue delay by 52% compared to the existing solution.</p></div></div></div>
-        </div>
-
-      </div>
-    </div>
-
-      <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2023</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">Microservice-based in-network security framework for FPGA NICs</div>
-          <div class="pub-authors">Lasani Hussain, Mayank Rawat, Neeraj Kumar Yadav, Sumit Darak, Praveen Tammana, Rinku Shah</div>
-          <div class="pub-venue">IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing Workshops (CCGridW) 2023</div>
-          <div class="pub-links"><a href="papers/2023-ccgrid-in-net-crypto.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Microservice architectures [25] provide benefits such as
-              independent scaling of bottleneck functions, code reusability,
-              and ease of management. Inspired by these benefits, we propose to migrate from monolithic architecture to microservice
-              security architecture. In this work, we propose to design
-              and implement an in-network, microservice-based security
-              framework for offloaded applications by leveraging FPGA
-              NICs. Our goal is to decompose the TLS cipher suite and
-              4G/5G security algorithms into independent crypto functions
-              (i.e., microservices). We aim to design a programmable system
-              that supports near line-rate processing for signaling and data
-              messages. It should judiciously utilize the FPGA hardware
-              to maximally pack crypto algorithms and support the autoscaling of crypto microservices based on the incoming traffic
-              characteristics.</p>
-            </div>
-          </div>
-        </div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title">In-Network Probabilistic Monitoring Primitives under the Influence of Adversarial Network Inputs</div>
-          <div class="pub-authors">Harish S A, Shiv, Anibrata, Amogh, Praveen Tammana, Pravein Kannan, Rinku Shah</div>
-          <div class="pub-venue">ACM APNet 2023</div>
-          <div class="pub-links"><a href="papers/2023-apnet-In_Network_Probabilistic_Monitoring_Primitives_under_the_Influence_of_Adversarial_Network_Inputs.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/apnet24-bf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management tasks heavily rely on network telemetry data. Programmable data planes provide novel ways to collect this telemetry data efficiently using probabilistic data structures like bloom filters and their variants. Despite the benefits of the data structures (and associated data plane primitives), their exposure increases the attack surface. That is, they are at risk of adversarial network inputs.
-              In this work, we examine the effects of adversarial network inputs to bloom filters that are integral to data plane primitives. Bloom filters are probabilistic and inherently susceptible to pollution attacks which increase their false positive rates. To quantify the impact, we demonstrate the feasibility of pollution attacks on FlowRadar, a network monitoring and debugging system that employs a data plane primitive to collect traffic statistics. We observe that the adversary can corrupt traffic statistics with a few well-crafted malicious flows (tens of flows), leading to a 99% drop in the accuracy of the core functionality of the FlowRadar system.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2022</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">AccelUPF: Accelerating the 5G user plane using programmable hardware</div>
-          <div class="pub-authors">Abhik Bose, Shailendra Keshav Kirtikar, Shivaji Chirumamilla, Rinku Shah, Mythili Vutukuru</div>
-          <div class="pub-venue">ACM SIGCOMM SOSR 2022</div>
-          <div class="pub-links"><a href="papers/2022-sosr-accelupf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=Vvj69YyBVb4&t=4148s" class="pub-link" target="_blank" rel="noopener">Talk</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The latest generation of 5G telecommunication networks are expected to provide high throughput and low latency while catering to diverse applications like mobile broadband, dense IoT, and self-driving cars. A high performance User Plane Function (UPF), the main element in the 5G user plane, is critical to achieving these performance goals. This paper presents AccelUPF, a 5G UPF that offloads functionality to programmable dataplane hardware for performance acceleration. While prior work has proposed accelerating the UPF by offloading its data forwarding functionality to programmable hardware, the Packet Forwarding Control Protocol (PFCP) messages from the control plane that configure the hardware data forwarding rules were still processed in software. We show that only offloading data forwarding and not PFCP message processing leads to suboptimal performance in the UPF for applications like IoT that have a much higher ratio of PFCP messages to data traffic, due to a bottleneck at the software control plane that configures the hardware packet forwarding rules. In contrast to prior work, AccelUPF offloads both PFCP message processing as well as data forwarding to programmable hardware. AccelUPF overcomes several technical challenges pertaining to the processing of the complex variable-sized PFCP messages within the memory and compute constraints of programmable hardware platforms. Our evaluation of AccelUPF implemented over a Netronome programmable NIC and an Intel Tofino programmable switch demonstrates performance gains over the state-of-the-art UPFs for real-world traffic scenarios.</p></div></div></div>
-        </div>
-
-        <div class="pub-card">
-          <div class="pub-title">Implementing ChaCha Based Crypto Primitives on Programmable SmartNICs</div>
-          <div class="pub-authors">Shaguftha Kottur, Krishna Kadiyala, Praveen Tammana, Rinku Shah</div>
-          <div class="pub-venue">ACM SIGCOMM Workshop on FFSPIN 2022</div>
-          <div class="pub-links"><a href="papers/2022-ffspin-crypto-primitives.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Control and management plane applications such as serverless function orchestration and 4G/5G control plane functions are offloaded to smartNICs to reduce communication and processing latency. Such applications involve multiple inter-host interactions that were traditionally secured using SSL/TLS gRPC-based communication channels. Offloading the applications to smartNIC implies that we must also offload the security algorithms. Otherwise, we need to send the application messages to the host VM/container for crypto operations, negating offload benefits.
-              We propose crypto externs for Netronome Agilio smartNICs that implement authentication and confidentiality (encryption/decryption) using the ChaCha stream cipher algorithm. AES and ChaCha are two popular cipher suites, but we chose ChaCha since none of the smartNICs have ChaCha-based crypto accelerators. However, smartNICs have restricted instruction set, and limited memory, making it difficult to implement security algorithms. This paper identifies and addresses several challenges to implement ChaCha crypto primitives successfully. Our evaluations show that our crypto extern implementation satisfies the scalability requirement of popular applications such as serverless management functions and host in-band network telemetry.</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2021</div>
-      <div class="pub-stack">
-
-        <div class="pub-card">
-          <div class="pub-title">Leveraging Programmable Dataplanes for a High Performance 5G User Plane Function</div>
-          <div class="pub-authors">Abhik Bose, Diptyaroop Maji, Prateek Agarwal, Nilesh Unhale, Rinku Shah, Mythili Vutukuru</div>
-          <div class="pub-venue">ACM APNet 2021</div>
-          <div class="pub-links"><a href="papers/2021-apnet-p4upf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2021-apnet-p4upf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Emerging 5G applications require a dataplane that has a high forwarding throughput and low processing latency, in addition to low cost and power consumption. To meet these requirements, the state-of-the-art 5G User Plane Functions (UPFs) are built over high performance packet I/O mechanisms like the Data Plane Development Kit (DPDK), and further offload some functionality to programmable dataplane hardware. In this paper, we design and implement several standards-compliant UPF prototypes, beginning with a software-only DPDK-based UPF, progressing to designs which offload different functions to programmable hardware. We evaluate and compare the performance of these designs, to highlight the costs and benefits of these offloads. Our results show that offload techniques employed in prior work help improve performance in certain scenarios, but also have their limitations. Overcoming these limitations and fully realizing the power of programmable hardware requires offloading more complex functionality than is done today. Our work presents a preliminary implementation towards a comprehensive programmable dataplane-accelerated 5G UPF.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    </div>
-  </div>
-
-    <div class="pub-group fade-up">
-      <div class="pub-year-ghost">2020</div>
-      <div class="pub-stack">
-        <div class="pub-card">
-          <div class="pub-title">TurboEPC: Leveraging Dataplane Programmability to Accelerate the Mobile Packet Core</div>
-          <div class="pub-authors">Rinku Shah, Vikas Kumar, Mythili Vutukuru, Purushottam Kulkarni</div>
-          <div class="pub-venue">ACM SOSR 2020</div>
-          <div class="pub-links"><a href="papers/2020-sosr-turboepc.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=CbgPYwK4nDs" class="pub-link" target="_blank" rel="noopener">Talk</a><a href="https://github.com/rinku-shah/turboepc" class="pub-link" target="_blank" rel="noopener">Code</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Recent architectures of the mobile packet core advocate the separation of the control and dataplane components, with all signaling messages being processed by the control plane entities. This paper presents the design, implementation, and evaluation of TurboEPC, a redesign of the mobile packet core that revisits the division of work between the control and data planes. In TurboEPC, the control plane offloads a small amount of user state to programmable dataplane switches, using which the switches can correctly process a subset of signaling messages within the dataplane itself. The messages that are offloaded to the dataplane in TurboEPC constitute a significant fraction of the total signaling traffic in the packet core, and handling these messages on dataplane switches closer to the end-user improves both control plane processing throughput and latency. We implemented the TurboEPC design using P4-based software and hardware switches. The TurboEPC hardware prototype shows throughput and latency improvements by up to 102x and 98% respectively when the switch hardware stores the state of 65K concurrent users, and 22× and 97% respectively when the switch CPU is busy forwarding dataplane traffic at linerate, over the traditional EPC.</p>
-          </div>
-        </div>
-      </div>
-      </div>
-      </div>
-    </div>
-
-    <div class="fade-up" style="text-align:center;margin-top:2rem">
-      <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank" rel="noopener">Full list on Google Scholar &rarr;</a>
-    </div>
-  </div>
-</section>
-
 <!-- TEAM -->
-<section id="team">
+<section id="team" class="alt-bg">
   <div class="max-w">
     <div class="section-header fade-up">
       <p class="section-tag">People</p>
@@ -1531,266 +1234,269 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
     </div>
 </section>
 
-<!-- PROJECTS -->
-<section id="projects" class="alt-bg">
+<!-- PUBLICATIONS -->
+<section id="publications">
   <div class="max-w">
     <div class="section-header fade-up">
-      <p class="section-tag">Research Directions</p>
-      <h2>Projects</h2>
-      <p class="section-sub">Industry and government funded projects</p>
+      <p class="section-tag">Selected papers</p>
+      <h2>Publications</h2>
+      <p class="section-sub">Peer-reviewed papers from NESt Lab, newest first.</p>
+      <!-- Visit <a href="https://scholar.google.com/citations?user=jNhSvOEAAAAJ&hl=en&oi=ao"> Google Scholar profile</a> for complete list.</p> -->
     </div>
-    <div class="proj-grid">
-      <div class="proj-card fade-up"><div class="proj-funder">Understanding the future of large-scale AI systems before they are built...</div><div class="proj-title">AI Infrastructure Simulation and Optimization</div>
-      <div class="proj-pi"><p>The exponential scaling of Large Language Models and multi-modal AI has triggered an unprecedented global compute crunch. 
-        To sustain these workloads, modern distributed AI data centers must tightly co-design their processing accelerators with highly evolving scale-up 
-        and scale-out networking fabrics. However, this massive design space induces complex interactions 
-        across the workload, system, and network layers. In production environments, 
-        identifying critical microarchitectural bottlenecks, communication "stalls," and tail-latency 
-        amplification is virtually impossible due to the non-deterministic nature of live clusters. 
-        Building or scaling physical AI infrastructure blindly is prohibitively expensive, 
-        yet state-of-the-art simulators (e.g., ASTRA-sim, Meta's Arcadia) fundamentally assume idealized, homogeneous infrastructure. 
-        This flaw obscures the real-world, fragmented asymmetries of modern hardware deployments, leading to suboptimal cluster configurations 
-        and multi-crore infrastructural inefficiencies. This project aims to develop an open-source, unified cross-layer simulation and benchmarking framework 
-        designed to architect and stress-test next-generation, heterogeneous compute, memory and network infrastructure.</p>
-      </div><div class="proj-meta"><span class="proj-period">Related Publications: ACM SIGCOMM Workshop on NAIC 2025, ACM SIGCOMM Workshop on MemNetAI 2026</span><span class="proj-grant">Funded by --  Marvell Technology</span></div></div>
-      <div class="proj-card fade-up"><div class="proj-funder">Moving intelligence into the network...</div><div class="proj-title">Programmable Networks and In-network Security</div><div class="proj-pi"><p>Modern networks are no longer limited to packet forwarding. Advances in programmable switches and SmartNICs enable application-specific functionality to be executed directly within network devices.</p><p>This project investigates how programmable data planes can accelerate networking, security, observability, and distributed systems workloads. We design and implement systems using P4-programmable switches, SmartNICs, and FPGA-based accelerators to improve network performance while maintaining line-rate operation.</p><p>Our research includes congestion control, telemetry, traffic engineering, in-network processing, and network acceleration for cloud and AI infrastructures.</p></div><div class="proj-meta"><span class="proj-period"><p>Related Publications: FlexMesh (ACM CoNEXT 2026), CoDel (IFIP Networking 2024), IEEE/ACM CCGRIDW 2023, ACM SIGCOMM Workshop on FFSPIN 2022 </p></span><span class="proj-grant">Funded by -- DST (C3iHub), DST (NIDHI PRAYAS), IBM </span></div></div>
-      <div class="proj-card fade-up"><div class="proj-funder">Eliminating inefficiencies in cloud software stacks...</div><div class="proj-title">High-Performance Cloud and Microservice Systems</div><div class="proj-pi"><p>Cloud applications increasingly consist of hundreds of interconnected microservices. Although individual services may execute in microseconds, communication overheads such as serialization, data movement, and protocol processing can dominate overall latency.</p><p>This project focuses on improving the efficiency of cloud-native software systems by reducing communication overheads across application, operating-system, and networking layers. We investigate serialization frameworks, transport protocols, kernel networking mechanisms, and communication abstractions that deliver high performance without requiring specialized hardware.</p><p>Our goal is to make high-performance communication accessible to commodity cloud deployments.</p></div><div class="proj-meta"><span class="proj-period">Related Publications: Poster @ ACM CoNeXT 2024</span><span class="proj-grant"><p></p></span></div></div>
+    <div class="pub-filter" role="group" aria-label="Filter publications by year"></div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2026</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div>
+          <div class="pub-authors">Palak Mishra, Rajat Bhardwaj, Yash Verma, Ramanjeet Singh, Rinku Shah</div>
+          <div class="pub-venue">ACM SIGCOMM workshop on MemNetAI 2026</div>
+          <div class="pub-links"><a href="papers/2026-memnetai-vyuh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The blistering pace of AI innovation demands a shift toward agile benchmarking methodologies, specifically targeting architectural simulators and emulators to guide early-stage hardware-software co-design. While workload standardization efforts like Chakra provide schemas for representing execution graphs and dependencies, they lack fine-grained memory-trace information. Such detailed traces are foundational for evaluating emerging distributed infrastructures, including GPU memory pooling and memory-semantic fabrics. Existing memory tracing tools are either too coarse-grained, highly invasive to workload behavior, dependent on source-code modification, or fail to scale. To bridge this gap, we introduce an execution trace generator that efficiently captures, represents, and replays the fine-grained memory operation behavior of large-scale AI/ML workloads. We demonstrate the temporal distribution and dominance of memory operation types, memory hierarchies, and stall reasons for nano-GPT-10M with data parallelism across two H100 GPUs, which can be used to generate memory benchmarks.</p></div></div></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title">Designing size-aware cryptographic primitives for FPGA-based accelerators</div>
+          <div class="pub-authors">Aditya Peer, Rohan, Siddhant, Neeraj, Amandeep, Praveen Tammana, Sumit Darak, Rinku Shah</div>
+          <div class="pub-venue">ACM CoNEXT 2026</div>
+          <div class="pub-links"><a href="papers/2026-conext-flexmesh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Telecom operators and military/defense applications (e.g., UAVs) prefer to offload compute-intensive cryptographic processing to FPGA-based cryptographic accelerators over fixed-function ASICs for reconfigurability and short deployment cycles. The state-of-the-art FPGA-based cryptographic accelerators are designed either for high throughput or power efficiency. We propose FlexMesh, a programmable, dynamically reconfigurable, and size-aware framework for 5G/6G cryptographic primitives. We design variable-sized FPGA-based cryptographic cores by varying the degree of parallelism, and demonstrate that if the cryptographic core is chosen wisely, we can achieve performance without trading resource or power efficiency for certain use cases. FlexMesh dynamically orchestrates multiple asymmetric cryptographic cores (i.e., variable-sized cores) based on the observed request size distribution. To efficiently utilize the deployed cryptographic cores, we design a workload-aware, dynamically configurable load balancer and a scheduler. We test our system over realistic 5G datasets, and our results demonstrate that asymmetric cryptographic cores reduce the request processing latency and improve resource and power efficiencies, compared to the baseline symmetric cryptographic cores.</p></div></div></div>
+        </div>
+
+
+      </div>
+    </div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2025</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">Simulating LLM training workloads for heterogeneous compute and network infrastructure</div>
+          <div class="pub-authors">Sumit Kumar, Arjun, Naman, Ramanjeet, Meet, Praveen, Satananda, Abed, and Rinku</div>
+          <div class="pub-venue">ACM NAIC 2025, co-located with SIGCOMM 2025</div>
+          <div class="pub-links"><a href="papers/2025-naic-hetero-aisim.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.arxiv.org/abs/2508.05370" class="pub-link" target="_blank" rel="noopener">arXiv</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The growing demand for large-scale GPU clusters to train large language models (LLMs) poses a significant challenge to innovation due to high costs and limited accessibility. While state-of-the-art simulators address this issue, they assume a uniform infrastructure. However, device heterogeneity is unavoidable in cloud environments due to resource sharing, frequent updates in device generations, and the inherent intra-chip interconnect heterogeneity. We propose a heterogeneity-aware simulator for distributed LLM training that takes into account the real-world compute and network heterogeneity. Our simulator allows for custom configurations and models the impact of hardware diversity on training time.</p></div></div></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title">Securing In-Network Traffic Control Systems with P4Auth</div>
+          <div class="pub-authors">Ranjitha K, Medha, Stavan, Karuturi, Sri Hari, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
+          <div class="pub-venue">IEEE/IFIP DSN 2025</div>
+          <div class="pub-links"><a href="papers/2025-dsn-p4auth.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>In-network traffic control systems built on programmable data planes enhance network performance. However, these systems also increase the attack surface and are vulnerable to attacks not seen before. We focus on a problem that stems from the fact that a programmable switch data plane trusts and processes the messages from upper layers in the switch software (OS, SDK, drivers) and from neighbor nodes in the network. Since these messages can update the state maintained in the data plane, which can influence traffic control decisions, it is important to protect such messages from adversaries aiming to degrade performance, compromise privacy, bypass security, or, worst case, network outage.In this paper, we present P4Auth, a key-based protection mechanism that ensures the authenticity and integrity of such messages in in-network systems making fast traffic control decisions. Our key idea is to move key-based security primitives to the switch data plane so that it reduces the trusted computing base and exposure to switch software vulnerabilities while enabling faster checks in the data plane. To realize this idea, we design and develop an authentication protocol, secure key exchange mechanism, and associated data plane primitives. We prototype P4Auth for Intel Tofino and understand the overheads of P4Auth. We also demonstrate how P4Auth protects two in-network systems from man-in-the-middle (MitM) adversaries.</p></div></div></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title">Detecting Manipulation to Table Rules in the Programmable Data Planes</div>
+          <div class="pub-authors">Ranjitha K, Karuturi, Devansh, Stavan, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
+          <div class="pub-venue">IFIP/IEEE Networking 2025</div>
+          <div class="pub-links"><a href="papers/2025-ifipnet-p4tval.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management systems built on programmable data planes enhance network performance, security,
+                and reliability. However, these systems also increase the attack
+                surface and, hence, are vulnerable to attacks not seen before. We
+                focus on a problem that stems from the fact that a switch data
+                plane trusts the control messages (e.g., table update messages)
+                from upper layers in the switch control plane (OS, SDK, drivers).
+                Since these control messages define the packet forwarding behavior, unauthorized modification to the messages by an adversary
+                at any of these layers can lead to poor performance, privacy
+                compromise, security bypass, and network outage.
+                In this paper, we present P4TVal, a P4 Table rule Validation
+                system that detects unauthorized updates to table rules. Our key
+                idea is early detection, where a table rule update is promptly
+                followed by an authenticated rule validation. To realize this idea,
+                we craft and send custom packets to hit specific table rules in the
+                data plane and validate the table rules actually applied to them.
+                We prototype P4TVal for Intel Tofino and BMV2 and demonstrate
+                how P4TVal can detect unauthorized modifications to table rules.
+                Our evaluation shows that P4TVal's early detection reduces the
+                detection time by 10X compared to the state-of-the-art approach.
+                Index Terms—programmable data plane security, securing table
+                update, detecting forwarding table manipulation attack.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2024</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">Poster: Reducing Data Movement Tax for Serialization in Microservices</div>
+          <div class="pub-authors">Siddharth Nayak, Vishesh Rangwani, Kartikay Dubey, Rajorshi Mondal, Tushar Gupta, Rinku Shah</div>
+          <div class="pub-venue">ACM CoNEXT 2024</div>
+          <div class="pub-links"><a href="papers/2024_conext_muser.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Small-scale public cloud providers cannot adopt serialization datacopy optimizations that leverage hardware acceleration or kernelbypass zero-copy paradigm (e.g., DPDK) because of (1) accelerator
+                deployment costs, (2) securing kernel-bypass zero-copy serialization communication relies on encryption at the NIC hardware, and
+                (3) kernel-bypass solutions require developers to rewrite the business logic. We propose a serialization library that leverages the
+                kernel scatter-gather communication primitives to reduce serialization data copy costs without using custom hardware or a custom
+                network stack.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="pub-card">
+          <div class="pub-title">DL3: Adaptive Load Balancing for Latency-critical Edge Cloud Applications</div>
+          <div class="pub-authors">Prashanth, Ranjitha, Ankit, Arjun Temura, Rinku Shah, Praveen Tammana</div>
+          <div class="pub-venue">IEEE CNSM 2024</div>
+          <div class="pub-links"><a href="papers/2024_cnsm_dl3.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>On-premise edge cloud provides opportunities to enable ML-based latency-critical services to resource-constrained end devices. The edge services are deployed as loosely coupled microservices using cloud orchestrators like Kubernetes, and a load balancer distributes requests from an upstream microservice instance (client) across many downstream microservice instances (servers). However, in a shared environment, transient and sporadic delay events are common due to contention for host and network resources (e.g., high load on servers, high network queuing delays). To meet low latency requirements of edge services, the load balancer should quickly adapt to such delay events and adjust routing decisions (e.g., pick the best downstream instance among all). In this paper, we propose DL3, a distributed load balancer (LB) that quickly adapts to server load and network queuing delays by adjusting routing decisions so that the requests are forwarded to the best possible servers. The key idea is to enable LB with visibility into both servers’ load and transient delays on network paths toward the servers. We prototype DL3 on a Kubernetes-managed edge cloud cluster and evaluated its performance for a latency-sensitive ML-based object detection service. Our preliminary results show that DL3 improves tail response time by 33% compared to the state-of-the-art load balance mechanism.</p></div></div></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title"><em>CoDel-ACT</em>: Realizing CoDel AQM for Programmable Switch ASIC</div>
+          <div class="pub-authors">Vedant Bothra, Aditya Peer, Vijay Kumar Singh, Mukulika Maity, Rinku Shah</div>
+          <div class="pub-venue">IFIP/IEEE Networking 2024</div>
+          <div class="pub-links"><a href="papers/2024_codelACT_IFIP.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2024-IFIPnet-codelACT-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Bufferbloat is a major issue in computer networks, caused by network devices such as switches and routers with large buffers, resulting in congested queues and high network delays. Active Queue Management (AQM) algorithms like RED, CoDel, and PIE have been developed to address Bufferbloat. Among these, CoDel is the most effective as it does not require parameter tuning. However, software-based AQM solutions cannot scale for high-speed networks, while traditional hardware switches are fixed-function. Programmable switch ASICs offer more flexibility but impose programming constraints to achieve line rates. Due to these limitations, previous research has been unsuccessful in implementing an RFC-compliant CoDel AQM on programmable switch ASICs. To solve this challenge, we have introduced CoDel-ACT, a redesign of CoDel that can handle the global state across switch pipeline stages, improves the accuracy of the math function, and fully implements CoDel within the data plane of an Intel Tofino switch. Our evaluations demonstrate that CoDel-ACT solves Bufferbloat, has negligible overheads, and reduces the average packet queue delay by 52% compared to the existing solution.</p></div></div></div>
+        </div>
+
+      </div>
+    </div>
+
+      <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2023</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">Microservice-based in-network security framework for FPGA NICs</div>
+          <div class="pub-authors">Lasani Hussain, Mayank Rawat, Neeraj Kumar Yadav, Sumit Darak, Praveen Tammana, Rinku Shah</div>
+          <div class="pub-venue">IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing Workshops (CCGridW) 2023</div>
+          <div class="pub-links"><a href="papers/2023-ccgrid-in-net-crypto.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Microservice architectures [25] provide benefits such as
+              independent scaling of bottleneck functions, code reusability,
+              and ease of management. Inspired by these benefits, we propose to migrate from monolithic architecture to microservice
+              security architecture. In this work, we propose to design
+              and implement an in-network, microservice-based security
+              framework for offloaded applications by leveraging FPGA
+              NICs. Our goal is to decompose the TLS cipher suite and
+              4G/5G security algorithms into independent crypto functions
+              (i.e., microservices). We aim to design a programmable system
+              that supports near line-rate processing for signaling and data
+              messages. It should judiciously utilize the FPGA hardware
+              to maximally pack crypto algorithms and support the autoscaling of crypto microservices based on the incoming traffic
+              characteristics.</p>
+            </div>
+          </div>
+        </div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title">In-Network Probabilistic Monitoring Primitives under the Influence of Adversarial Network Inputs</div>
+          <div class="pub-authors">Harish S A, Shiv, Anibrata, Amogh, Praveen Tammana, Pravein Kannan, Rinku Shah</div>
+          <div class="pub-venue">ACM APNet 2023</div>
+          <div class="pub-links"><a href="papers/2023-apnet-In_Network_Probabilistic_Monitoring_Primitives_under_the_Influence_of_Adversarial_Network_Inputs.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/apnet24-bf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management tasks heavily rely on network telemetry data. Programmable data planes provide novel ways to collect this telemetry data efficiently using probabilistic data structures like bloom filters and their variants. Despite the benefits of the data structures (and associated data plane primitives), their exposure increases the attack surface. That is, they are at risk of adversarial network inputs.
+              In this work, we examine the effects of adversarial network inputs to bloom filters that are integral to data plane primitives. Bloom filters are probabilistic and inherently susceptible to pollution attacks which increase their false positive rates. To quantify the impact, we demonstrate the feasibility of pollution attacks on FlowRadar, a network monitoring and debugging system that employs a data plane primitive to collect traffic statistics. We observe that the adversary can corrupt traffic statistics with a few well-crafted malicious flows (tens of flows), leading to a 99% drop in the accuracy of the core functionality of the FlowRadar system.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2022</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">AccelUPF: Accelerating the 5G user plane using programmable hardware</div>
+          <div class="pub-authors">Abhik Bose, Shailendra Keshav Kirtikar, Shivaji Chirumamilla, Rinku Shah, Mythili Vutukuru</div>
+          <div class="pub-venue">ACM SIGCOMM SOSR 2022</div>
+          <div class="pub-links"><a href="papers/2022-sosr-accelupf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=Vvj69YyBVb4&t=4148s" class="pub-link" target="_blank" rel="noopener">Talk</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The latest generation of 5G telecommunication networks are expected to provide high throughput and low latency while catering to diverse applications like mobile broadband, dense IoT, and self-driving cars. A high performance User Plane Function (UPF), the main element in the 5G user plane, is critical to achieving these performance goals. This paper presents AccelUPF, a 5G UPF that offloads functionality to programmable dataplane hardware for performance acceleration. While prior work has proposed accelerating the UPF by offloading its data forwarding functionality to programmable hardware, the Packet Forwarding Control Protocol (PFCP) messages from the control plane that configure the hardware data forwarding rules were still processed in software. We show that only offloading data forwarding and not PFCP message processing leads to suboptimal performance in the UPF for applications like IoT that have a much higher ratio of PFCP messages to data traffic, due to a bottleneck at the software control plane that configures the hardware packet forwarding rules. In contrast to prior work, AccelUPF offloads both PFCP message processing as well as data forwarding to programmable hardware. AccelUPF overcomes several technical challenges pertaining to the processing of the complex variable-sized PFCP messages within the memory and compute constraints of programmable hardware platforms. Our evaluation of AccelUPF implemented over a Netronome programmable NIC and an Intel Tofino programmable switch demonstrates performance gains over the state-of-the-art UPFs for real-world traffic scenarios.</p></div></div></div>
+        </div>
+
+        <div class="pub-card">
+          <div class="pub-title">Implementing ChaCha Based Crypto Primitives on Programmable SmartNICs</div>
+          <div class="pub-authors">Shaguftha Kottur, Krishna Kadiyala, Praveen Tammana, Rinku Shah</div>
+          <div class="pub-venue">ACM SIGCOMM Workshop on FFSPIN 2022</div>
+          <div class="pub-links"><a href="papers/2022-ffspin-crypto-primitives.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Control and management plane applications such as serverless function orchestration and 4G/5G control plane functions are offloaded to smartNICs to reduce communication and processing latency. Such applications involve multiple inter-host interactions that were traditionally secured using SSL/TLS gRPC-based communication channels. Offloading the applications to smartNIC implies that we must also offload the security algorithms. Otherwise, we need to send the application messages to the host VM/container for crypto operations, negating offload benefits.
+              We propose crypto externs for Netronome Agilio smartNICs that implement authentication and confidentiality (encryption/decryption) using the ChaCha stream cipher algorithm. AES and ChaCha are two popular cipher suites, but we chose ChaCha since none of the smartNICs have ChaCha-based crypto accelerators. However, smartNICs have restricted instruction set, and limited memory, making it difficult to implement security algorithms. This paper identifies and addresses several challenges to implement ChaCha crypto primitives successfully. Our evaluations show that our crypto extern implementation satisfies the scalability requirement of popular applications such as serverless management functions and host in-band network telemetry.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2021</div>
+      <div class="pub-stack">
+
+        <div class="pub-card">
+          <div class="pub-title">Leveraging Programmable Dataplanes for a High Performance 5G User Plane Function</div>
+          <div class="pub-authors">Abhik Bose, Diptyaroop Maji, Prateek Agarwal, Nilesh Unhale, Rinku Shah, Mythili Vutukuru</div>
+          <div class="pub-venue">ACM APNet 2021</div>
+          <div class="pub-links"><a href="papers/2021-apnet-p4upf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2021-apnet-p4upf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Emerging 5G applications require a dataplane that has a high forwarding throughput and low processing latency, in addition to low cost and power consumption. To meet these requirements, the state-of-the-art 5G User Plane Functions (UPFs) are built over high performance packet I/O mechanisms like the Data Plane Development Kit (DPDK), and further offload some functionality to programmable dataplane hardware. In this paper, we design and implement several standards-compliant UPF prototypes, beginning with a software-only DPDK-based UPF, progressing to designs which offload different functions to programmable hardware. We evaluate and compare the performance of these designs, to highlight the costs and benefits of these offloads. Our results show that offload techniques employed in prior work help improve performance in certain scenarios, but also have their limitations. Overcoming these limitations and fully realizing the power of programmable hardware requires offloading more complex functionality than is done today. Our work presents a preliminary implementation towards a comprehensive programmable dataplane-accelerated 5G UPF.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>
+
+    <div class="pub-group fade-up">
+      <div class="pub-year-ghost">2020</div>
+      <div class="pub-stack">
+        <div class="pub-card">
+          <div class="pub-title">TurboEPC: Leveraging Dataplane Programmability to Accelerate the Mobile Packet Core</div>
+          <div class="pub-authors">Rinku Shah, Vikas Kumar, Mythili Vutukuru, Purushottam Kulkarni</div>
+          <div class="pub-venue">ACM SOSR 2020</div>
+          <div class="pub-links"><a href="papers/2020-sosr-turboepc.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=CbgPYwK4nDs" class="pub-link" target="_blank" rel="noopener">Talk</a><a href="https://github.com/rinku-shah/turboepc" class="pub-link" target="_blank" rel="noopener">Code</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Recent architectures of the mobile packet core advocate the separation of the control and dataplane components, with all signaling messages being processed by the control plane entities. This paper presents the design, implementation, and evaluation of TurboEPC, a redesign of the mobile packet core that revisits the division of work between the control and data planes. In TurboEPC, the control plane offloads a small amount of user state to programmable dataplane switches, using which the switches can correctly process a subset of signaling messages within the dataplane itself. The messages that are offloaded to the dataplane in TurboEPC constitute a significant fraction of the total signaling traffic in the packet core, and handling these messages on dataplane switches closer to the end-user improves both control plane processing throughput and latency. We implemented the TurboEPC design using P4-based software and hardware switches. The TurboEPC hardware prototype shows throughput and latency improvements by up to 102x and 98% respectively when the switch hardware stores the state of 65K concurrent users, and 22× and 97% respectively when the switch CPU is busy forwarding dataplane traffic at linerate, over the traditional EPC.</p>
+          </div>
+        </div>
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <div class="fade-up" style="text-align:center;margin-top:2rem">
+      <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank" rel="noopener">Full list on Google Scholar &rarr;</a>
     </div>
   </div>
 </section>
 
 
   <!-- GALLERY -->
-  <section id="gallery" class="alt-bg gallery-section">
+  <section id="gallery" class="alt-bg">
     <div class="max-w">
       <div class="section-header fade-up">
         <p class="section-tag">Life at NESt</p>
         <h2>Photo Gallery</h2>
-        <p class="section-sub">Conferences, lab events, awards, and team moments &mdash; cycling automatically</p>
+        <p class="section-sub">Conferences, lab events, awards, and team moments.</p>
       </div>
 
-      <div class="gallery-stage fade-up">
-        <div class="gallery-mosaic" id="galleryMosaic">
-          <div class="gslot" data-slot="0" onclick="glbOpen(0)">
-            <div class="gslot-frame gf-active" data-label="Lab Group Photo" data-sublabel="Annual Photo · NESt Lab"
-              data-pidx="0">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Lab Group Photo</span>
-                <span class="gslot-ph-sublabel">Annual Photo · NESt Lab</span>
-              </div>
-            </div>
-            <div class="gslot-frame " data-label="SmartNIC Testbed" data-sublabel="Lab Infrastructure · P4"
-              data-pidx="6">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">SmartNIC Testbed</span>
-                <span class="gslot-ph-sublabel">Lab Infrastructure · P4</span>
-              </div>
-            </div>
-            <div class="gslot-caption"><span>Lab Group Photo</span></div>
-          </div>
-          <div class="gslot" data-slot="1" onclick="glbOpen(1)">
-            <div class="gslot-frame gf-active" data-label="SIGCOMM 2025" data-sublabel="Conference · Presentation"
-              data-pidx="1">
-              <img loading="lazy" decoding="async" src="images/sigcomm_2025.jpeg" alt="SIGCOMM 2025">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">SIGCOMM 2025</span>
-                <span class="gslot-ph-sublabel">Conference · Presentation</span>
-              </div>
-            </div>
-            <div class="gslot-frame " data-label="IBM Research Visit" data-sublabel="OSCP Internship · 2024"
-              data-pidx="7">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">IBM Research Visit</span>
-                <span class="gslot-ph-sublabel">OSCP Internship · 2024</span>
-              </div>
-            </div>
-            <div class="gslot-caption"><span>SIGCOMM 2025</span></div>
-          </div>
-          <div class="gslot" data-slot="2" onclick="glbOpen(2)">
-            <div class="gslot-frame gf-active" data-label="Lab Meeting" data-sublabel="Weekly Research Sync"
-              data-pidx="2">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Lab Meeting</span>
-                <span class="gslot-ph-sublabel">Weekly Research Sync</span>
-              </div>
-            </div>
-            <!-- <div class="gslot-frame " data-label="Dagstuhl Seminar 2023" data-sublabel="Programmable Host Networking"
-              data-pidx="8">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Dagstuhl Seminar 2023</span>
-                <span class="gslot-ph-sublabel">Programmable Host Networking</span>
-              </div>
-            </div> -->
-            <div class="gslot-frame " data-label="HIPC 2025" data-sublabel="" data-pidx="11">
-              <img loading="lazy" decoding="async" src="images/HIPC_2025.jpeg" alt="HIPC 2025">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">HIPC 2025</span>
-                <!-- <span class="gslot-ph-sublabel">Paper Accepted</span> -->
-              </div>
-            </div>
-            <div class="gslot-caption"><span>Lab Meeting</span></div>
-          </div>
-          <div class="gslot" data-slot="3" onclick="glbOpen(3)">
-            <div class="gslot-frame gf-active" data-label="CoNEXT 2025" data-sublabel="Paper Presentation"
-              data-pidx="3">
-              <img loading="lazy" decoding="async" src="images/CoNEXT_2025.jpeg" alt="CoNEXT 2025">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">CoNEXT 2025</span>
-                <span class="gslot-ph-sublabel">Paper Presentation</span>
-              </div>
-            </div>
-            <div class="gslot-frame " data-label="P4 Workshop" data-sublabel="Hands-on Session" data-pidx="9">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">P4 Workshop</span>
-                <span class="gslot-ph-sublabel">Hands-on Session</span>
-              </div>
-            </div>
-            <div class="gslot-caption"><span>CoNEXT 2025</span></div>
-          </div>
-          <div class="gslot" data-slot="4" onclick="glbOpen(4)">
-            <div class="gslot-frame gf-active" data-label="Marvell Visit" data-sublabel="Industry Collaboration"
-              data-pidx="4">
-              <img loading="lazy" decoding="async" src="images/Marvell_2025.jpeg" alt="Marvell Visit">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Marvell Visit</span>
-                <span class="gslot-ph-sublabel">Industry Collaboration</span>
-              </div>
-            </div>
-            <div class="gslot-frame " data-label="Google Networking Summit" data-sublabel="NESt Lab · 2024" data-pidx="10">
-              <img loading="lazy" decoding="async" src="images/Google_Networking_summit.jpeg" alt="Google Networking Summit">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Google Networking Summit</span>
-                <span class="gslot-ph-sublabel">NESt Lab · 2025</span>
-              </div>
-            </div>
-            <div class="gslot-caption"><span>Marvell Visit</span></div>
-          </div>
-          <div class="gslot" data-slot="5" onclick="glbOpen(5)">
-            <div class="gslot-frame gf-active" data-label="Best Thesis Award"
-              data-sublabel="Aditya Peer · 14th Convocation" data-pidx="5">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">Best Thesis Award</span>
-                <span class="gslot-ph-sublabel">Aditya Peer · 14th Convocation</span>
-              </div>
-            </div>
-            <div class="gslot-frame " data-label="DSN 2025 Celebration" data-sublabel="Paper Accepted" data-pidx="11">
-              <div class="gslot-ph">
-                <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="36" cy="32" r="10" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="#1a2340" stroke-width="2" />
-                  <circle cx="54" cy="22" r="3.5" fill="#9b1d20" opacity=".45" />
-                </svg>
-                <span class="gslot-ph-label">DSN 2025 Celebration</span>
-                <span class="gslot-ph-sublabel">Paper Accepted</span>
-              </div>
-            </div>
-            <div class="gslot-caption"><span>Best Thesis Award</span></div>
-          </div>
-
-        </div>
-      </div>
-
-      <div class="gallery-progress-bar">
-        <div class="gallery-progress-fill" id="galleryProgressFill"></div>
-      </div>
-
-      <div class="gallery-dots" id="galleryDots">
-        <button class="gdot active" onclick="glbGoto(0)" aria-label="Round 1"></button><button class="gdot"
-          onclick="glbGoto(1)" aria-label="Round 2"></button>
-      </div>
-
-      <div class="gallery-controls">
-        <button class="gctrl" id="gctrlPrev" onclick="glbGoto((galleryRound-1+galleryTotal)%galleryTotal)">&#8592;
-          Prev</button>
-        <button class="gctrl active-ctrl" id="gctrlPause" onclick="toggleGalleryPause()">&#9646;&#9646; Pause</button>
-        <span class="gctrl-sep">|</span>
-        <button class="gctrl" id="gctrlNext" onclick="glbGoto((galleryRound+1)%galleryTotal)">Next &#8594;</button>
+      <!-- To add a photo: copy one <figure class="gitem"> block below and change
+           the src, alt and caption. The first photo is shown large. -->
+      <div class="gallery-grid fade-up">
+        <figure class="gitem">
+          <button type="button" class="gitem-btn" aria-label="Open photo: Google Networking Summit">
+            <img loading="lazy" decoding="async" src="images/Google_Networking_summit.jpeg" alt="Google Networking Summit">
+          </button>
+          <figcaption><strong>Google Networking Summit</strong><span>NESt Lab</span></figcaption>
+        </figure>
+        <figure class="gitem">
+          <button type="button" class="gitem-btn" aria-label="Open photo: CoNEXT 2025">
+            <img loading="lazy" decoding="async" src="images/CoNEXT_2025.jpeg" alt="CoNEXT 2025">
+          </button>
+          <figcaption><strong>CoNEXT 2025</strong><span>Paper presentation</span></figcaption>
+        </figure>
+        <figure class="gitem">
+          <button type="button" class="gitem-btn" aria-label="Open photo: SIGCOMM 2025">
+            <img loading="lazy" decoding="async" src="images/sigcomm_2025.jpeg" alt="SIGCOMM 2025">
+          </button>
+          <figcaption><strong>SIGCOMM 2025</strong><span>Conference presentation</span></figcaption>
+        </figure>
+        <figure class="gitem">
+          <button type="button" class="gitem-btn" aria-label="Open photo: Marvell Visit">
+            <img loading="lazy" decoding="async" src="images/Marvell_2025.jpeg" alt="Marvell Visit">
+          </button>
+          <figcaption><strong>Marvell Visit</strong><span>Industry collaboration</span></figcaption>
+        </figure>
+        <figure class="gitem">
+          <button type="button" class="gitem-btn" aria-label="Open photo: HiPC 2025">
+            <img loading="lazy" decoding="async" src="images/HIPC_2025.jpeg" alt="HiPC 2025">
+          </button>
+          <figcaption><strong>HiPC 2025</strong><span>Conference</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
@@ -1807,7 +1513,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   <!-- ALUMNI -->
 <!-- ALUMNI -->
 
-<section id="alumni" class="alt-bg">
+<section id="alumni">
 
   <div class="max-w">
 
@@ -1832,16 +1538,10 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
       <h3 class="alumni-title">
         MTech Alumni
       </h3>
-      <div class="alumni-wrapper">
-        <button class="alumni-btn"
-          onclick="scrollAlumni('mtech',-1)">
-          &#10094;
-        </button>
+      <div>
 
 
-        <div class="alumni-scroll"
-
-          id="mtech">
+        <div class="students-grid alumni-grid" id="mtech">
           <!-- STUDENT 1 -->
           <div class="student-card">
             <div class="student-av">
@@ -2034,15 +1734,6 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
 
         </div>
 
-
-        <button class="alumni-btn"
-
-          onclick="scrollAlumni('mtech',1)">
-
-          &#10095;
-
-        </button>
-
       </div>
 
     </div>
@@ -2059,25 +1750,15 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
 
       </h3>
 
-      <div class="alumni-wrapper">
+      <div>
 
-        <button class="alumni-btn"
-
-          onclick="scrollAlumni('btech',-1)">
-
-          &#10094;
-
-        </button>
-
-        <!-- <div class="alumni-scroll"
-
-          id="btech"> -->
+        <!-- <div class="students-grid alumni-grid" id="btech"> -->
 
           <!-- Add BTech students -->
 
         <!-- </div> -->
 
-        <div class="alumni-scroll" id="btech">
+        <div class="students-grid alumni-grid" id="btech">
 
           <!-- 1 -->
 
@@ -2409,14 +2090,6 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         
         </div>
 
-        <button class="alumni-btn"
-
-          onclick="scrollAlumni('btech',1)">
-
-          &#10095;
-
-        </button>
-
       </div>
 
     </div>
@@ -2427,7 +2100,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
 </section>
 
 <!-- CONTACT -->
-<section id="contact">
+<section id="contact" class="alt-bg">
   <div class="max-w">
     <div class="contact-wrap">
       <div class="contact-box fade-up">
@@ -2483,9 +2156,31 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
 <!-- </section> -->
 
 <footer>
-  &copy; 2026 NESt Lab &mdash; Networks, Edge, and SysTems Lab &middot; IIIT Delhi &nbsp;&middot;&nbsp;
-  <a href="https://github.com/nest-iiitd">github.com/nest-iiitd</a>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-name">NESt<span> Lab</span></div>
+      <p>Networks, Edge, and SysTems Lab<br>Department of CSE, IIIT Delhi</p>
+    </div>
+    <div class="footer-links" role="navigation" aria-label="Footer">
+      <a href="#projects">Research</a>
+      <a href="#news">News</a>
+      <a href="#team">Team</a>
+      <a href="#publications">Publications</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#alumni">Alumni</a>
+    </div>
+    <div class="footer-contact">
+      <p>B-502 R&amp;D Block, IIIT Delhi<br>Okhla Phase III, New Delhi 110020</p>
+      <a href="mailto:rinku@iiitd.ac.in">rinku@iiitd.ac.in</a>
+      <a href="https://github.com/nest-iiitd" target="_blank" rel="noopener">github.com/nest-iiitd</a>
+    </div>
+  </div>
+  <div class="footer-bottom">&copy; 2026 NESt Lab &middot; IIIT Delhi</div>
 </footer>
+
+<a href="#hero" class="to-top" aria-label="Back to top">
+  <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+</a>
 
 <script>
 function toggleAbstract(btn) {
@@ -2516,117 +2211,43 @@ function toggleAbstract(btn) {
 
 
 
-// ── Gallery cycling deck ──
-// Labels, captions and photos are read from the .gslot-frame markup, so adding a
-// photo only needs an <img> (and data-label/data-sublabel) inside a frame.
-var gallerySlots  = Array.prototype.slice.call(document.querySelectorAll('.gslot'));
-var galleryRound  = 0;
-var galleryTotal  = Math.max.apply(null, gallerySlots.map(function(s){ return s.querySelectorAll('.gslot-frame').length; }));
-var galleryPaused = false;
-var galleryTimer  = null;
-var GALLERY_INTERVAL = 4000; // ms per round
-
-function galleryFrame(slot) {
-  var frames = slot.querySelectorAll('.gslot-frame');
-  return frames[galleryRound % frames.length];
-}
-
-function glbGoto(round) {
-  galleryRound = round;
-  gallerySlots.forEach(function(slot) {
-    var active = galleryFrame(slot);
-    slot.querySelectorAll('.gslot-frame').forEach(function(f) {
-      f.classList.toggle('gf-active', f === active);
-    });
-    var cap = slot.querySelector('.gslot-caption span');
-    if (cap) cap.textContent = active.dataset.label || '';
-  });
-
-  document.querySelectorAll('.gdot').forEach(function(d, i) {
-    d.classList.toggle('active', i === round);
-  });
-
-  // progress bar reset & animate
-  var fill = document.getElementById('galleryProgressFill');
-  if (fill && !galleryPaused) {
-    fill.style.transition = 'none';
-    fill.style.width = '0%';
-    requestAnimationFrame(function() {
-      requestAnimationFrame(function() {
-        fill.style.transition = 'width ' + GALLERY_INTERVAL + 'ms linear';
-        fill.style.width = '100%';
-      });
-    });
-  }
-}
-
-function startGalleryTimer() {
-  clearInterval(galleryTimer);
-  galleryTimer = setInterval(function() {
-    if (!galleryPaused && !document.hidden) glbGoto((galleryRound + 1) % galleryTotal);
-  }, GALLERY_INTERVAL);
-}
-
-function toggleGalleryPause() {
-  galleryPaused = !galleryPaused;
-  var btn = document.getElementById('gctrlPause');
-  var fill = document.getElementById('galleryProgressFill');
-  if (galleryPaused) {
-    btn.textContent = '▶ Resume';
-    btn.classList.remove('active-ctrl');
-    if (fill) fill.style.transition = 'none';
-  } else {
-    btn.textContent = '❚❚ Pause';
-    btn.classList.add('active-ctrl');
-    glbGoto(galleryRound); // restart progress bar
-  }
-}
-
-// Lightbox
-var glbSlot = 0;
-function glbOpen(si) {
-  glbSlot = si;
+// ── Gallery lightbox ──
+var galleryItems = Array.prototype.slice.call(document.querySelectorAll('.gitem'));
+var glbIndex = 0;
+var glbReturnFocus = null;
+galleryItems.forEach(function(fig, i) {
+  fig.querySelector('.gitem-btn').addEventListener('click', function() { glbOpen(i); });
+});
+function glbOpen(i) {
+  glbIndex = i;
+  glbReturnFocus = document.activeElement;
   glbRender();
   document.getElementById('glb').classList.add('open');
   document.body.style.overflow = 'hidden';
+  document.getElementById('glb-close').focus();
 }
 function glbClose() {
   document.getElementById('glb').classList.remove('open');
   document.body.style.overflow = '';
+  if (glbReturnFocus) glbReturnFocus.focus();
 }
 function glbNav(dir) {
-  glbSlot = (glbSlot + dir + gallerySlots.length) % gallerySlots.length;
+  glbIndex = (glbIndex + dir + galleryItems.length) % galleryItems.length;
   glbRender();
 }
 function glbRender() {
-  var frame = galleryFrame(gallerySlots[glbSlot]);
-  var label = frame.dataset.label || '';
-  var sub = frame.dataset.sublabel || '';
-  var photo = frame.querySelector('img');
+  var fig = galleryItems[glbIndex];
+  var photo = fig.querySelector('img');
+  var title = fig.querySelector('figcaption strong').textContent;
+  var sub = fig.querySelector('figcaption span');
+  var img = document.createElement('img');
+  img.src = photo.currentSrc || photo.src;
+  img.alt = photo.alt;
   var content = document.getElementById('glb-content');
-  document.getElementById('glb-caption').textContent = label + (sub ? '  ·  ' + sub : '');
   content.innerHTML = '';
-  if (photo) {
-    var img = document.createElement('img');
-    img.src = photo.currentSrc || photo.src;
-    img.alt = photo.alt || label;
-    content.appendChild(img);
-  } else {
-    var ph = document.createElement('div');
-    ph.className = 'glb-ph';
-    ph.innerHTML = '<svg viewBox="0 0 72 72" width="52" height="52" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><circle cx="36" cy="32" r="10" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/></svg><p></p>';
-    ph.querySelector('p').textContent = label;
-    content.appendChild(ph);
-  }
+  content.appendChild(img);
+  document.getElementById('glb-caption').textContent = title + (sub && sub.textContent ? '  ·  ' + sub.textContent : '');
 }
-// make gallery tiles keyboard-accessible
-gallerySlots.forEach(function(slot) {
-  slot.tabIndex = 0;
-  slot.setAttribute('role', 'button');
-  slot.addEventListener('keydown', function(e) {
-    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); slot.click(); }
-  });
-});
 document.addEventListener('keydown', function(e) {
   if (!document.getElementById('glb').classList.contains('open')) return;
   if (e.key === 'Escape') glbClose();
@@ -2636,10 +2257,6 @@ document.addEventListener('keydown', function(e) {
 document.getElementById('glb').addEventListener('click', function(e) {
   if (e.target === this) glbClose();
 });
-
-// Kick off
-glbGoto(0);
-startGalleryTimer();
 
 // Scroll fade-in
 var io = new IntersectionObserver(function(entries){
@@ -2653,6 +2270,60 @@ var io = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.08});
 document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
+
+// Hero stats: count straight from the page so they never go stale
+(function(){
+  var counts = {
+    pubs: document.querySelectorAll('#publications .pub-card').length,
+    members: document.querySelectorAll('#team .student-card').length + 1, // + PI
+    alumni: document.querySelectorAll('#alumni .student-card').length,
+    projects: document.querySelectorAll('#projects .proj-card').length
+  };
+  document.querySelectorAll('[data-count]').forEach(function(el){
+    var n = counts[el.dataset.count];
+    if (n) el.textContent = n;
+  });
+})();
+
+// News: show the latest few, reveal the rest on demand
+(function(){
+  var SHOW = 5;
+  var list = document.querySelector('.news-list');
+  var rows = list ? list.querySelectorAll('.news-row') : [];
+  if (rows.length <= SHOW) return;
+  for (var i = SHOW; i < rows.length; i++) rows[i].classList.add('is-collapsed');
+  var btn = document.createElement('button');
+  btn.className = 'btn-outline more-btn';
+  btn.type = 'button';
+  btn.textContent = 'Show all news (' + rows.length + ')';
+  btn.addEventListener('click', function(){
+    var open = list.classList.toggle('expanded');
+    btn.textContent = open ? 'Show less' : 'Show all news (' + rows.length + ')';
+  });
+  list.after(btn);
+})();
+
+// Publications: year filter pills built from the year groups
+(function(){
+  var bar = document.querySelector('.pub-filter');
+  var groups = Array.prototype.slice.call(document.querySelectorAll('#publications .pub-group'));
+  if (!bar || !groups.length) return;
+  var years = groups.map(function(g){ return g.querySelector('.pub-year-ghost').textContent.trim(); });
+  function make(label, year, n){
+    var b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'pf-pill';
+    b.innerHTML = label + ' <span>' + n + '</span>';
+    b.setAttribute('aria-pressed', year === 'all');
+    b.addEventListener('click', function(){
+      bar.querySelectorAll('.pf-pill').forEach(function(p){ p.setAttribute('aria-pressed', p === b); });
+      groups.forEach(function(g, i){ g.hidden = year !== 'all' && years[i] !== year; });
+    });
+    bar.appendChild(b);
+  }
+  make('All', 'all', document.querySelectorAll('#publications .pub-card').length);
+  groups.forEach(function(g, i){ make(years[i], years[i], g.querySelectorAll('.pub-card').length); });
+})();
 
 // Mobile nav menu
 (function(){
@@ -2672,6 +2343,7 @@ document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
 // Nav active link
 var navLinks = document.querySelectorAll('nav a.nav-link');
 var sections = document.querySelectorAll('section[id]');
+var toTop = document.querySelector('.to-top');
 var navTicking = false;
 function updateActiveNav(){
   var cur = '';
@@ -2680,28 +2352,11 @@ function updateActiveNav(){
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
   navTicking = false;
+  toTop.classList.toggle('show', window.scrollY > 900);
 }
 window.addEventListener('scroll', function(){
   if (!navTicking) { navTicking = true; requestAnimationFrame(updateActiveNav); }
 }, {passive: true});
-
-function scrollAlumni(id,direction){
-
-    const container = document.getElementById(id);
-
-    const card = container.querySelector('.student-card');
-
-    const distance = card.offsetWidth + 24;
-
-    container.scrollBy({
-
-      left: direction * distance,
-
-      behavior: 'smooth'
-
-    });
-
-}
 
 </script>
 </body>
