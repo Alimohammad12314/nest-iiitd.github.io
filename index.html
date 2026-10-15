@@ -26,12 +26,13 @@ html{scroll-behavior:smooth}
   --gold:    #b8860b;
   --text:    #1c1c1e;
   --sub:     #4a4a52;
-  --muted:   #888890;
+  --muted:   #6c6c76;
   --border:  #dcdad4;
   --border2: #c8c6be;
   --card:    #ffffff;
-  --shadow:  0 1px 3px rgba(26,35,64,0.06),0 4px 16px rgba(26,35,64,0.06);
-  --shadow2: 0 2px 8px rgba(26,35,64,0.08),0 12px 32px rgba(26,35,64,0.1);
+  --shadow:  0 1px 2px rgba(26,35,64,0.05),0 6px 20px rgba(26,35,64,0.06);
+  --shadow2: 0 2px 6px rgba(26,35,64,0.06),0 18px 40px rgba(26,35,64,0.12);
+  --radius:  14px;
 }
 
 body{
@@ -39,8 +40,11 @@ body{
   color:var(--text);
   font-family:'Source Sans 3',sans-serif;
   font-weight:400;
+  font-size:17px;
   line-height:1.7;
   overflow-x:hidden;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
 }
 
 /* subtle paper texture via repeating gradient */
@@ -72,15 +76,15 @@ nav{
 .nav-wordmark{display:flex;flex-direction:column;line-height:1.15}
 .nav-nest{
   font-family:'IBM Plex Serif',serif;
-  font-size:17px;font-weight:700;
+  font-size:18px;font-weight:700;
   color:var(--navy);letter-spacing:-0.01em;
 }
 .nav-nest span{color:var(--crimson)}
-.nav-full{font-family:'IBM Plex Mono',monospace;font-size:8.5px;font-weight:400;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
+.nav-full{font-family:'IBM Plex Mono',monospace;font-size:9.5px;font-weight:500;color:var(--muted);letter-spacing:0.06em;text-transform:uppercase}
 nav ul{display:flex;gap:2rem;list-style:none}
 nav a.nav-link{
   color:var(--sub);text-decoration:none;
-  font-size:13.5px;font-weight:600;letter-spacing:0.01em;
+  font-size:14.5px;font-weight:600;letter-spacing:0.01em;
   transition:color .2s;position:relative;padding-bottom:2px;
 }
 nav a.nav-link::after{
@@ -125,40 +129,41 @@ h1{
 h1 em{font-style:italic;color:var(--crimson)}
 .hero-full-name{
   font-family:'IBM Plex Mono',monospace;
-  font-size:12px;font-weight:500;
-  color:var(--muted);letter-spacing:0.08em;
+  font-size:13px;font-weight:500;
+  color:var(--muted);letter-spacing:0.06em;
   margin-bottom:1.75rem;
   border-left:3px solid var(--border2);
   padding-left:0.875rem;
 }
-.hero-intro{max-width:800px;text-align:justify;margin-bottom:1.7rem}
+.hero-intro{max-width:760px;margin-bottom:1.75rem;color:var(--sub);font-size:1.06rem;line-height:1.8}
+.hero-intro b{color:var(--navy)}
 .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
 .chip{
   font-family:'IBM Plex Mono',monospace;
   font-size:12px;font-weight:500;letter-spacing:0.08em;
-  padding:4px 8px;border-radius:3px;
+  padding:5px 12px;border-radius:999px;
   border:1px solid var(--border2);
-  color:var(--sub);background:var(--card);
+  color:var(--navy);background:var(--card);
   transition:all .2s;
 }
 .chip:hover{border-color:var(--navy);color:var(--navy);background:var(--bg2)}
 .hero-btns{display:flex;gap:.875rem;flex-wrap:wrap;margin-bottom:2.5rem}
 .btn-primary{
-  font-size:13px;font-weight:700;letter-spacing:0.04em;
-  padding:10px 22px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;
+  font-size:14px;font-weight:700;letter-spacing:0.02em;
+  padding:11px 24px;border-radius:8px;box-shadow:0 2px 6px rgba(26,35,64,0.15);text-decoration:none;border:none;cursor:pointer;
   background:var(--navy);color:#fff;transition:background .2s;
 }
 .btn-primary:hover{background:var(--navy2)}
 .btn-outline{
-  font-size:13px;font-weight:600;letter-spacing:0.04em;
-  padding:9px 20px;border-radius:4px;text-decoration:none;cursor:pointer;
+  font-size:14px;font-weight:600;letter-spacing:0.02em;
+  padding:10px 22px;border-radius:8px;text-decoration:none;cursor:pointer;
   background:transparent;color:var(--navy);
   border:1.5px solid var(--border2);transition:all .2s;
 }
 .btn-outline:hover{border-color:var(--navy);background:var(--bg2)}
 .btn-crimson{
-  font-size:13px;font-weight:700;letter-spacing:0.04em;
-  padding:10px 22px;border-radius:4px;text-decoration:none;border:none;cursor:pointer;
+  font-size:14px;font-weight:700;letter-spacing:0.02em;
+  padding:11px 24px;border-radius:8px;box-shadow:0 2px 6px rgba(26,35,64,0.15);text-decoration:none;border:none;cursor:pointer;
   background:var(--crimson);color:#fff;transition:background .2s;
   display:inline-block;text-align:center;
 }
@@ -222,20 +227,21 @@ h1 em{font-style:italic;color:var(--crimson)}
 /* ── SECTIONS ── */
 section{position:relative;z-index:1;padding:90px 5vw}
 .max-w{max-width:1160px;margin:auto}
-.section-header{margin-bottom:3.5rem;display:flex;flex-direction:column;gap:.5rem}
+.section-header{margin-bottom:3rem;display:flex;flex-direction:column;gap:.7rem}
 .section-tag{
   font-family:'IBM Plex Mono',monospace;
-  font-size:10.5px;font-weight:600;color:var(--crimson);
-  letter-spacing:.2em;text-transform:uppercase;
+  font-size:12px;font-weight:600;color:var(--crimson);
+  letter-spacing:.18em;text-transform:uppercase;
   display:flex;align-items:center;gap:.75rem;
 }
-.section-tag::after{content:'';flex:1;max-width:40px;height:1.5px;background:var(--crimson)}
+.section-tag::after{content:'';flex:1;max-width:48px;height:2px;background:var(--crimson)}
 h2{
   font-family:'IBM Plex Serif',serif;
-  font-size:clamp(1.75rem,3.5vw,2.5rem);
-  font-weight:700;letter-spacing:-0.02em;color:var(--navy);line-height:1.15;
+  font-size:clamp(2.1rem,4vw,3rem);
+  font-weight:700;letter-spacing:-0.025em;color:var(--navy);line-height:1.1;
 }
-.section-sub{font-size:.95rem;color:var(--muted);font-weight:400}
+.section-sub{font-size:1.06rem;color:var(--sub);font-weight:400;max-width:640px}
+.section-sub:empty{display:none}
 .alt-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
 
 /* ── NEWS ── */
@@ -243,40 +249,41 @@ h2{
 .news-row{
   display:grid;grid-template-columns:56px auto 1fr;
   gap:1.25rem;align-items:start;
-  padding:1.1rem 0;border-bottom:1px solid var(--border);
+  padding:1.35rem 0;border-bottom:1px solid var(--border);
 }
 .news-row:first-child{border-top:1px solid var(--border)}
 .news-yr{
   font-family:'IBM Plex Mono',monospace;
-  font-size:11px;font-weight:600;color:var(--muted);padding-top:4px;
+  font-size:13px;font-weight:600;color:var(--navy);padding-top:3px;
 }
 .nbadge{
   font-family:'IBM Plex Mono',monospace;
-  font-size:9.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
-  padding:3px 9px;border-radius:3px;white-space:nowrap;margin-top:3px;
+  font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;
+  padding:3px 10px;border-radius:999px;white-space:nowrap;margin-top:3px;
 }
 .nb-award{background:#fef9e7;color:var(--gold);border:1px solid #f0d060}
 .nb-pub{background:#eef2fb;color:#2563eb;border:1px solid #bfcfef}
 .nb-std{background:#edfaf4;color:#16a34a;border:1px solid #a7d7b8}
-.news-body{font-size:.9rem;color:var(--sub);line-height:1.7}
+.news-body{font-size:1rem;color:var(--sub);line-height:1.7}
 .news-body strong{color:var(--text);font-weight:700}
 .news-body a{color:var(--crimson);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
 .news-body a:hover{border-color:var(--crimson)}
 .news-body em{color:var(--muted)}
 
 /* ── PUBLICATIONS ── */
-.pub-group{margin-bottom:2.5rem;display:grid;grid-template-columns:85px 1fr;gap:1.5rem;align-items:start}
+.pub-group{margin-bottom:3rem;display:grid;grid-template-columns:110px 1fr;gap:2rem;align-items:start}
 .pub-year-ghost{
   font-family:'IBM Plex Serif',serif;
-  font-size:3rem;font-weight:700;
-  color:rgba(26,35,64,0.06);letter-spacing:-0.04em;
-  line-height:1;text-align:right;padding-top:.4rem;user-select:none;
+  font-size:2.6rem;font-weight:700;
+  color:var(--navy);opacity:.28;letter-spacing:-0.03em;
+  line-height:1;text-align:right;padding-top:.5rem;user-select:none;
+  position:sticky;top:88px;
 }
-.pub-stack{display:flex;flex-direction:column;gap:.625rem}
+.pub-stack{display:flex;flex-direction:column;gap:.875rem}
 .pub-card{
-  background:var(--card);border:1px solid var(--border);border-radius:8px;
-  padding:1.1rem 1.5rem;
-  box-shadow:0 1px 3px rgba(41, 50, 79, 0.04);
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:1.35rem 1.6rem;
+  box-shadow:var(--shadow);
   transition:border-color .2s,box-shadow .2s,transform .2s;
   position:relative;overflow:hidden;
 }
@@ -290,21 +297,21 @@ h2{
   transform:translateX(3px);
 }
 .pub-card:hover::before{opacity:1}
-.pub-title{font-family:'IBM Plex Serif',serif;font-size:.95rem;font-weight:600;color:var(--navy);margin-bottom:.3rem;line-height:1.45}
-.pub-authors{font-size:.82rem;color:var(--muted);margin-bottom:.35rem;font-weight:400}
-.pub-venue{font-family:'IBM Plex Mono',monospace;font-size:.75rem;font-weight:600;color:var(--crimson);letter-spacing:.03em}
+.pub-title{font-family:'IBM Plex Serif',serif;font-size:1.12rem;font-weight:600;color:var(--navy);margin-bottom:.4rem;line-height:1.4}
+.pub-authors{font-size:.94rem;color:var(--sub);margin-bottom:.4rem;font-weight:400}
+.pub-venue{font-family:'IBM Plex Mono',monospace;font-size:.8rem;font-weight:600;color:var(--crimson);letter-spacing:.03em}
 .pub-links{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.625rem;align-items:center}
 .pub-link{
   font-family:'IBM Plex Mono',monospace;
-  font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  padding:2px 9px;border:1px solid var(--border2);border-radius:3px;
+  font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 11px;border:1px solid var(--border2);border-radius:999px;
   color:var(--navy);text-decoration:none;transition:all .15s;
 }
 .pub-link:hover{border-color:var(--navy);background:var(--bg2)}
 .abstract-toggle{
   font-family:'IBM Plex Mono',monospace;
-  font-size:9.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
-  padding:2px 9px;border:1px solid var(--border2);border-radius:3px;
+  font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 11px;border:1px solid var(--border2);border-radius:999px;
   color:var(--muted);background:transparent;cursor:pointer;transition:all .15s;
   display:inline-flex;align-items:center;gap:4px;
 }
@@ -319,13 +326,13 @@ h2{
   animation:slideDown .2s ease;
 }
 @keyframes slideDown{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
-.pub-abstract p{font-size:.85rem;color:var(--sub);line-height:1.75;font-style:italic}
+.pub-abstract p{font-size:.95rem;color:var(--sub);line-height:1.75}
 
 /* ── PROJECTS ── */
 .proj-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .proj-card{
-  background:var(--card);border:1px solid var(--border);border-radius:10px;
-  padding:1.5rem;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
+  padding:2rem 2.25rem;
   box-shadow:var(--shadow);
   transition:border-color .2s,box-shadow .2s,transform .2s;
   display:flex;flex-direction:column;gap:.5rem;position:relative;overflow:hidden;
@@ -339,31 +346,32 @@ h2{
 .proj-card:hover::after{transform:scaleX(1)}
 .proj-funder{
   font-family:'IBM Plex Mono',monospace;
-  font-size:9.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
+  font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold);
 }
-.proj-title{font-family:'IBM Plex Serif',serif;font-size:.95rem;font-weight:600;color:var(--navy);line-height:1.4}
-.proj-pi{font-size:.82rem;color:var(--muted)}
+.proj-title{font-family:'IBM Plex Serif',serif;font-size:1.5rem;font-weight:700;color:var(--navy);line-height:1.25;letter-spacing:-0.015em;margin-bottom:.25rem}
+.proj-pi{font-size:1rem;color:var(--sub);line-height:1.75;max-width:78ch}
+.proj-pi p + p{margin-top:.75rem}
 .proj-meta{
   display:flex;justify-content:space-between;align-items:center;
   margin-top:auto;padding-top:.875rem;border-top:1px solid var(--border);
   flex-wrap:wrap;gap:.5rem;
 }
-.proj-period{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--muted);font-weight:500}
+.proj-period{font-family:'IBM Plex Mono',monospace;font-size:.8rem;color:var(--muted);font-weight:500}
 .proj-grant{font-family:'IBM Plex Serif',serif;font-size:1rem;font-weight:700;color:var(--navy)}
 
 /* ── TEAM ── */
 .pi-card{
   display:grid;grid-template-columns:auto 1fr;gap:2rem;align-items:start;
-  background:var(--card);border:1px solid var(--border);border-radius:12px;
+  background:var(--card);border:1px solid var(--border);border-radius:var(--radius);
   padding:2.5rem;margin-bottom:3rem;box-shadow:var(--shadow);
   position:relative;overflow:hidden;
 }
 .pi-card::before{
   content:'Principal Investigator';position:absolute;top:1.5rem;right:1.75rem;
   font-family:'IBM Plex Mono',monospace;
-  font-size:9px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+  font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
   color:var(--crimson);border:1px solid rgba(155,29,32,0.25);
-  padding:2px 8px;border-radius:3px;background:#fef5f5;
+  padding:3px 11px;border-radius:999px;background:#fef5f5;
 }
 .pi-photo{width:200px;height:200px;border-radius:0;object-fit:contain;border:0 solid var(--border2)}
 .pi-initials{
@@ -371,17 +379,19 @@ h2{
   font-family:'IBM Plex Serif',serif;font-size:1.8rem;font-weight:700;
   background:var(--navy);color:#fff;
 }
-.pi-name{font-family:'IBM Plex Serif',serif;font-size:1.5rem;font-weight:700;color:var(--navy);margin-bottom:.15rem;letter-spacing:-0.01em}
-.pi-role{font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600;color:var(--crimson);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.875rem}
-.pi-bio{font-size:.9rem;color:var(--sub);line-height:1.8;margin-bottom:1.25rem}
+.pi-name{font-family:'IBM Plex Serif',serif;font-size:2rem;font-weight:700;color:var(--navy);margin-bottom:.15rem;letter-spacing:-0.01em}
+.pi-role{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;color:var(--crimson);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.875rem}
+.pi-bio{font-size:1.02rem;color:var(--sub);line-height:1.8;margin-bottom:1.25rem}
 .pi-links{display:flex;gap:.625rem;flex-wrap:wrap}
-.team-group-label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
-  color:var(--navy);margin-bottom:1rem;margin-top:2.5rem;
-  display:flex;align-items:center;gap:.75rem;
+/* sub-headings inside Team / Alumni */
+.team-group-label,.alumni-title{
+  font-family:'IBM Plex Serif',serif;
+  font-size:1.45rem;font-weight:700;letter-spacing:-0.015em;line-height:1.2;
+  color:var(--navy);margin:3rem 0 1.25rem;
+  display:flex;align-items:center;gap:1rem;
 }
-.team-group-label::after{content:'';flex:1;max-width:36px;height:1.5px;background:var(--border2)}
+.team-group-label::before,.alumni-title::before{content:'';width:4px;height:1.1em;border-radius:2px;background:var(--crimson);flex-shrink:0}
+.team-group-label::after,.alumni-title::after{content:'';flex:1;height:1px;background:var(--border2)}
 .students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,500px),1fr));gap:.75rem;margin-bottom:.5rem}
 .student-card{
   background:var(--card);border:1px solid var(--border);border-radius:8px;
@@ -396,23 +406,23 @@ h2{
   color:var(--navy);flex-shrink:0;
   background:var(--bg2);border:1.5px solid var(--border2);
 }
-.student-name{font-size:.88rem;font-weight:700;color:var(--navy);margin-bottom:.1rem}
-.student-since{font-family:'IBM Plex Mono',monospace;font-size:.68rem;font-weight:500;color:var(--muted);letter-spacing:.04em;margin-bottom:.3rem}
+.student-name{font-size:1.06rem;font-weight:700;color:var(--navy);margin-bottom:.15rem;line-height:1.3}
+.student-since{font-family:'IBM Plex Mono',monospace;font-size:.76rem;font-weight:500;color:var(--muted);letter-spacing:.02em;line-height:1.6;margin-bottom:.5rem}
 .student-links-row{display:flex;gap:.35rem}
 .slink{
   display:inline-flex;align-items:center;justify-content:center;
-  width:20px;height:20px;border:1px solid var(--border2);border-radius:3px;
+  width:28px;height:28px;border:1px solid var(--border2);border-radius:8px;
   color:var(--muted);text-decoration:none;font-size:.75rem;transition:all .2s;
 }
 .slink:hover{border-color:var(--crimson);color:var(--crimson);background:#fef5f5}
 .recruit-box{
   margin-top:3rem;
   background:var(--navy);
-  border-radius:12px;padding:2rem 2.5rem;
+  border-radius:var(--radius);padding:2.25rem 2.75rem;
   display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1.5rem;
 }
-.recruit-title{font-family:'IBM Plex Serif',serif;font-size:1.2rem;font-weight:700;color:#fff;margin-bottom:.4rem}
-.recruit-sub{font-size:.88rem;color:rgba(255,255,255,0.65);max-width:500px;line-height:1.7}
+.recruit-title{font-family:'IBM Plex Serif',serif;font-size:1.6rem;font-weight:700;color:#fff;margin-bottom:.4rem}
+.recruit-sub{font-size:1rem;color:rgba(255,255,255,0.78);max-width:500px;line-height:1.7}
 .recruit-btns{display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
 
 /* ── CONTACT ── */
@@ -681,7 +691,6 @@ footer a:hover{text-decoration:underline}
 
 /* ── ALUMNI ── */
 .alumni-group{width:100%;margin-top:60px;margin-bottom:50px}
-.alumni-title{margin-bottom:24px}
 .alumni-wrapper{display:flex;align-items:center;gap:20px;width:100%}
 .alumni-scroll{display:flex;gap:24px;flex:1;scroll-behavior:smooth}
 .alumni-scroll .student-card{min-width:320px;flex:0 0 auto}
@@ -697,7 +706,7 @@ footer a:hover{text-decoration:underline}
 }
 .student-av{width:110px;height:110px}
 .student-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
-.slink .ico{width:11px;height:11px}
+.slink .ico{width:14px;height:14px}
 
 /* ══════════════════════════════════
    RESPONSIVE
@@ -761,7 +770,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .pi-links{justify-content:center}
 
   .pub-group{grid-template-columns:1fr;gap:.5rem}
-  .pub-year-ghost{text-align:left;font-size:2.25rem;padding-top:0}
+  .pub-year-ghost{text-align:left;font-size:2.25rem;padding-top:0;position:static}
   .pub-card{padding:1rem 1.1rem}
   .pub-card:hover{transform:none}
 
@@ -807,7 +816,12 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .student-card{padding:14px;gap:14px;border-radius:14px}
   .student-av{width:72px;height:72px}
 
-  .proj-card{padding:1.25rem}
+  .proj-card{padding:1.4rem 1.25rem}
+  .proj-title{font-size:1.25rem}
+  .team-group-label,.alumni-title{font-size:1.25rem;margin-top:2.25rem}
+  .pi-name{font-size:1.65rem}
+  .pub-title{font-size:1.04rem}
+  body{font-size:16px}
   .proj-meta{flex-direction:column;align-items:flex-start}
 
   .gallery-mosaic{grid-template-rows:repeat(3,120px);gap:8px}
@@ -1539,16 +1553,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         and multi-crore infrastructural inefficiencies. This project aims to develop an open-source, unified cross-layer simulation and benchmarking framework 
         designed to architect and stress-test next-generation, heterogeneous compute, memory and network infrastructure.</p>
       </div><div class="proj-meta"><span class="proj-period">Related Publications: ACM SIGCOMM Workshop on NAIC 2025, ACM SIGCOMM Workshop on MemNetAI 2026</span><span class="proj-grant">Funded by --  Marvell Technology</span></div></div>
-      <div class="proj-card fade-up"><div class="proj-funder">Moving intelligence into the network...</div><div class="proj-title">Programmable Networks and In-network Security</div><div class="proj-pi">Modern networks are no longer limited to packet forwarding. Advances in programmable switches and SmartNICs enable application-specific functionality to be executed directly within network devices.
-
-This project investigates how programmable data planes can accelerate networking, security, observability, and distributed systems workloads. We design and implement systems using P4-programmable switches, SmartNICs, and FPGA-based accelerators to improve network performance while maintaining line-rate operation.
-
-Our research includes congestion control, telemetry, traffic engineering, in-network processing, and network acceleration for cloud and AI infrastructures.</div><div class="proj-meta"><span class="proj-period"><p>Related Publications: FlexMesh (ACM CoNEXT 2026), CoDel (IFIP Networking 2024), IEEE/ACM CCGRIDW 2023, ACM SIGCOMM Workshop on FFSPIN 2022 </p></span><span class="proj-grant">Funded by -- DST (C3iHub), DST (NIDHI PRAYAS), IBM </span></div></div>
-      <div class="proj-card fade-up"><div class="proj-funder">Eliminating inefficiencies in cloud software stacks...</div><div class="proj-title">High-Performance Cloud and Microservice Systems</div><div class="proj-pi">Cloud applications increasingly consist of hundreds of interconnected microservices. Although individual services may execute in microseconds, communication overheads such as serialization, data movement, and protocol processing can dominate overall latency.
-
-This project focuses on improving the efficiency of cloud-native software systems by reducing communication overheads across application, operating-system, and networking layers. We investigate serialization frameworks, transport protocols, kernel networking mechanisms, and communication abstractions that deliver high performance without requiring specialized hardware.
-
-Our goal is to make high-performance communication accessible to commodity cloud deployments.</div><div class="proj-meta"><span class="proj-period">Related Publications: Poster @ ACM CoNeXT 2024</span><span class="proj-grant"><p></p></span></div></div>
+      <div class="proj-card fade-up"><div class="proj-funder">Moving intelligence into the network...</div><div class="proj-title">Programmable Networks and In-network Security</div><div class="proj-pi"><p>Modern networks are no longer limited to packet forwarding. Advances in programmable switches and SmartNICs enable application-specific functionality to be executed directly within network devices.</p><p>This project investigates how programmable data planes can accelerate networking, security, observability, and distributed systems workloads. We design and implement systems using P4-programmable switches, SmartNICs, and FPGA-based accelerators to improve network performance while maintaining line-rate operation.</p><p>Our research includes congestion control, telemetry, traffic engineering, in-network processing, and network acceleration for cloud and AI infrastructures.</p></div><div class="proj-meta"><span class="proj-period"><p>Related Publications: FlexMesh (ACM CoNEXT 2026), CoDel (IFIP Networking 2024), IEEE/ACM CCGRIDW 2023, ACM SIGCOMM Workshop on FFSPIN 2022 </p></span><span class="proj-grant">Funded by -- DST (C3iHub), DST (NIDHI PRAYAS), IBM </span></div></div>
+      <div class="proj-card fade-up"><div class="proj-funder">Eliminating inefficiencies in cloud software stacks...</div><div class="proj-title">High-Performance Cloud and Microservice Systems</div><div class="proj-pi"><p>Cloud applications increasingly consist of hundreds of interconnected microservices. Although individual services may execute in microseconds, communication overheads such as serialization, data movement, and protocol processing can dominate overall latency.</p><p>This project focuses on improving the efficiency of cloud-native software systems by reducing communication overheads across application, operating-system, and networking layers. We investigate serialization frameworks, transport protocols, kernel networking mechanisms, and communication abstractions that deliver high performance without requiring specialized hardware.</p><p>Our goal is to make high-performance communication accessible to commodity cloud deployments.</p></div><div class="proj-meta"><span class="proj-period">Related Publications: Poster @ ACM CoNeXT 2024</span><span class="proj-grant"><p></p></span></div></div>
     </div>
   </div>
 </section>
