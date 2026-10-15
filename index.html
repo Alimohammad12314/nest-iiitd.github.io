@@ -1,10 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta name="google-site-verification" content="q9Fg_DasgE6vx3Y0fseji0gE1YQ-Av-PriUXEI2EfhU" charset="UTF-8" />
-<!--<meta charset="UTF-8">-->
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="q9Fg_DasgE6vx3Y0fseji0gE1YQ-Av-PriUXEI2EfhU">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NESt Lab — Networks, Edge, and SysTems Lab @ IIIT Delhi</title>
+<meta name="description" content="NESt Lab at IIIT Delhi researches networking, AI systems and infrastructure, programmable data planes, cloud systems, and in-network security.">
+<meta name="theme-color" content="#1a2340">
+<link rel="icon" type="image/png" href="images/NESt-IIITD-logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -124,18 +127,11 @@ h1 em{font-style:italic;color:var(--crimson)}
   font-family:'IBM Plex Mono',monospace;
   font-size:12px;font-weight:500;
   color:var(--muted);letter-spacing:0.08em;
-  text-transform:uppercase;margin-bottom:1.75rem;
+  margin-bottom:1.75rem;
   border-left:3px solid var(--border2);
   padding-left:0.875rem;
-  text-transform: none;
 }
-.hero-sub{
-  font-size:1.05rem;font-weight:300;
-  color:var(--sub);max-width:500px;
-  line-height:1.85;margin-bottom:2rem;
-  text-align: justify;
-  hyphens: auto;
-}
+.hero-intro{max-width:800px;text-align:justify;margin-bottom:1.7rem}
 .hero-chips{display:flex;flex-wrap:wrap;gap:.5rem;margin-bottom:2rem}
 .chip{
   font-family:'IBM Plex Mono',monospace;
@@ -167,14 +163,6 @@ h1 em{font-style:italic;color:var(--crimson)}
   display:inline-block;text-align:center;
 }
 .btn-crimson:hover{background:var(--crimson2)}
-.hero-stats{display:flex;gap:2.5rem;flex-wrap:wrap;padding-top:1.75rem;border-top:1px solid var(--border)}
-.stat-item{}
-.stat-n{
-  font-family:'IBM Plex Serif',serif;
-  font-size:2rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:-0.02em;
-}
-.stat-n span{color:var(--crimson);font-size:1.2rem}
-.stat-l{font-family:'IBM Plex Mono',monospace;font-size:10px;font-weight:500;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;margin-top:3px}
 
 /* ── CARD DECK (light) ── */
 .hero-deck-col{display:flex;align-items:center;justify-content:center;flex-shrink:0}
@@ -228,6 +216,8 @@ h1 em{font-style:italic;color:var(--crimson)}
   color:var(--muted);white-space:nowrap;display:flex;align-items:center;gap:.75rem;
 }
 .t-dot{width:4px;height:4px;border-radius:50%;background:var(--crimson);opacity:.6}
+.t-item a{color:var(--crimson);text-decoration:none}
+.t-item a:hover{text-decoration:underline}
 
 /* ── SECTIONS ── */
 section{position:relative;z-index:1;padding:90px 5vw}
@@ -425,50 +415,6 @@ h2{
 .recruit-sub{font-size:.88rem;color:rgba(255,255,255,0.65);max-width:500px;line-height:1.7}
 .recruit-btns{display:flex;flex-direction:column;gap:.75rem;flex-shrink:0}
 
-/* ── TEACHING ── */
-.course-list{display:flex;flex-direction:column;gap:.625rem}
-.course-card{
-  display:grid;grid-template-columns:96px 1fr auto;gap:1.25rem;align-items:center;
-  background:var(--card);border:1px solid var(--border);border-radius:8px;
-  padding:1rem 1.5rem;box-shadow:0 1px 2px rgba(26,35,64,0.04);
-  transition:border-color .2s,box-shadow .15s;
-}
-.course-card:hover{border-color:var(--border2);box-shadow:var(--shadow)}
-.course-code{font-family:'IBM Plex Mono',monospace;font-size:.8rem;font-weight:600;color:var(--crimson);letter-spacing:.04em}
-.course-name{font-family:'IBM Plex Serif',serif;font-size:.95rem;font-weight:600;color:var(--navy)}
-.course-note{font-size:.78rem;color:var(--muted);margin-top:.1rem}
-.course-sem{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;color:var(--muted);text-align:right;white-space:nowrap}
-
-/* ── SERVICE ── */
-.service-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:.625rem}
-.service-item{
-  background:var(--card);border:1px solid var(--border);border-radius:6px;
-  padding:.75rem 1rem;display:flex;align-items:start;gap:.875rem;
-  transition:border-color .15s;
-}
-.service-item:hover{border-color:var(--border2)}
-.service-yr{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;color:var(--crimson);min-width:32px;padding-top:2px;flex-shrink:0}
-.service-desc{font-size:.86rem;color:var(--sub);line-height:1.55}
-.service-desc strong{color:var(--text);font-weight:700}
-
-/* ── COLLABORATORS ── */
-.collab-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:.75rem}
-.collab-card{
-  background:var(--card);border:1px solid var(--border);border-radius:8px;
-  padding:.875rem 1.1rem;display:flex;align-items:center;gap:.875rem;
-  box-shadow:0 1px 2px rgba(26,35,64,0.04);transition:border-color .15s,box-shadow .15s;
-}
-.collab-card:hover{border-color:var(--border2);box-shadow:var(--shadow)}
-.collab-av{
-  width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:700;
-  color:var(--navy);background:var(--bg2);border:1.5px solid var(--border2);flex-shrink:0;
-}
-.collab-name{font-size:.88rem;font-weight:700;color:var(--navy)}
-.collab-name a{color:var(--navy);text-decoration:none;border-bottom:1px solid transparent;transition:border-color .15s}
-.collab-name a:hover{border-color:var(--crimson);color:var(--crimson)}
-.collab-org{font-family:'IBM Plex Mono',monospace;font-size:.7rem;font-weight:500;color:var(--muted)}
-
 /* ── CONTACT ── */
 .contact-wrap{display:flex;justify-content:center}
 .contact-box{
@@ -506,7 +452,7 @@ footer a:hover{text-decoration:underline}
 .pi-hero-photo-wrap{
   flex-shrink:0;
   position:relative;
-  width:200px;
+  width:180px;
   margin-top:0.3rem;
 }
 .pi-hero-photo{
@@ -514,34 +460,6 @@ footer a:hover{text-decoration:underline}
   border-radius:0;
   object-fit:contain;
   display:block;
-}
-.pi-hero-photo-placeholder{
-  width:90px;height:90px;
-  border-radius:50%;
-  border:2px dashed var(--border2);
-  background:var(--bg2);
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:2px;
-  cursor:pointer;
-  transition:border-color .2s,background .2s;
-  position:relative;
-  overflow:hidden;
-}
-.pi-hero-photo-placeholder:hover{
-  border-color:var(--crimson);
-  background:#fef9f9;
-}
-.pi-hero-photo-placeholder svg{
-  width:54px;height:54px;opacity:.5;
-}
-.pi-photo-label{
-  font-family:'IBM Plex Mono',monospace;
-  font-size:7.5px;font-weight:600;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--muted);
-  position:absolute;bottom:12px;
 }
 
 
@@ -603,10 +521,6 @@ footer a:hover{text-decoration:underline}
 .gslot-frame.gf-active {
   opacity: 1;
   z-index: 2;
-}
-.gslot-frame.gf-prev {
-  opacity: 0;
-  z-index: 1;
 }
 
 /* Photo inside frame */
@@ -765,113 +679,25 @@ footer a:hover{text-decoration:underline}
 #glb-next { right: 1.5rem; }
 
 
-.alumni-group{
-
-margin-top:60px;
-}
-
-.alumni-title{
-
-margin-bottom:24px;
-}
-
-
-.alumni-wrapper{
-
-display:flex;
-
-align-items:center;
-
-gap:14px;
-}
-
-
-.alumni-scroll{
-
-display:flex;
-
-gap:24px;
-
-overflow:hidden;
-
-scroll-behavior:smooth;
-
-flex:1;
-}
-
-
+/* ── ALUMNI ── */
+.alumni-group{width:100%;margin-top:60px;margin-bottom:50px}
+.alumni-title{margin-bottom:24px}
+.alumni-wrapper{display:flex;align-items:center;gap:20px;width:100%}
+.alumni-scroll{display:flex;gap:24px;flex:1;scroll-behavior:smooth}
 .alumni-scroll .student-card{min-width:320px;flex:0 0 auto}
-
-.student-card{
-
-display:flex;
-
-align-items:center;
-
-gap:18px;
-
-padding:18px;
-
-border-radius:18px;
-
-background:#fff;
-
-box-shadow:0 6px 20px rgba(0,0,0,0.08);
-}
-
-
-.student-av{
-
-width:110px;
-
-height:110px;
-}
-
-
-.student-av img{
-
-width:100%;
-
-height:100%;
-
-object-fit:cover;
-
-border-radius:50%;
-}
-
-
 .alumni-btn{
-
-width:44px;
-
-height:44px;
-
-border:none;
-
-border-radius:50%;
-
-cursor:pointer;
-
-font-size:24px;
-
-background:#fff;
-
-box-shadow:0 4px 10px rgba(0,0,0,.1);
-}
-.alumni-group{
-  width:100%;
-  margin-bottom:50px;
+  width:44px;height:44px;border:none;border-radius:50%;cursor:pointer;
+  font-size:24px;background:#fff;box-shadow:0 4px 10px rgba(0,0,0,.1);
 }
 
-.alumni-wrapper{
-  display:flex;
-  align-items:center;
-  gap:20px;
-  width:100%;
+/* team + alumni member cards */
+.student-card{
+  display:flex;align-items:center;gap:18px;padding:18px;border-radius:18px;
+  background:#fff;box-shadow:0 6px 20px rgba(0,0,0,0.08);
 }
-#btech{
-  margin-top:0;
-}
+.student-av{width:110px;height:110px}
+.student-av img{width:100%;height:100%;object-fit:cover;border-radius:50%}
+.slink .ico{width:11px;height:11px}
 
 /* ══════════════════════════════════
    RESPONSIVE
@@ -933,7 +759,6 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .pi-card{grid-template-columns:1fr;padding:2.75rem 1.5rem 1.75rem;gap:1.25rem;justify-items:center;text-align:center}
   .pi-card::before{top:1rem;right:50%;transform:translateX(50%)}
   .pi-links{justify-content:center}
-  .course-card{grid-template-columns:1fr}
 
   .pub-group{grid-template-columns:1fr;gap:.5rem}
   .pub-year-ghost{text-align:left;font-size:2.25rem;padding-top:0}
@@ -967,7 +792,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .pi-hero-photo-wrap{width:88px;margin-top:0}
   h1{font-size:clamp(1.9rem,8.5vw,2.6rem)}
   .hero-full-name{margin-bottom:1.25rem}
-  .hero-sub,.hero-text p{font-size:1rem;text-align:left !important}
+  .hero-intro{text-align:left}
   .hero-btns > a{flex:1 1 auto;text-align:center}
 
   .ticker-wrap{border-radius:0 !important;border-left:none !important;border-right:none !important}
@@ -997,9 +822,19 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
   .contact-address{font-size:.74rem;line-height:2}
   .contact-btns > a{flex:1 1 auto;text-align:center}
 }
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .ticker{animation:none}
+  .fade-up{opacity:1;transform:none;transition:none}
+  *,*::before,*::after{transition-duration:.01ms !important;animation-duration:.01ms !important}
+}
 </style>
 </head>
 <body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></symbol>
+  <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></g></symbol>
+</svg>
 
 <!-- NAV -->
 <nav>
@@ -1019,7 +854,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
     <li><a href="#team" class="nav-link">Team</a></li>
     <li><a href="#projects" class="nav-link">Projects</a></li>
     <li><a href="#gallery" class="nav-link">Gallery</a></li>
-    <li><a href="#alumni" class="nav-link">Almuni</a></li>
+    <li><a href="#alumni" class="nav-link">Alumni</a></li>
     <li><a href="#contact" class="nav-link">Contact</a></li>
   </ul>
 </nav>
@@ -1058,7 +893,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         and a culture of curiosity. 
         We help transform potential into expertise, preparing the next generation of 
         researchers, engineers, and innovators to make an impact far beyond the lab.</p>  -->
-      <p class=""hero-sub">         
+               
         <!--<h3>The Philosophy Behind NESt</h3>-->
         <!--<p style="max-width: 800px; text-align: justify;"><b>Our Philosophy: </b>A "nest" is where ideas take shape, curiosity is nurtured, and 
           individuals develop the skills and confidence needed to explore 
@@ -1078,7 +913,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         support the rapidly evolving demands of AI infrastructure, cloud computing, 
         security, and telecommunications.
         </p> -->
-        <p style="max-width: 800px; text-align: justify;">
+        <p class="hero-intro">
         The <b>Networks, Edge, and SysTems (NESt) Lab</b> is where ideas are nurtured,
         skills are sharpened, and future researchers take flight. We strive to develop
         independent thinkers capable of tackling challenging problems in networking,
@@ -1088,8 +923,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         programmable data planes, and hardware-software co-design 
         to design abstractions and optimizations for the next generation scalable, high-performance computing 
         and communication systems.
-        </p>  
-        <br>
+        </p>
       <div class="hero-chips">
         <span class="chip">AI/ML Systems</span>
         <span class="chip">Programmable Networks</span>
@@ -1102,7 +936,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
       <div class="hero-btns">
         <a href="#publications" class="btn-primary">View Publications</a>
         <a href="mailto:rinku@iiitd.ac.in" class="btn-outline">Join NESt Lab</a>
-        <a href="https://github.com/nest-iiitd" class="btn-outline" target="_blank">GitHub</a>
+        <a href="https://github.com/nest-iiitd" class="btn-outline" target="_blank" rel="noopener">GitHub</a>
       </div>
      
     </div>
@@ -1210,12 +1044,12 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
  <!-- ticker goes here, before the buttons -->
 <div class="ticker-wrap" style="margin: 0 0 1.5rem; border-radius: 6px; border-left: 1px solid var(--border); border-right: 1px solid var(--border);">
   <div class="ticker">
-    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank">ACM CoNext 2026</a>, Congratulations Aditya!</span>
-    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank">ACM MemNetAI 2026</a>, Congratulations Palak!</span>
+    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank" rel="noopener">ACM CoNext 2026</a>, Congratulations Aditya!</span>
+    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank" rel="noopener">ACM MemNetAI 2026</a>, Congratulations Palak!</span>
     <span class="t-item"><span class="t-dot"></span>IIIT-Delhi&rsquo;s NESt lab is hosting <a href="https://indosys-conf.github.io/2026/">IndoSys 2026</a> from July 20–21, 2026. Do join us!</span>
     <!-- duplicate items so the scroll loops seamlessly -->
-    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank">ACM CoNext 2026</a>, Congratulations Aditya!</span>
-    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank">ACM MemNetAI 2026</a>, Congratulations Palak!</span>
+    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank" rel="noopener">ACM CoNext 2026</a>, Congratulations Aditya!</span>
+    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank" rel="noopener">ACM MemNetAI 2026</a>, Congratulations Palak!</span>
     <span class="t-item"><span class="t-dot"></span>IIIT-Delhi&rsquo;s NESt lab is hosting <a href="https://indosys-conf.github.io/2026/">IndoSys 2026</a> from July 20–21, 2026. Do join us!</span>
   </div>
 </div>
@@ -1223,8 +1057,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
 <!-- TICKER -->
 <!--<div class="ticker-wrap">
   <div class="ticker">
-    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at  <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank">ACM CoNext 2026,</a> Congratulations Aditya! </span>
-    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at the SIGCOMM workshop, <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank">ACM MemNetAI 2026</a> Congratulations Palak! </span>
+    <span class="t-item"><span class="t-dot"></span><strong>Aditya&rsquo;s</strong> paper is accepted at  <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank" rel="noopener">ACM CoNext 2026,</a> Congratulations Aditya! </span>
+    <span class="t-item"><span class="t-dot"></span><strong>Palak&rsquo;s</strong> first paper accepted at the SIGCOMM workshop, <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank" rel="noopener">ACM MemNetAI 2026</a> Congratulations Palak! </span>
     <span class="t-item"><span class="t-dot"></span>IIIT-Delhi&rsquo;s NESt lab is hosting <a href="https://indosys-conf.github.io/2026/">IndoSys 2026</a> from July 20-21, 2026. Do join us!</span>
   </div>
 </div>-->
@@ -1239,9 +1073,9 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
     <div class="news-list">
 
        <div class="news-row fade-up"><div class="news-yr">2026</div><span class="nbadge nb-award">Best Poster</span><div class="news-body"><strong>Aditya Peer</strong> receives the Best Poster award for the Invited Paper @ the <a href=https://indosys-conf.github.io/2026>8th Indian Symposium on Computer Systems (INDOSYS) 2026</a>. Poster title: Designing Size-aware Cryptographic Primitives for FPGA-based Accelerators.</div></div>
-      <div class="news-row fade-up"><div class="news-yr">2026</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Palak&rsquo;s</strong> first paper accepted at the SIGCOMM workshop, <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank">MemNetAI 2026</a> Congratulations Palak! <br> Paper Title: Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div></div><div class="news-row fade-up"><div class="news-yr">2025</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Aditya&rsquo;s</strong> paper accepted at <a href="#" target="_blank">ACM CoNEXT 2026</a> on size-aware cryptographic primitives for FPGA accelerators.</div></div>
+      <div class="news-row fade-up"><div class="news-yr">2026</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Palak&rsquo;s</strong> first paper accepted at the SIGCOMM workshop, <a href="https://conferences.sigcomm.org/sigcomm/2026/memnetai/" target="_blank" rel="noopener">MemNetAI 2026</a> Congratulations Palak! <br> Paper Title: Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div></div><div class="news-row fade-up"><div class="news-yr">2025</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Aditya&rsquo;s</strong> paper accepted at <a href="https://conferences.sigcomm.org/co-next/2026/#!/home" target="_blank" rel="noopener">ACM CoNEXT 2026</a> on size-aware cryptographic primitives for FPGA accelerators.</div></div>
       <div class="news-row fade-up"><div class="news-yr">2025</div><span class="nbadge nb-award">Best Thesis</span><div class="news-body"><strong>Aditya Peer</strong> receives the Best M.Tech. Thesis award (CSE) at The 14th Convocation, IIIT-Delhi. Thesis: <em>Workload-aware In-network Crypto Primitives for FPGA NICs.</em>.</div></div>
-      <div class="news-row fade-up"><div class="news-yr">2025</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Sumit&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2025/workshop/naic/" target="_blank">ACM SIGCOMM NAIC 2025</a> on simulating LLM training workloads for heterogeneous infrastructure.</div></div>
+      <div class="news-row fade-up"><div class="news-yr">2025</div><span class="nbadge nb-pub">Paper Accepted</span><div class="news-body"><strong>Sumit&rsquo;s</strong> first paper accepted at <a href="https://conferences.sigcomm.org/sigcomm/2025/workshop/naic/" target="_blank" rel="noopener">ACM SIGCOMM NAIC 2025</a> on simulating LLM training workloads for heterogeneous infrastructure.</div></div>
       <div class="news-row fade-up"><div class="news-yr">2024</div><span class="nbadge nb-std">Internship</span><div class="news-body">Dual degree student <strong>Arjun Temura</strong> starts summer internship at <strong>IBM Research India.</strong>.</div></div>
       <div class="news-row fade-up"><div class="news-yr">2024</div><span class="nbadge nb-award">Fellowship</span><div class="news-body">PhD student <strong>Neeraj Kumar Yadav</strong> receives the <strong>TCS Research Fellowship 2023.</strong>.</div></div>
       <div class="news-row fade-up"><div class="news-yr">2023</div><span class="nbadge nb-award">Invitation</span><div class="news-body">Honored to receive invitation to <strong>Dagstuhl Seminar on Programmable Host Networking</strong>.</div></div>
@@ -1268,14 +1102,14 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">Enabling Hardware-Software Co-Design for Large-Scale AI Systems via Fine-Grained GPU Memory Tracing</div>
           <div class="pub-authors">Palak Mishra, Rajat Bhardwaj, Yash Verma, Ramanjeet Singh, Rinku Shah</div>
           <div class="pub-venue">ACM SIGCOMM workshop on MemNetAI 2026</div>
-          <div class="pub-links"><a href="papers/2026-memnetai-vyuh.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The blistering pace of AI innovation demands a shift toward agile benchmarking methodologies, specifically targeting architectural simulators and emulators to guide early-stage hardware-software co-design. While workload standardization efforts like Chakra provide schemas for representing execution graphs and dependencies, they lack fine-grained memory-trace information. Such detailed traces are foundational for evaluating emerging distributed infrastructures, including GPU memory pooling and memory-semantic fabrics. Existing memory tracing tools are either too coarse-grained, highly invasive to workload behavior, dependent on source-code modification, or fail to scale. To bridge this gap, we introduce an execution trace generator that efficiently captures, represents, and replays the fine-grained memory operation behavior of large-scale AI/ML workloads. We demonstrate the temporal distribution and dominance of memory operation types, memory hierarchies, and stall reasons for nano-GPT-10M with data parallelism across two H100 GPUs, which can be used to generate memory benchmarks.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2026-memnetai-vyuh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The blistering pace of AI innovation demands a shift toward agile benchmarking methodologies, specifically targeting architectural simulators and emulators to guide early-stage hardware-software co-design. While workload standardization efforts like Chakra provide schemas for representing execution graphs and dependencies, they lack fine-grained memory-trace information. Such detailed traces are foundational for evaluating emerging distributed infrastructures, including GPU memory pooling and memory-semantic fabrics. Existing memory tracing tools are either too coarse-grained, highly invasive to workload behavior, dependent on source-code modification, or fail to scale. To bridge this gap, we introduce an execution trace generator that efficiently captures, represents, and replays the fine-grained memory operation behavior of large-scale AI/ML workloads. We demonstrate the temporal distribution and dominance of memory operation types, memory hierarchies, and stall reasons for nano-GPT-10M with data parallelism across two H100 GPUs, which can be used to generate memory benchmarks.</p></div></div></div>
         </div>
 
         <div class="pub-card">
           <div class="pub-title">Designing size-aware cryptographic primitives for FPGA-based accelerators</div>
           <div class="pub-authors">Aditya Peer, Rohan, Siddhant, Neeraj, Amandeep, Praveen Tammana, Sumit Darak, Rinku Shah</div>
           <div class="pub-venue">ACM CoNEXT 2026</div>
-          <div class="pub-links"><a href="papers/2026-conext-flexmesh.pdf" class="pub-link">PDF</a><a href="#" class="pub-link">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Telecom operators and military/defense applications (e.g., UAVs) prefer to offload compute-intensive cryptographic processing to FPGA-based cryptographic accelerators over fixed-function ASICs for reconfigurability and short deployment cycles. The state-of-the-art FPGA-based cryptographic accelerators are designed either for high throughput or power efficiency. We propose FlexMesh, a programmable, dynamically reconfigurable, and size-aware framework for 5G/6G cryptographic primitives. We design variable-sized FPGA-based cryptographic cores by varying the degree of parallelism, and demonstrate that if the cryptographic core is chosen wisely, we can achieve performance without trading resource or power efficiency for certain use cases. FlexMesh dynamically orchestrates multiple asymmetric cryptographic cores (i.e., variable-sized cores) based on the observed request size distribution. To efficiently utilize the deployed cryptographic cores, we design a workload-aware, dynamically configurable load balancer and a scheduler. We test our system over realistic 5G datasets, and our results demonstrate that asymmetric cryptographic cores reduce the request processing latency and improve resource and power efficiencies, compared to the baseline symmetric cryptographic cores.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2026-conext-flexmesh.pdf" class="pub-link">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Telecom operators and military/defense applications (e.g., UAVs) prefer to offload compute-intensive cryptographic processing to FPGA-based cryptographic accelerators over fixed-function ASICs for reconfigurability and short deployment cycles. The state-of-the-art FPGA-based cryptographic accelerators are designed either for high throughput or power efficiency. We propose FlexMesh, a programmable, dynamically reconfigurable, and size-aware framework for 5G/6G cryptographic primitives. We design variable-sized FPGA-based cryptographic cores by varying the degree of parallelism, and demonstrate that if the cryptographic core is chosen wisely, we can achieve performance without trading resource or power efficiency for certain use cases. FlexMesh dynamically orchestrates multiple asymmetric cryptographic cores (i.e., variable-sized cores) based on the observed request size distribution. To efficiently utilize the deployed cryptographic cores, we design a workload-aware, dynamically configurable load balancer and a scheduler. We test our system over realistic 5G datasets, and our results demonstrate that asymmetric cryptographic cores reduce the request processing latency and improve resource and power efficiencies, compared to the baseline symmetric cryptographic cores.</p></div></div></div>
         </div>
 
 
@@ -1290,21 +1124,21 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">Simulating LLM training workloads for heterogeneous compute and network infrastructure</div>
           <div class="pub-authors">Sumit Kumar, Arjun, Naman, Ramanjeet, Meet, Praveen, Satananda, Abed, and Rinku</div>
           <div class="pub-venue">ACM NAIC 2025, co-located with SIGCOMM 2025</div>
-          <div class="pub-links"><a href="papers/2025-naic-hetero-aisim.pdf" class="pub-link" target="_blank">PDF</a><a href="https://www.arxiv.org/abs/2508.05370" class="pub-link" target="_blank">arXiv</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The growing demand for large-scale GPU clusters to train large language models (LLMs) poses a significant challenge to innovation due to high costs and limited accessibility. While state-of-the-art simulators address this issue, they assume a uniform infrastructure. However, device heterogeneity is unavoidable in cloud environments due to resource sharing, frequent updates in device generations, and the inherent intra-chip interconnect heterogeneity. We propose a heterogeneity-aware simulator for distributed LLM training that takes into account the real-world compute and network heterogeneity. Our simulator allows for custom configurations and models the impact of hardware diversity on training time.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2025-naic-hetero-aisim.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.arxiv.org/abs/2508.05370" class="pub-link" target="_blank" rel="noopener">arXiv</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The growing demand for large-scale GPU clusters to train large language models (LLMs) poses a significant challenge to innovation due to high costs and limited accessibility. While state-of-the-art simulators address this issue, they assume a uniform infrastructure. However, device heterogeneity is unavoidable in cloud environments due to resource sharing, frequent updates in device generations, and the inherent intra-chip interconnect heterogeneity. We propose a heterogeneity-aware simulator for distributed LLM training that takes into account the real-world compute and network heterogeneity. Our simulator allows for custom configurations and models the impact of hardware diversity on training time.</p></div></div></div>
         </div>
 
         <div class="pub-card">
           <div class="pub-title">Securing In-Network Traffic Control Systems with P4Auth</div>
           <div class="pub-authors">Ranjitha K, Medha, Stavan, Karuturi, Sri Hari, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
           <div class="pub-venue">IEEE/IFIP DSN 2025</div>
-          <div class="pub-links"><a href="papers/2025-dsn-p4auth.pdf" class="pub-link" target="_blank">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>In-network traffic control systems built on programmable data planes enhance network performance. However, these systems also increase the attack surface and are vulnerable to attacks not seen before. We focus on a problem that stems from the fact that a programmable switch data plane trusts and processes the messages from upper layers in the switch software (OS, SDK, drivers) and from neighbor nodes in the network. Since these messages can update the state maintained in the data plane, which can influence traffic control decisions, it is important to protect such messages from adversaries aiming to degrade performance, compromise privacy, bypass security, or, worst case, network outage.In this paper, we present P4Auth, a key-based protection mechanism that ensures the authenticity and integrity of such messages in in-network systems making fast traffic control decisions. Our key idea is to move key-based security primitives to the switch data plane so that it reduces the trusted computing base and exposure to switch software vulnerabilities while enabling faster checks in the data plane. To realize this idea, we design and develop an authentication protocol, secure key exchange mechanism, and associated data plane primitives. We prototype P4Auth for Intel Tofino and understand the overheads of P4Auth. We also demonstrate how P4Auth protects two in-network systems from man-in-the-middle (MitM) adversaries.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2025-dsn-p4auth.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>In-network traffic control systems built on programmable data planes enhance network performance. However, these systems also increase the attack surface and are vulnerable to attacks not seen before. We focus on a problem that stems from the fact that a programmable switch data plane trusts and processes the messages from upper layers in the switch software (OS, SDK, drivers) and from neighbor nodes in the network. Since these messages can update the state maintained in the data plane, which can influence traffic control decisions, it is important to protect such messages from adversaries aiming to degrade performance, compromise privacy, bypass security, or, worst case, network outage.In this paper, we present P4Auth, a key-based protection mechanism that ensures the authenticity and integrity of such messages in in-network systems making fast traffic control decisions. Our key idea is to move key-based security primitives to the switch data plane so that it reduces the trusted computing base and exposure to switch software vulnerabilities while enabling faster checks in the data plane. To realize this idea, we design and develop an authentication protocol, secure key exchange mechanism, and associated data plane primitives. We prototype P4Auth for Intel Tofino and understand the overheads of P4Auth. We also demonstrate how P4Auth protects two in-network systems from man-in-the-middle (MitM) adversaries.</p></div></div></div>
         </div>
 
         <div class="pub-card">
           <div class="pub-title">Detecting Manipulation to Table Rules in the Programmable Data Planes</div>
           <div class="pub-authors">Ranjitha K, Karuturi, Devansh, Stavan, Dheekshitha, Rinku Shah, and Praveen Tammana</div>
           <div class="pub-venue">IFIP/IEEE Networking 2025</div>
-          <div class="pub-links"><a href="papers/2025-ifipnet-p4tval.pdf" class="pub-link" target="_blank">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management systems built on programmable data planes enhance network performance, security,
+          <div class="pub-links"><a href="papers/2025-ifipnet-p4tval.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management systems built on programmable data planes enhance network performance, security,
                 and reliability. However, these systems also increase the attack
                 surface and, hence, are vulnerable to attacks not seen before. We
                 focus on a problem that stems from the fact that a switch data
@@ -1340,7 +1174,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">Poster: Reducing Data Movement Tax for Serialization in Microservices</div>
           <div class="pub-authors">Siddharth Nayak, Vishesh Rangwani, Kartikay Dubey, Rajorshi Mondal, Tushar Gupta, Rinku Shah</div>
           <div class="pub-venue">ACM CoNEXT 2024</div>
-          <div class="pub-links"><a href="papers/2024_conext_muser.pdf" class="pub-link" target="_blank">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Small-scale public cloud providers cannot adopt serialization datacopy optimizations that leverage hardware acceleration or kernelbypass zero-copy paradigm (e.g., DPDK) because of (1) accelerator
+          <div class="pub-links"><a href="papers/2024_conext_muser.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Small-scale public cloud providers cannot adopt serialization datacopy optimizations that leverage hardware acceleration or kernelbypass zero-copy paradigm (e.g., DPDK) because of (1) accelerator
                 deployment costs, (2) securing kernel-bypass zero-copy serialization communication relies on encryption at the NIC hardware, and
                 (3) kernel-bypass solutions require developers to rewrite the business logic. We propose a serialization library that leverages the
                 kernel scatter-gather communication primitives to reduce serialization data copy costs without using custom hardware or a custom
@@ -1354,14 +1188,14 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">DL3: Adaptive Load Balancing for Latency-critical Edge Cloud Applications</div>
           <div class="pub-authors">Prashanth, Ranjitha, Ankit, Arjun Temura, Rinku Shah, Praveen Tammana</div>
           <div class="pub-venue">IEEE CNSM 2024</div>
-          <div class="pub-links"><a href="papers/2024_cnsm_dl3.pdf" class="pub-link" target="_blank">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>On-premise edge cloud provides opportunities to enable ML-based latency-critical services to resource-constrained end devices. The edge services are deployed as loosely coupled microservices using cloud orchestrators like Kubernetes, and a load balancer distributes requests from an upstream microservice instance (client) across many downstream microservice instances (servers). However, in a shared environment, transient and sporadic delay events are common due to contention for host and network resources (e.g., high load on servers, high network queuing delays). To meet low latency requirements of edge services, the load balancer should quickly adapt to such delay events and adjust routing decisions (e.g., pick the best downstream instance among all). In this paper, we propose DL3, a distributed load balancer (LB) that quickly adapts to server load and network queuing delays by adjusting routing decisions so that the requests are forwarded to the best possible servers. The key idea is to enable LB with visibility into both servers’ load and transient delays on network paths toward the servers. We prototype DL3 on a Kubernetes-managed edge cloud cluster and evaluated its performance for a latency-sensitive ML-based object detection service. Our preliminary results show that DL3 improves tail response time by 33% compared to the state-of-the-art load balance mechanism.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2024_cnsm_dl3.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>On-premise edge cloud provides opportunities to enable ML-based latency-critical services to resource-constrained end devices. The edge services are deployed as loosely coupled microservices using cloud orchestrators like Kubernetes, and a load balancer distributes requests from an upstream microservice instance (client) across many downstream microservice instances (servers). However, in a shared environment, transient and sporadic delay events are common due to contention for host and network resources (e.g., high load on servers, high network queuing delays). To meet low latency requirements of edge services, the load balancer should quickly adapt to such delay events and adjust routing decisions (e.g., pick the best downstream instance among all). In this paper, we propose DL3, a distributed load balancer (LB) that quickly adapts to server load and network queuing delays by adjusting routing decisions so that the requests are forwarded to the best possible servers. The key idea is to enable LB with visibility into both servers’ load and transient delays on network paths toward the servers. We prototype DL3 on a Kubernetes-managed edge cloud cluster and evaluated its performance for a latency-sensitive ML-based object detection service. Our preliminary results show that DL3 improves tail response time by 33% compared to the state-of-the-art load balance mechanism.</p></div></div></div>
         </div>
 
         <div class="pub-card">
           <div class="pub-title"><em>CoDel-ACT</em>: Realizing CoDel AQM for Programmable Switch ASIC</div>
           <div class="pub-authors">Vedant Bothra, Aditya Peer, Vijay Kumar Singh, Mukulika Maity, Rinku Shah</div>
           <div class="pub-venue">IFIP/IEEE Networking 2024</div>
-          <div class="pub-links"><a href="papers/2024_codelACT_IFIP.pdf" class="pub-link" target="_blank">PDF</a><a href="slides/2024-IFIPnet-codelACT-slides.pdf" class="pub-link" target="_blank">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Bufferbloat is a major issue in computer networks, caused by network devices such as switches and routers with large buffers, resulting in congested queues and high network delays. Active Queue Management (AQM) algorithms like RED, CoDel, and PIE have been developed to address Bufferbloat. Among these, CoDel is the most effective as it does not require parameter tuning. However, software-based AQM solutions cannot scale for high-speed networks, while traditional hardware switches are fixed-function. Programmable switch ASICs offer more flexibility but impose programming constraints to achieve line rates. Due to these limitations, previous research has been unsuccessful in implementing an RFC-compliant CoDel AQM on programmable switch ASICs. To solve this challenge, we have introduced CoDel-ACT, a redesign of CoDel that can handle the global state across switch pipeline stages, improves the accuracy of the math function, and fully implements CoDel within the data plane of an Intel Tofino switch. Our evaluations demonstrate that CoDel-ACT solves Bufferbloat, has negligible overheads, and reduces the average packet queue delay by 52% compared to the existing solution.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2024_codelACT_IFIP.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2024-IFIPnet-codelACT-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Bufferbloat is a major issue in computer networks, caused by network devices such as switches and routers with large buffers, resulting in congested queues and high network delays. Active Queue Management (AQM) algorithms like RED, CoDel, and PIE have been developed to address Bufferbloat. Among these, CoDel is the most effective as it does not require parameter tuning. However, software-based AQM solutions cannot scale for high-speed networks, while traditional hardware switches are fixed-function. Programmable switch ASICs offer more flexibility but impose programming constraints to achieve line rates. Due to these limitations, previous research has been unsuccessful in implementing an RFC-compliant CoDel AQM on programmable switch ASICs. To solve this challenge, we have introduced CoDel-ACT, a redesign of CoDel that can handle the global state across switch pipeline stages, improves the accuracy of the math function, and fully implements CoDel within the data plane of an Intel Tofino switch. Our evaluations demonstrate that CoDel-ACT solves Bufferbloat, has negligible overheads, and reduces the average packet queue delay by 52% compared to the existing solution.</p></div></div></div>
         </div>
 
       </div>
@@ -1375,7 +1209,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">Microservice-based in-network security framework for FPGA NICs</div>
           <div class="pub-authors">Lasani Hussain, Mayank Rawat, Neeraj Kumar Yadav, Sumit Darak, Praveen Tammana, Rinku Shah</div>
           <div class="pub-venue">IEEE/ACM 23rd International Symposium on Cluster, Cloud and Internet Computing Workshops (CCGridW) 2023</div>
-          <div class="pub-links"><a href="papers/2023-ccgrid-in-net-crypto.pdf" class="pub-link" target="_blank">PDF</a><a href="" class="pub-link" target="_blank">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Microservice architectures [25] provide benefits such as
+          <div class="pub-links"><a href="papers/2023-ccgrid-in-net-crypto.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Microservice architectures [25] provide benefits such as
               independent scaling of bottleneck functions, code reusability,
               and ease of management. Inspired by these benefits, we propose to migrate from monolithic architecture to microservice
               security architecture. In this work, we propose to design
@@ -1397,7 +1231,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">In-Network Probabilistic Monitoring Primitives under the Influence of Adversarial Network Inputs</div>
           <div class="pub-authors">Harish S A, Shiv, Anibrata, Amogh, Praveen Tammana, Pravein Kannan, Rinku Shah</div>
           <div class="pub-venue">ACM APNet 2023</div>
-          <div class="pub-links"><a href="papers/2023-apnet-In_Network_Probabilistic_Monitoring_Primitives_under_the_Influence_of_Adversarial_Network_Inputs.pdf" class="pub-link" target="_blank">PDF</a><a href="slides/apnet24-bf-slides.pdf" class="pub-link" target="_blank">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management tasks heavily rely on network telemetry data. Programmable data planes provide novel ways to collect this telemetry data efficiently using probabilistic data structures like bloom filters and their variants. Despite the benefits of the data structures (and associated data plane primitives), their exposure increases the attack surface. That is, they are at risk of adversarial network inputs.
+          <div class="pub-links"><a href="papers/2023-apnet-In_Network_Probabilistic_Monitoring_Primitives_under_the_Influence_of_Adversarial_Network_Inputs.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/apnet24-bf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Network management tasks heavily rely on network telemetry data. Programmable data planes provide novel ways to collect this telemetry data efficiently using probabilistic data structures like bloom filters and their variants. Despite the benefits of the data structures (and associated data plane primitives), their exposure increases the attack surface. That is, they are at risk of adversarial network inputs.
               In this work, we examine the effects of adversarial network inputs to bloom filters that are integral to data plane primitives. Bloom filters are probabilistic and inherently susceptible to pollution attacks which increase their false positive rates. To quantify the impact, we demonstrate the feasibility of pollution attacks on FlowRadar, a network monitoring and debugging system that employs a data plane primitive to collect traffic statistics. We observe that the adversary can corrupt traffic statistics with a few well-crafted malicious flows (tens of flows), leading to a 99% drop in the accuracy of the core functionality of the FlowRadar system.</p>
             </div>
           </div>
@@ -1415,14 +1249,14 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">AccelUPF: Accelerating the 5G user plane using programmable hardware</div>
           <div class="pub-authors">Abhik Bose, Shailendra Keshav Kirtikar, Shivaji Chirumamilla, Rinku Shah, Mythili Vutukuru</div>
           <div class="pub-venue">ACM SIGCOMM SOSR 2022</div>
-          <div class="pub-links"><a href="papers/2022-sosr-accelupf.pdf" class="pub-link" target="_blank">PDF</a><a href="https://www.youtube.com/watch?v=Vvj69YyBVb4&t=4148s" class="pub-link" target="_blank">Talk</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The latest generation of 5G telecommunication networks are expected to provide high throughput and low latency while catering to diverse applications like mobile broadband, dense IoT, and self-driving cars. A high performance User Plane Function (UPF), the main element in the 5G user plane, is critical to achieving these performance goals. This paper presents AccelUPF, a 5G UPF that offloads functionality to programmable dataplane hardware for performance acceleration. While prior work has proposed accelerating the UPF by offloading its data forwarding functionality to programmable hardware, the Packet Forwarding Control Protocol (PFCP) messages from the control plane that configure the hardware data forwarding rules were still processed in software. We show that only offloading data forwarding and not PFCP message processing leads to suboptimal performance in the UPF for applications like IoT that have a much higher ratio of PFCP messages to data traffic, due to a bottleneck at the software control plane that configures the hardware packet forwarding rules. In contrast to prior work, AccelUPF offloads both PFCP message processing as well as data forwarding to programmable hardware. AccelUPF overcomes several technical challenges pertaining to the processing of the complex variable-sized PFCP messages within the memory and compute constraints of programmable hardware platforms. Our evaluation of AccelUPF implemented over a Netronome programmable NIC and an Intel Tofino programmable switch demonstrates performance gains over the state-of-the-art UPFs for real-world traffic scenarios.</p></div></div></div>
+          <div class="pub-links"><a href="papers/2022-sosr-accelupf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=Vvj69YyBVb4&t=4148s" class="pub-link" target="_blank" rel="noopener">Talk</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>The latest generation of 5G telecommunication networks are expected to provide high throughput and low latency while catering to diverse applications like mobile broadband, dense IoT, and self-driving cars. A high performance User Plane Function (UPF), the main element in the 5G user plane, is critical to achieving these performance goals. This paper presents AccelUPF, a 5G UPF that offloads functionality to programmable dataplane hardware for performance acceleration. While prior work has proposed accelerating the UPF by offloading its data forwarding functionality to programmable hardware, the Packet Forwarding Control Protocol (PFCP) messages from the control plane that configure the hardware data forwarding rules were still processed in software. We show that only offloading data forwarding and not PFCP message processing leads to suboptimal performance in the UPF for applications like IoT that have a much higher ratio of PFCP messages to data traffic, due to a bottleneck at the software control plane that configures the hardware packet forwarding rules. In contrast to prior work, AccelUPF offloads both PFCP message processing as well as data forwarding to programmable hardware. AccelUPF overcomes several technical challenges pertaining to the processing of the complex variable-sized PFCP messages within the memory and compute constraints of programmable hardware platforms. Our evaluation of AccelUPF implemented over a Netronome programmable NIC and an Intel Tofino programmable switch demonstrates performance gains over the state-of-the-art UPFs for real-world traffic scenarios.</p></div></div></div>
         </div>
 
         <div class="pub-card">
           <div class="pub-title">Implementing ChaCha Based Crypto Primitives on Programmable SmartNICs</div>
           <div class="pub-authors">Shaguftha Kottur, Krishna Kadiyala, Praveen Tammana, Rinku Shah</div>
           <div class="pub-venue">ACM SIGCOMM Workshop on FFSPIN 2022</div>
-          <div class="pub-links"><a href="papers/2022-ffspin-crypto-primitives.pdf" class="pub-link" target="_blank">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Control and management plane applications such as serverless function orchestration and 4G/5G control plane functions are offloaded to smartNICs to reduce communication and processing latency. Such applications involve multiple inter-host interactions that were traditionally secured using SSL/TLS gRPC-based communication channels. Offloading the applications to smartNIC implies that we must also offload the security algorithms. Otherwise, we need to send the application messages to the host VM/container for crypto operations, negating offload benefits.
+          <div class="pub-links"><a href="papers/2022-ffspin-crypto-primitives.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Control and management plane applications such as serverless function orchestration and 4G/5G control plane functions are offloaded to smartNICs to reduce communication and processing latency. Such applications involve multiple inter-host interactions that were traditionally secured using SSL/TLS gRPC-based communication channels. Offloading the applications to smartNIC implies that we must also offload the security algorithms. Otherwise, we need to send the application messages to the host VM/container for crypto operations, negating offload benefits.
               We propose crypto externs for Netronome Agilio smartNICs that implement authentication and confidentiality (encryption/decryption) using the ChaCha stream cipher algorithm. AES and ChaCha are two popular cipher suites, but we chose ChaCha since none of the smartNICs have ChaCha-based crypto accelerators. However, smartNICs have restricted instruction set, and limited memory, making it difficult to implement security algorithms. This paper identifies and addresses several challenges to implement ChaCha crypto primitives successfully. Our evaluations show that our crypto extern implementation satisfies the scalability requirement of popular applications such as serverless management functions and host in-band network telemetry.</p>
             </div>
           </div>
@@ -1440,7 +1274,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">Leveraging Programmable Dataplanes for a High Performance 5G User Plane Function</div>
           <div class="pub-authors">Abhik Bose, Diptyaroop Maji, Prateek Agarwal, Nilesh Unhale, Rinku Shah, Mythili Vutukuru</div>
           <div class="pub-venue">ACM APNet 2021</div>
-          <div class="pub-links"><a href="papers/2021-apnet-p4upf.pdf" class="pub-link" target="_blank">PDF</a><a href="slides/2021-apnet-p4upf-slides.pdf" class="pub-link" target="_blank">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Emerging 5G applications require a dataplane that has a high forwarding throughput and low processing latency, in addition to low cost and power consumption. To meet these requirements, the state-of-the-art 5G User Plane Functions (UPFs) are built over high performance packet I/O mechanisms like the Data Plane Development Kit (DPDK), and further offload some functionality to programmable dataplane hardware. In this paper, we design and implement several standards-compliant UPF prototypes, beginning with a software-only DPDK-based UPF, progressing to designs which offload different functions to programmable hardware. We evaluate and compare the performance of these designs, to highlight the costs and benefits of these offloads. Our results show that offload techniques employed in prior work help improve performance in certain scenarios, but also have their limitations. Overcoming these limitations and fully realizing the power of programmable hardware requires offloading more complex functionality than is done today. Our work presents a preliminary implementation towards a comprehensive programmable dataplane-accelerated 5G UPF.</p>
+          <div class="pub-links"><a href="papers/2021-apnet-p4upf.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="slides/2021-apnet-p4upf-slides.pdf" class="pub-link" target="_blank" rel="noopener">Slides</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Emerging 5G applications require a dataplane that has a high forwarding throughput and low processing latency, in addition to low cost and power consumption. To meet these requirements, the state-of-the-art 5G User Plane Functions (UPFs) are built over high performance packet I/O mechanisms like the Data Plane Development Kit (DPDK), and further offload some functionality to programmable dataplane hardware. In this paper, we design and implement several standards-compliant UPF prototypes, beginning with a software-only DPDK-based UPF, progressing to designs which offload different functions to programmable hardware. We evaluate and compare the performance of these designs, to highlight the costs and benefits of these offloads. Our results show that offload techniques employed in prior work help improve performance in certain scenarios, but also have their limitations. Overcoming these limitations and fully realizing the power of programmable hardware requires offloading more complex functionality than is done today. Our work presents a preliminary implementation towards a comprehensive programmable dataplane-accelerated 5G UPF.</p>
           </div>
         </div>
       </div>
@@ -1455,7 +1289,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
           <div class="pub-title">TurboEPC: Leveraging Dataplane Programmability to Accelerate the Mobile Packet Core</div>
           <div class="pub-authors">Rinku Shah, Vikas Kumar, Mythili Vutukuru, Purushottam Kulkarni</div>
           <div class="pub-venue">ACM SOSR 2020</div>
-          <div class="pub-links"><a href="papers/2020-sosr-turboepc.pdf" class="pub-link" target="_blank">PDF</a><a href="https://www.youtube.com/watch?v=CbgPYwK4nDs" class="pub-link" target="_blank">Talk</a><a href="https://github.com/rinku-shah/turboepc" class="pub-link" target="_blank">Code</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Recent architectures of the mobile packet core advocate the separation of the control and dataplane components, with all signaling messages being processed by the control plane entities. This paper presents the design, implementation, and evaluation of TurboEPC, a redesign of the mobile packet core that revisits the division of work between the control and data planes. In TurboEPC, the control plane offloads a small amount of user state to programmable dataplane switches, using which the switches can correctly process a subset of signaling messages within the dataplane itself. The messages that are offloaded to the dataplane in TurboEPC constitute a significant fraction of the total signaling traffic in the packet core, and handling these messages on dataplane switches closer to the end-user improves both control plane processing throughput and latency. We implemented the TurboEPC design using P4-based software and hardware switches. The TurboEPC hardware prototype shows throughput and latency improvements by up to 102x and 98% respectively when the switch hardware stores the state of 65K concurrent users, and 22× and 97% respectively when the switch CPU is busy forwarding dataplane traffic at linerate, over the traditional EPC.</p>
+          <div class="pub-links"><a href="papers/2020-sosr-turboepc.pdf" class="pub-link" target="_blank" rel="noopener">PDF</a><a href="https://www.youtube.com/watch?v=CbgPYwK4nDs" class="pub-link" target="_blank" rel="noopener">Talk</a><a href="https://github.com/rinku-shah/turboepc" class="pub-link" target="_blank" rel="noopener">Code</a><div class="pub-abstract-wrap"><button class="abstract-toggle" onclick="toggleAbstract(this)" aria-expanded="false"><span class="abstract-toggle-icon">&#9658;</span> Abstract</button><div class="pub-abstract" hidden><p>Recent architectures of the mobile packet core advocate the separation of the control and dataplane components, with all signaling messages being processed by the control plane entities. This paper presents the design, implementation, and evaluation of TurboEPC, a redesign of the mobile packet core that revisits the division of work between the control and data planes. In TurboEPC, the control plane offloads a small amount of user state to programmable dataplane switches, using which the switches can correctly process a subset of signaling messages within the dataplane itself. The messages that are offloaded to the dataplane in TurboEPC constitute a significant fraction of the total signaling traffic in the packet core, and handling these messages on dataplane switches closer to the end-user improves both control plane processing throughput and latency. We implemented the TurboEPC design using P4-based software and hardware switches. The TurboEPC hardware prototype shows throughput and latency improvements by up to 102x and 98% respectively when the switch hardware stores the state of 65K concurrent users, and 22× and 97% respectively when the switch CPU is busy forwarding dataplane traffic at linerate, over the traditional EPC.</p>
           </div>
         </div>
       </div>
@@ -1464,7 +1298,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
     </div>
 
     <div class="fade-up" style="text-align:center;margin-top:2rem">
-      <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank">Full list on Google Scholar &rarr;</a>
+      <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank" rel="noopener">Full list on Google Scholar &rarr;</a>
     </div>
   </div>
 </section>
@@ -1483,11 +1317,11 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         <div class="pi-name">Rinku Shah</div>
         <div class="pi-role">Assistant Professor &middot; CSE &middot; IIIT Delhi</div>
         <!--<div class="pi-bio">Works at the intersection of networking and systems, with a focus on AI/ML infrastructure, security, and cloud computing. Research explores software-defined networking and programmable data planes for emerging ML workloads. Ph.D. from IIT Bombay (2021), advised by Prof. Mythili Vutukuru and Prof. Purushottam Kulkarni.</div>-->
-        <div class=""pi-bio">Ph.D. in Computer Science &amp; Engineering, IIT Bombay <br> <br></div>
+        <div class="pi-bio">Ph.D. in Computer Science &amp; Engineering, IIT Bombay</div>
         <div class="pi-links">
-          <a href="resources/cv.pdf" class="btn-outline" target="_blank">CV</a>
-          <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank">Scholar</a>
-          <a href="https://faculty.iiitd.ac.in/~rinku" class="btn-outline" target="_blank">Website</a>
+          <a href="resources/cv.pdf" class="btn-outline" target="_blank" rel="noopener">CV</a>
+          <a href="https://scholar.google.co.in/citations?user=jNhSvOEAAAAJ" class="btn-outline" target="_blank" rel="noopener">Scholar</a>
+          <a href="https://faculty.iiitd.ac.in/~rinku" class="btn-outline" target="_blank" rel="noopener">Website</a>
           <a href="mailto:rinku@iiitd.ac.in" class="btn-primary">Email</a>
         </div>
       </div>
@@ -1502,10 +1336,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
               Network Infrastructure</div>
             <div class="student-links-row">
               <a href="mailto:sumitk@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
-              <a href="https://www.linkedin.com/in/sumit-kumaar/" class="slink" title="LinkedIn" target="_blank"><i
-                  class="fa-brands fa-linkedin"></i></a>
-              <a href="https://sumitkiiitd.github.io/website" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+              <a href="https://www.linkedin.com/in/sumit-kumaar/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a href="https://sumitkiiitd.github.io/website" class="slink" title="Website" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></a>
             </div>
           </div>
         </div>
@@ -1517,9 +1349,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
               CXL Fabrics </div>
             <div class="student-links-row"><a href="mailto:adityap@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/aditya-peer-787960224/" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://adityapeer77.github.io/" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+                target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a href="https://adityapeer77.github.io/" class="slink" title="Website" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></a>
             </div>
           </div>
         </div>
@@ -1531,9 +1362,8 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
               and Benchmarking </div>
             <div class="student-links-row"><a href="mailto:palakm@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/palak-mishra-937716192/" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://palakmishra-eq.github.io/" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+                target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
+              <a href="https://palakmishra-eq.github.io/" class="slink" title="Website" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-globe"/></svg></a>
             </div>
           </div>
         </div>
@@ -1543,10 +1373,6 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-name">Mohammad Ali</div>
             <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
             <div class="student-links-row"><a href="mailto:mohammada@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
-            <a href="" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -1556,10 +1382,6 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-name">Shivansh Bhatnagar</div>
             <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
             <div class="student-links-row"><a href="mailto:shivanshb@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
-            <a href="" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-            <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
@@ -1574,9 +1396,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-links-row">
               <a href="mailto:prakhar25005@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/prakhar-agarwal-53a21222a/" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
+              target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
             </div>
           </div>
         </div>
@@ -1588,83 +1408,62 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-links-row">
               <a href="mailto:aditya25011@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/aditya-malik-7035aa1ab/" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
+              target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
             </div>
           </div>
         </div>
 
         <div class="student-card">
-          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="HV"></div>
+          <div class="student-av">HV</div>
           <div>
             <div class="student-name">Harsha Verma</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:harsha25024@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
-              <a href="" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
 
         <div class="student-card">
-          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="AT"></div>
+          <div class="student-av">AT</div>
           <div>
             <div class="student-name">Aditya Sai Teja</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:aditya25058@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
-              <a href="" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
 
         <div class="student-card">
-          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="AP"></div>
+          <div class="student-av">AP</div>
           <div>
             <div class="student-name">Amisha Patel</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:amisha25061@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
-              <a href="" class="slink" title="LinkedIn"
-              target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                class="fa-solid fa-globe"></i></a>
             </div>
           </div>
         </div>
 
         <!-- <div class="student-card">
-          <div class="student-av"><img loading="lazy" decoding="async" src="images/Sayantan.jpeg" alt="Aditya Peer"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Sayantan.jpeg" alt="Sayantan Dasgupta"></div>
           <div>
             <div class="student-name">Sayantan Dasgupta</div>
             <div class="student-since">MTech &middot; May 2025</div>
             <div class="student-links-row">
               <a href="mailto:sayantan24161@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
-              <a href="https://www.linkedin.com/in/dasguptas/" class="slink" title="LinkedIn" target="_blank"><i
-                class="fa-brands fa-linkedin"></i></a>
-              <a href="" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+              <a href="https://www.linkedin.com/in/dasguptas/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
           </div>
         </div> -->
         <!-- <div class="student-card">
-          <div class="student-av"><img loading="lazy" decoding="async" src="images/Kushal.jpeg" alt="Aditya Peer"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Kushal.jpeg" alt="Kushal Mitra"></div>
           <div>
             <div class="student-name">Kushal Mitra</div>
             <div class="student-since">MTech &middot; May 2025</div>
             <div class="student-links-row"><a href="mailto:kushal24151@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
-                <a href="" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
               </div>
             </div>
         <!-- </div> -->
@@ -1683,9 +1482,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/vaishnavi-srivastava-483369288" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+                target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
           </div>
         </div>
@@ -1698,9 +1495,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
             <div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/scapesfear/" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+                target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
         </div>
@@ -1716,7 +1511,7 @@ nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)
         <div class="recruit-btns">
           <a href="mailto:rinku@iiitd.ac.in" class="btn-crimson">Apply Now &rarr;</a>
           <a href="#alumni" class="btn-outline"
-            style="color:#fff;border-color:rgba(255,255,255,0.3)" target="_blank">View Alumni</a>
+            style="color:#fff;border-color:rgba(255,255,255,0.3)" target="_blank" rel="noopener">View Alumni</a>
         </div>
       </div>
     </div>
@@ -1912,7 +1707,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
           <div class="gslot" data-slot="4" onclick="glbOpen(4)">
             <div class="gslot-frame gf-active" data-label="Marvell Visit" data-sublabel="Industry Collaboration"
               data-pidx="4">
-              <img loading="lazy" decoding="async" src="images/Marvell_2025.jpeg" alt="CoNEXT 2025">
+              <img loading="lazy" decoding="async" src="images/Marvell_2025.jpeg" alt="Marvell Visit">
               <div class="gslot-ph">
                 <svg class="gslot-ph-icon" viewBox="0 0 72 72" width="36" height="36"
                   xmlns="http://www.w3.org/2000/svg">
@@ -2064,16 +1859,9 @@ Our goal is to make high-performance communication accessible to commodity cloud
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/dasguptas/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-
-                <a href=""
-
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2096,18 +1884,8 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:kushal24151@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
                 </a>
               </div>
             </div>
@@ -2129,18 +1907,13 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:arjun20497@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/arjun-temura/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2161,18 +1934,13 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:shambhavi22067@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/shambhavi-pathak/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2192,18 +1960,13 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:siddharth22128@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/siddharth1297/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2223,18 +1986,13 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:klasani21042@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/lasani-hussain-a293ba121/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2255,18 +2013,13 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
               <div class="student-links-row">
                 <a href="mailto:kushal24151@iiitd.ac.in"
-                  class="slink">
+                  class="slink" title="Email">
                   &#9993;
                 </a>
                 <a href="https://www.linkedin.com/in/shaguftha-zk/"
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-brands fa-linkedin"></i>
-                </a>
-                <a href=""
-                  class="slink"
-                  target="_blank">
-                  <i class="fa-solid fa-globe"></i>
+                  class="slink" title="LinkedIn"
+                  target="_blank" rel="noopener">
+                  <svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg>
                 </a>
               </div>
             </div>
@@ -2330,9 +2083,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
             <div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/surat-sathi-samanta-01b973263/" class="slink" title="LinkedIn"
-                target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink" title="Website" target="_blank"><i
-                  class="fa-solid fa-globe"></i></a>
+                target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
           </div>
         </div>
@@ -2348,9 +2099,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/ramanjeet-singh-340754229/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/ramanjeet-singh-340754229/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2367,9 +2116,6 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
               </div>
             </div>
           </div>
@@ -2387,9 +2133,6 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
               </div>
             </div>
           </div>
@@ -2407,9 +2150,6 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
               </div>
             </div>
           </div>
@@ -2430,9 +2170,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/siddhant1103/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/siddhant1103/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2450,9 +2188,6 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="" class="slink"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
               </div>
             </div>
           </div>
@@ -2473,9 +2208,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/kartikay-dubey/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/kartikay-dubey/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2500,9 +2233,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/prateek0328/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/prateek0328/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2523,9 +2254,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/yukti-rao-9843a4212/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/yukti-rao-9843a4212/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2546,9 +2275,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/vishesh-rangwani-6ba263241/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/vishesh-rangwani-6ba263241/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2569,9 +2296,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/vedantbothra/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/vedantbothra/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2596,9 +2321,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/mdkaif02/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/mdkaif02/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2623,9 +2346,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/ritikanagar09/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/ritikanagar09/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2650,9 +2371,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/shivansh-mittal-a90636201/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/shivansh-mittal-a90636201/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2677,9 +2396,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               </div>
         
               <div class="student-links-row">
-                <a href="" class="slink">&#9993;</a>
-                <a href="https://www.linkedin.com/in/yashasvi-chaurasia-936259218/" class="slink" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="" class="slink"><i class="fa-solid fa-globe"></i></a>
+                <a href="https://www.linkedin.com/in/yashasvi-chaurasia-936259218/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
               </div>
             </div>
           </div>
@@ -2719,7 +2436,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
         </div>
         <div class="contact-btns">
           <a href="mailto:rinku@iiitd.ac.in" class="btn-primary">Send Email</a>
-          <a href="https://github.com/nest-iiitd" class="btn-outline" target="_blank">Lab GitHub</a>
+          <a href="https://github.com/nest-iiitd" class="btn-outline" target="_blank" rel="noopener">Lab GitHub</a>
        </div>
       </div>
     </div>
@@ -2794,62 +2511,31 @@ function toggleAbstract(btn) {
 
 
 // ── Gallery cycling deck ──
+// Labels, captions and photos are read from the .gslot-frame markup, so adding a
+// photo only needs an <img> (and data-label/data-sublabel) inside a frame.
+var gallerySlots  = Array.prototype.slice.call(document.querySelectorAll('.gslot'));
 var galleryRound  = 0;
-var galleryTotal  = 2;   // 2 rounds of 6 photos each
+var galleryTotal  = Math.max.apply(null, gallerySlots.map(function(s){ return s.querySelectorAll('.gslot-frame').length; }));
 var galleryPaused = false;
 var galleryTimer  = null;
 var GALLERY_INTERVAL = 4000; // ms per round
 
-// All 12 photo entries (label, sublabel) — add real src strings here when available
-var GALLERY_PHOTOS = [
-  {label:'Lab Group Photo',       sub:'Annual Photo · NESt Lab',           src:''},
-  {label:'SIGCOMM 2025',          sub:'Conference · Presentation',          src:''},
-  {label:'Lab Meeting',           sub:'Weekly Research Sync',               src:''},
-  {label:'CoNEXT 2024',           sub:'Paper Presentation',                 src:''},
-  {label:'Marvell Visit',         sub:'Industry Collaboration',             src:''},
-  {label:'Best Thesis Award',     sub:'Aditya Peer · 14th Convocation',     src:''},
-  {label:'SmartNIC Testbed',      sub:'Lab Infrastructure · P4',            src:''},
-  {label:'IBM Research Visit',    sub:'OSCP Internship · 2024',             src:''},
-  {label:'Dagstuhl Seminar 2023', sub:'Programmable Host Networking',       src:''},
-  {label:'P4 Workshop',           sub:'Hands-on Session',                   src:''},
-  {label:'Team Outing',           sub:'NESt Lab · 2024',                    src:''},
-  {label:'DSN 2025 Celebration',  sub:'Paper Accepted',                     src:''},
-];
-
-// Slot → which photo indices it cycles through
-var SLOT_PHOTOS = [
-  [0, 6],
-  [1, 7],
-  [2, 8],
-  [3, 9],
-  [4, 10],
-  [5, 11],
-];
+function galleryFrame(slot) {
+  var frames = slot.querySelectorAll('.gslot-frame');
+  return frames[galleryRound % frames.length];
+}
 
 function glbGoto(round) {
   galleryRound = round;
-  var slots = document.querySelectorAll('.gslot');
-  slots.forEach(function(slot, si) {
-    var frames = slot.querySelectorAll('.gslot-frame');
-    var photoIdx = SLOT_PHOTOS[si][round % SLOT_PHOTOS[si].length];
-    var ph = GALLERY_PHOTOS[photoIdx];
-
-    // swap captions
-    var cap = slot.querySelector('.gslot-caption span');
-    if (cap) cap.textContent = ph.label;
-
-    // cross-fade frames
-    frames.forEach(function(f, fi) {
-      f.classList.remove('gf-active', 'gf-prev');
-      if (fi === round % frames.length) {
-        f.classList.add('gf-active');
-      } else {
-        f.classList.add('gf-prev');
-      }
+  gallerySlots.forEach(function(slot) {
+    var active = galleryFrame(slot);
+    slot.querySelectorAll('.gslot-frame').forEach(function(f) {
+      f.classList.toggle('gf-active', f === active);
     });
+    var cap = slot.querySelector('.gslot-caption span');
+    if (cap) cap.textContent = active.dataset.label || '';
   });
 
-  // dots
   document.querySelectorAll('.gdot').forEach(function(d, i) {
     d.classList.toggle('active', i === round);
   });
@@ -2871,10 +2557,7 @@ function glbGoto(round) {
 function startGalleryTimer() {
   clearInterval(galleryTimer);
   galleryTimer = setInterval(function() {
-    if (!galleryPaused) {
-      galleryRound = (galleryRound + 1) % galleryTotal;
-      glbGoto(galleryRound);
-    }
+    if (!galleryPaused && !document.hidden) glbGoto((galleryRound + 1) % galleryTotal);
   }, GALLERY_INTERVAL);
 }
 
@@ -2885,7 +2568,7 @@ function toggleGalleryPause() {
   if (galleryPaused) {
     btn.textContent = '▶ Resume';
     btn.classList.remove('active-ctrl');
-    if (fill) { fill.style.transition = 'none'; }
+    if (fill) fill.style.transition = 'none';
   } else {
     btn.textContent = '❚❚ Pause';
     btn.classList.add('active-ctrl');
@@ -2906,21 +2589,38 @@ function glbClose() {
   document.body.style.overflow = '';
 }
 function glbNav(dir) {
-  var slots = document.querySelectorAll('.gslot');
-  glbSlot = (glbSlot + dir + slots.length) % slots.length;
+  glbSlot = (glbSlot + dir + gallerySlots.length) % gallerySlots.length;
   glbRender();
 }
 function glbRender() {
-  var photoIdx = SLOT_PHOTOS[glbSlot][galleryRound % SLOT_PHOTOS[glbSlot].length];
-  var ph = GALLERY_PHOTOS[photoIdx];
+  var frame = galleryFrame(gallerySlots[glbSlot]);
+  var label = frame.dataset.label || '';
+  var sub = frame.dataset.sublabel || '';
+  var photo = frame.querySelector('img');
   var content = document.getElementById('glb-content');
-  document.getElementById('glb-caption').textContent = ph.label + (ph.sub ? '  ·  ' + ph.sub : '');
-  if (ph.src) {
-    content.innerHTML = '<img loading="lazy" decoding="async" src="' + ph.src + '" alt="' + ph.label + '">';
+  document.getElementById('glb-caption').textContent = label + (sub ? '  ·  ' + sub : '');
+  content.innerHTML = '';
+  if (photo) {
+    var img = document.createElement('img');
+    img.src = photo.currentSrc || photo.src;
+    img.alt = photo.alt || label;
+    content.appendChild(img);
   } else {
-    content.innerHTML = '<div class="glb-ph"><svg viewBox="0 0 72 72" width="52" height="52" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><circle cx="36" cy="32" r="10" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/></svg><p>' + ph.label + '<br><span style="opacity:.5">' + ph.sub + '</span></p></div>';
+    var ph = document.createElement('div');
+    ph.className = 'glb-ph';
+    ph.innerHTML = '<svg viewBox="0 0 72 72" width="52" height="52" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="14" width="60" height="44" rx="6" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><circle cx="36" cy="32" r="10" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/><path d="M12,58 Q12,46 36,46 Q60,46 60,58" fill="none" stroke="rgba(255,255,255,0.25)" stroke-width="2"/></svg><p></p>';
+    ph.querySelector('p').textContent = label;
+    content.appendChild(ph);
   }
 }
+// make gallery tiles keyboard-accessible
+gallerySlots.forEach(function(slot) {
+  slot.tabIndex = 0;
+  slot.setAttribute('role', 'button');
+  slot.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); slot.click(); }
+  });
+});
 document.addEventListener('keydown', function(e) {
   if (!document.getElementById('glb').classList.contains('open')) return;
   if (e.key === 'Escape') glbClose();
@@ -2966,12 +2666,17 @@ document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
 // Nav active link
 var navLinks = document.querySelectorAll('nav a.nav-link');
 var sections = document.querySelectorAll('section[id]');
-window.addEventListener('scroll', function(){
+var navTicking = false;
+function updateActiveNav(){
   var cur = '';
   sections.forEach(function(s){ if(window.scrollY >= s.offsetTop - 90) cur = s.id; });
   navLinks.forEach(function(a){
     a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
   });
+  navTicking = false;
+}
+window.addEventListener('scroll', function(){
+  if (!navTicking) { navTicking = true; requestAnimationFrame(updateActiveNav); }
 }, {passive: true});
 
 function scrollAlumni(id,direction){
