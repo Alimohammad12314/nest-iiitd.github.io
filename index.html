@@ -332,7 +332,7 @@ h2{
 .pub-abstract p{font-size:.85rem;color:var(--sub);line-height:1.75;font-style:italic}
 
 /* ── PROJECTS ── */
-.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(800px,1fr));gap:1.25rem}
+.proj-grid{display:grid;grid-template-columns:1fr;gap:1.25rem}
 .proj-card{
   background:var(--card);border:1px solid var(--border);border-radius:10px;
   padding:1.5rem;
@@ -392,7 +392,7 @@ h2{
   display:flex;align-items:center;gap:.75rem;
 }
 .team-group-label::after{content:'';flex:1;max-width:36px;height:1.5px;background:var(--border2)}
-.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(500px,1fr));gap:.75rem;margin-bottom:.5rem}
+.students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,500px),1fr));gap:.75rem;margin-bottom:.5rem}
 .student-card{
   background:var(--card);border:1px solid var(--border);border-radius:8px;
   padding:.875rem 1.1rem;display:flex;align-items:center;gap:.875rem;
@@ -498,16 +498,6 @@ footer a:hover{text-decoration:underline}
 .fade-up{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease}
 .fade-up.visible{opacity:1;transform:none}
 
-@media(max-width:900px){
-  .hero-inner{grid-template-columns:1fr}
-  .hero-deck-col{display:none}
-}
-@media(max-width:768px){
-  nav ul{display:none}
-  .pi-card{grid-template-columns:1fr}
-  .course-card{grid-template-columns:1fr}
-  .pub-group{grid-template-columns:1fr}
-}
 
 /* ── PI HERO PHOTO beside h1 ── */
 .h1-with-photo{
@@ -516,11 +506,11 @@ footer a:hover{text-decoration:underline}
 .pi-hero-photo-wrap{
   flex-shrink:0;
   position:relative;
-  width:180px;height:180px;
+  width:200px;
   margin-top:0.3rem;
 }
 .pi-hero-photo{
-  width:200px;height:200px;
+  width:100%;height:auto;
   border-radius:0;
   object-fit:contain;
   display:block;
@@ -774,11 +764,6 @@ footer a:hover{text-decoration:underline}
 #glb-prev { left: 1.5rem; }
 #glb-next { right: 1.5rem; }
 
-@media(max-width: 768px) {
-  .gallery-stage { height: auto; }
-  .gallery-mosaic { grid-template-columns: 1fr 1fr; grid-template-rows: repeat(6, 140px); }
-  .gslot { grid-column: span 1 !important; grid-row: span 1 !important; }
-}
 
 .alumni-group{
 
@@ -815,11 +800,9 @@ flex:1;
 }
 
 
+.alumni-scroll .student-card{min-width:320px;flex:0 0 auto}
+
 .student-card{
-
-min-width:320px;
-
-flex:0 0 auto;
 
 display:flex;
 
@@ -890,6 +873,130 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
   margin-top:0;
 }
 
+/* ══════════════════════════════════
+   RESPONSIVE
+   ══════════════════════════════════ */
+section{scroll-margin-top:64px}
+img{max-width:100%}
+
+/* hamburger (hidden on desktop) */
+.nav-toggle{
+  display:none;width:40px;height:40px;padding:10px 8px;margin-right:-8px;
+  background:none;border:none;cursor:pointer;
+  flex-direction:column;justify-content:space-between;
+}
+.nav-toggle span{display:block;height:2px;border-radius:1px;background:var(--navy);transition:transform .25s,opacity .2s}
+nav.open .nav-toggle span:nth-child(1){transform:translateY(9px) rotate(45deg)}
+nav.open .nav-toggle span:nth-child(2){opacity:0}
+nav.open .nav-toggle span:nth-child(3){transform:translateY(-9px) rotate(-45deg)}
+
+/* alumni carousel: allow swipe, hide scrollbar */
+.alumni-scroll{overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.alumni-scroll::-webkit-scrollbar{display:none}
+.alumni-scroll .student-card{scroll-snap-align:start}
+.alumni-btn{flex-shrink:0;color:var(--navy)}
+
+@media(max-width:1180px){
+  nav ul{gap:1.4rem}
+}
+
+@media(max-width:1060px){
+  .nav-toggle{display:flex}
+  nav ul{
+    position:absolute;top:64px;left:0;right:0;
+    flex-direction:column;gap:0;
+    padding:.5rem 5vw 1rem;
+    background:rgba(250,249,246,0.98);
+    border-bottom:1px solid var(--border);
+    box-shadow:0 12px 24px rgba(26,35,64,0.08);
+    transform:translateY(-8px);opacity:0;visibility:hidden;
+    transition:opacity .2s,transform .2s,visibility .2s;
+  }
+  nav.open ul{transform:none;opacity:1;visibility:visible}
+  nav ul li{border-bottom:1px solid var(--border)}
+  nav ul li:last-child{border-bottom:none}
+  nav a.nav-link{display:block;padding:.8rem 0;font-size:15px}
+  nav a.nav-link::after{display:none}
+}
+
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr}
+  .hero-deck-col{display:none}
+  #hero{min-height:auto;padding:100px 5vw 56px}
+  .pi-hero-photo-wrap{width:140px}
+}
+
+@media(max-width:768px){
+  section{padding:64px 5vw}
+  .section-header{margin-bottom:2.25rem}
+
+  .pi-card{grid-template-columns:1fr;padding:2.75rem 1.5rem 1.75rem;gap:1.25rem;justify-items:center;text-align:center}
+  .pi-card::before{top:1rem;right:50%;transform:translateX(50%)}
+  .pi-links{justify-content:center}
+  .course-card{grid-template-columns:1fr}
+
+  .pub-group{grid-template-columns:1fr;gap:.5rem}
+  .pub-year-ghost{text-align:left;font-size:2.25rem;padding-top:0}
+  .pub-card{padding:1rem 1.1rem}
+  .pub-card:hover{transform:none}
+
+  .gallery-stage{height:auto}
+  .gallery-mosaic{grid-template-columns:1fr 1fr;grid-template-rows:repeat(3,160px)}
+  .gslot{grid-column:span 1 !important;grid-row:span 1 !important}
+
+  #glb{padding:1rem}
+  #glb img{max-width:100%;max-height:72vh}
+  #glb-prev,#glb-next{top:auto;bottom:1.25rem;transform:none;width:42px;height:42px}
+  #glb-prev{left:1rem}
+  #glb-next{right:1rem}
+  #glb-close{top:.75rem;right:1rem}
+  #glb-caption{bottom:1.6rem;max-width:calc(100% - 9rem);white-space:normal;text-align:center;line-height:1.5}
+
+  .recruit-box{padding:1.75rem 1.5rem}
+  .recruit-btns{width:100%}
+  .contact-box{padding:2.25rem 1.5rem}
+}
+
+@media(max-width:600px){
+  nav{padding:0 16px}
+  nav ul{padding:.25rem 16px .75rem}
+  #hero{padding:92px 16px 48px}
+  section{padding:56px 16px}
+
+  .h1-with-photo{gap:.875rem;align-items:center}
+  .pi-hero-photo-wrap{width:88px;margin-top:0}
+  h1{font-size:clamp(1.9rem,8.5vw,2.6rem)}
+  .hero-full-name{margin-bottom:1.25rem}
+  .hero-sub,.hero-text p{font-size:1rem;text-align:left !important}
+  .hero-btns > a{flex:1 1 auto;text-align:center}
+
+  .ticker-wrap{border-radius:0 !important;border-left:none !important;border-right:none !important}
+
+  .news-row{grid-template-columns:auto 1fr;gap:.35rem .75rem}
+  .news-body{grid-column:1 / -1}
+  .nbadge{justify-self:start;margin-top:0}
+  .news-yr{padding-top:0}
+
+  .pi-photo{width:160px;height:auto}
+
+  .student-card{padding:14px;gap:14px;border-radius:14px}
+  .student-av{width:72px;height:72px}
+
+  .proj-card{padding:1.25rem}
+  .proj-meta{flex-direction:column;align-items:flex-start}
+
+  .gallery-mosaic{grid-template-rows:repeat(3,120px);gap:8px}
+  .gallery-controls{gap:.5rem}
+
+  .alumni-group{margin-top:36px;margin-bottom:32px}
+  .alumni-wrapper{gap:8px}
+  .alumni-btn{width:34px;height:34px;font-size:18px}
+  .alumni-scroll{gap:12px}
+  .alumni-scroll .student-card{min-width:min(280px,calc(100vw - 120px))}
+
+  .contact-address{font-size:.74rem;line-height:2}
+  .contact-btns > a{flex:1 1 auto;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -903,7 +1010,10 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
       <span class="nav-full">Networks &middot; Edge &middot; SysTems &middot; IIIT Delhi</span>
     </div>
   </a>
-  <ul>
+  <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav-menu">
+    <span></span><span></span><span></span>
+  </button>
+  <ul id="nav-menu">
     <li><a href="#news" class="nav-link">News</a></li>
     <li><a href="#publications" class="nav-link">Publications</a></li>
     <li><a href="#team" class="nav-link">Team</a></li>
@@ -1385,8 +1495,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
       <div class="team-group-label">PhD Students</div>
       <div class="students-grid fade-up">
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Sumit.jpeg" alt="Sumit Kumar"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Sumit.jpeg" alt="Sumit Kumar"></div>
           <div>
             <div class="student-name">Sumit Kumar</div>
             <div class="student-since">PhD &middot; since October 2023 <br> Thesis: Simulating Next-Generation AI
@@ -1401,8 +1510,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div>
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Aditya_Peer.jpeg" alt="Aditya Peer"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Aditya_Peer.jpeg" alt="Aditya Peer"></div>
           <div>
             <div class="student-name">Aditya Peer</div>
             <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Redesigning LLM Serving for UALink and
@@ -1416,8 +1524,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div>
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Palak.jpeg" alt="Palak Mishra"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Palak.jpeg" alt="Palak Mishra"></div>
           <div>
             <div class="student-name">Palak Mishra</div>
             <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Designing Tools for AI workload Tracing
@@ -1431,8 +1538,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div>
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/" alt="MA"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Mohammad_Ali.jpeg" alt="Mohammad Ali"></div>
           <div>
             <div class="student-name">Mohammad Ali</div>
             <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
@@ -1445,8 +1551,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div>
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/" alt="SB"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Shivansh_Bhatnagar.jpeg" alt="Shivansh Bhatnagar"></div>
           <div>
             <div class="student-name">Shivansh Bhatnagar</div>
             <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
@@ -1462,8 +1567,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
       <div class="team-group-label">MTech (Thesis / Capstone)</div>
       <div class="students-grid fade-up">
         <div class="student-card">
-          <div class="student-av"style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Prakhar.jpeg" alt="PA"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Prakhar.jpeg" alt="PA"></div>
           <div>
             <div class="student-name">Prakhar Agarwal</div>
             <div class="student-since">MTech Research&middot; Jan 2026</div>
@@ -1477,8 +1581,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div>
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Aditya_Malik.jpeg" alt="AM"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Aditya_Malik.jpeg" alt="AM"></div>
           <div>
             <div class="student-name">Aditya Malik</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
@@ -1493,8 +1596,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
         </div>
 
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/" alt="HV"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="HV"></div>
           <div>
             <div class="student-name">Harsha Verma</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
@@ -1509,8 +1611,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
         </div>
 
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/" alt="AT"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="AT"></div>
           <div>
             <div class="student-name">Aditya Sai Teja</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
@@ -1525,8 +1626,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
         </div>
 
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/" alt="AP"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/" alt="AP"></div>
           <div>
             <div class="student-name">Amisha Patel</div>
             <div class="student-since">MTech &middot; Jan 2026</div>
@@ -1541,8 +1641,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
         </div>
 
         <!-- <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Sayantan.jpeg" alt="Aditya Peer"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Sayantan.jpeg" alt="Aditya Peer"></div>
           <div>
             <div class="student-name">Sayantan Dasgupta</div>
             <div class="student-since">MTech &middot; May 2025</div>
@@ -1556,8 +1655,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
           </div>
         </div> -->
         <!-- <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Kushal.jpeg" alt="Aditya Peer"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Kushal.jpeg" alt="Aditya Peer"></div>
           <div>
             <div class="student-name">Kushal Mitra</div>
             <div class="student-since">MTech &middot; May 2025</div>
@@ -1578,8 +1676,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
       <div class="student-card"><div class="student-av">SS</div><div><div class="student-name">Surat Sathi Samanta</div><div class="student-since">BTech &middot; Aug 2025</div><div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
        -->
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Vaishnavi.jpeg" alt="Vaishnavi Srivastava"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Vaishnavi.jpeg" alt="Vaishnavi Srivastava"></div>
           <div>
             <div class="student-name">Vaishnavi Srivastava</div>
             <div class="student-since">BTech &middot; Jan 2026</div>
@@ -1594,8 +1691,7 @@ box-shadow:0 4px 10px rgba(0,0,0,.1);
         </div>
 
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/Divyanshu_Yadav.jpeg" alt="Divyanshu Yadav"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/Divyanshu_Yadav.jpeg" alt="Divyanshu Yadav"></div>
           <div>
             <div class="student-name">Divyanshu Yadav</div>
             <div class="student-since">BTech &middot; Jan 2026</div>
@@ -2149,7 +2245,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
               <img loading="lazy" decoding="async" src="images/Kushal.jpeg"
                 alt="Arjun Temura">
             </div> -->
-            <div class="student-av " style="width:110px;height:110px;">SK</div>
+            <div class="student-av ">SK</div>
             <div>
               <div class="student-name">
                 Shaguftha Kottur
@@ -2227,8 +2323,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
           <!-- 1 -->
 
         <div class="student-card">
-          <div class="student-av" style="width:110px;height:110px;"><img loading="lazy" decoding="async" src="images/surat.jpeg" alt="Surat Sathi Samanta"
-              style="width:100%;height:100%;object-fit:cover;border-radius:50%"></div>
+          <div class="student-av"><img loading="lazy" decoding="async" src="images/surat.jpeg" alt="Surat Sathi Samanta"></div>
           <div>
             <div class="student-name">Surat Sathi Samanta</div>
             <div class="student-since">BTech &middot; Aug 2025 - Dec 2025</div>
@@ -2243,7 +2338,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
         </div>
 
           <div class="student-card">
-            <div class="student-av" style="width:110px;height:110px;">RS</div>
+            <div class="student-av">RS</div>
         
             <div>
               <div class="student-name">Ramanjeet Singh</div>
@@ -2262,7 +2357,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
 
           <!-- 2 -->
           <div class="student-card">
-            <div class="student-av" style="width:110px;height:110px;">TG</div>
+            <div class="student-av">TG</div>
         
             <div>
               <div class="student-name">Tushar Gupta</div>
@@ -2282,7 +2377,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
         
           <!-- 2 -->
           <div class="student-card">
-            <div class="student-av" style="width:110px;height:110px;">RB</div>
+            <div class="student-av">RB</div>
         
             <div>
               <div class="student-name">Rohan Basugade</div>
@@ -2302,7 +2397,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
         
           <!-- 3 -->
           <div class="student-card">
-            <div class="student-av" style="width:110px;height:110px;">AS</div>
+            <div class="student-av">AS</div>
         
             <div>
               <div class="student-name">Agamdeep Singh</div>
@@ -2345,7 +2440,7 @@ Our goal is to make high-performance communication accessible to commodity cloud
         
           <!-- 5 -->
           <div class="student-card">
-            <div class="student-av" style="width:110px;height:110px;">RM</div>
+            <div class="student-av">RM</div>
         
             <div>
               <div class="student-name">Rajorshi Mondal</div>
@@ -2852,6 +2947,21 @@ var io = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.08});
 document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
+
+// Mobile nav menu
+(function(){
+  var nav = document.querySelector('nav');
+  var btn = nav.querySelector('.nav-toggle');
+  function setOpen(open){
+    nav.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open);
+    btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  btn.addEventListener('click', function(){ setOpen(!nav.classList.contains('open')); });
+  nav.querySelectorAll('.nav-link').forEach(function(a){ a.addEventListener('click', function(){ setOpen(false); }); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') setOpen(false); });
+  document.addEventListener('click', function(e){ if (!nav.contains(e.target)) setOpen(false); });
+})();
 
 // Nav active link
 var navLinks = document.querySelectorAll('nav a.nav-link');
