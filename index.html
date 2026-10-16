@@ -334,6 +334,32 @@ h2{font-family:var(--display);font-size:clamp(2.2rem,4.6vw,3.5rem);font-weight:7
   transition:transform .25s,box-shadow .25s,border-color .25s;
 }
 .student-card:hover{transform:translateY(-4px);box-shadow:var(--shadow2);border-color:var(--border2)}
+.student-card{position:relative;overflow:hidden}
+.student-card::before{
+  content:'';position:absolute;left:0;right:0;top:0;height:72px;
+  background:linear-gradient(120deg,rgba(26,35,64,.07),rgba(192,57,43,.09));
+}
+.student-card > *{position:relative}
+.student-card > div:last-child{display:flex;flex-direction:column;align-items:center;flex:1;width:100%}
+.student-card:hover .student-av{box-shadow:0 0 0 4px var(--card),0 0 0 6px var(--crimson)}
+.student-av{transition:box-shadow .25s}
+.student-since{display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:.45rem}
+.deg{
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:3px 9px;border-radius:999px;
+}
+.deg-phd{background:rgba(192,57,43,.1);color:var(--crimson)}
+.deg-mtech{background:rgba(26,35,64,.08);color:var(--navy)}
+.deg-btech{background:rgba(196,134,20,.14);color:#8a5a00}
+.student-thesis{
+  width:100%;margin:0 0 .7rem;padding:.6rem .75rem;border-radius:10px;
+  background:rgba(26,35,64,.04);font-size:.84rem;line-height:1.45;color:var(--sub);
+}
+.student-thesis span{display:block;margin-bottom:.15rem;font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--crimson)}
+.student-links-row{margin-top:auto}
+/* team rows: centre a short last row instead of leaving a lone card on the left */
+.students-grid:not(.alumni-grid){display:flex;flex-wrap:wrap;justify-content:center}
+.students-grid:not(.alumni-grid) > .student-card{flex:0 1 272px}
 .student-av{
   width:112px;height:112px;flex-shrink:0;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
@@ -568,6 +594,13 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
   .students-grid,.alumni-grid{grid-template-columns:1fr;gap:.75rem}
   .student-card{flex-direction:row;text-align:left;padding:14px;gap:14px}
   .student-links-row{justify-content:flex-start}
+  .students-grid:not(.alumni-grid) > .student-card{flex:1 1 100%}
+  .student-card::before{display:none}
+  .student-card > div:last-child{align-items:flex-start}
+  .student-since{justify-content:flex-start}
+  .alumni-carousel .student-card::before{display:block}
+  .alumni-carousel .student-card > div:last-child{align-items:center}
+  .alumni-carousel .student-since{justify-content:center}
   .student-av,.alumni-grid .student-av{width:72px;height:72px;font-size:1rem}
   .alumni-carousel .alumni-grid{grid-template-columns:none;grid-auto-columns:72%;gap:.75rem}
   .alumni-carousel .student-card{flex-direction:column;text-align:center;padding:1.25rem 1rem}
@@ -906,8 +939,8 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Sumit.jpeg" alt="Sumit Kumar"></div>
           <div>
             <div class="student-name">Sumit Kumar</div>
-            <div class="student-since">PhD &middot; since October 2023 <br> Thesis: Simulating Next-Generation AI
-              Network Infrastructure</div>
+            <div class="student-since"><span class="deg deg-phd">PhD</span>since October 2023</div>
+            <div class="student-thesis"><span>Thesis</span>Simulating Next-Generation AI Network Infrastructure</div>
             <div class="student-links-row">
               <a href="mailto:sumitk@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/sumit-kumaar/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -919,8 +952,8 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Aditya_Peer.jpeg" alt="Aditya Peer"></div>
           <div>
             <div class="student-name">Aditya Peer</div>
-            <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Redesigning LLM Serving for UALink and
-              CXL Fabrics </div>
+            <div class="student-since"><span class="deg deg-phd">PhD</span>since July 2025</div>
+            <div class="student-thesis"><span>Thesis</span>Redesigning LLM Serving for UALink and CXL Fabrics</div>
             <div class="student-links-row"><a href="mailto:adityap@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/aditya-peer-787960224/" class="slink" title="LinkedIn"
                 target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -932,8 +965,8 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Palak.jpeg" alt="Palak Mishra"></div>
           <div>
             <div class="student-name">Palak Mishra</div>
-            <div class="student-since">PhD &middot; since July 2025 <br> Thesis: Designing Tools for AI workload Tracing
-              and Benchmarking </div>
+            <div class="student-since"><span class="deg deg-phd">PhD</span>since July 2025</div>
+            <div class="student-thesis"><span>Thesis</span>Designing Tools for AI workload Tracing and Benchmarking</div>
             <div class="student-links-row"><a href="mailto:palakm@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/palak-mishra-937716192/" class="slink" title="LinkedIn"
                 target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -945,7 +978,8 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Mohammad_Ali.jpeg" alt="Mohammad Ali"></div>
           <div>
             <div class="student-name">Mohammad Ali</div>
-            <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
+            <div class="student-since"><span class="deg deg-phd">PhD</span>since July 2026</div>
+            <div class="student-thesis"><span>Thesis</span>TBD</div>
             <div class="student-links-row"><a href="mailto:mohammada@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
             </div>
           </div>
@@ -954,7 +988,8 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Shivansh_Bhatnagar.jpeg" alt="Shivansh Bhatnagar"></div>
           <div>
             <div class="student-name">Shivansh Bhatnagar</div>
-            <div class="student-since">PhD &middot; since July 2026 <br> Thesis: TBD </div>
+            <div class="student-since"><span class="deg deg-phd">PhD</span>since July 2026</div>
+            <div class="student-thesis"><span>Thesis</span>TBD</div>
             <div class="student-links-row"><a href="mailto:shivanshb@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
             </div>
           </div>
@@ -966,7 +1001,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Prakhar.jpeg" alt="PA"></div>
           <div>
             <div class="student-name">Prakhar Agarwal</div>
-            <div class="student-since">MTech Research&middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech Research</span>Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:prakhar25005@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/prakhar-agarwal-53a21222a/" class="slink" title="LinkedIn"
@@ -978,7 +1013,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Aditya_Malik.jpeg" alt="AM"></div>
           <div>
             <div class="student-name">Aditya Malik</div>
-            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:aditya25011@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/aditya-malik-7035aa1ab/" class="slink" title="LinkedIn"
@@ -991,7 +1026,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av">HV</div>
           <div>
             <div class="student-name">Harsha Verma</div>
-            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:harsha25024@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
             </div>
@@ -1002,7 +1037,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av">AT</div>
           <div>
             <div class="student-name">Aditya Sai Teja</div>
-            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:aditya25058@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
             </div>
@@ -1013,7 +1048,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av">AP</div>
           <div>
             <div class="student-name">Amisha Patel</div>
-            <div class="student-since">MTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2026</div>
             <div class="student-links-row">
               <a href="mailto:amisha25061@iiitd.ac.in " class="slink" title="Email">&#9993;</a>
             </div>
@@ -1024,7 +1059,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Sayantan.jpeg" alt="Sayantan Dasgupta"></div>
           <div>
             <div class="student-name">Sayantan Dasgupta</div>
-            <div class="student-since">MTech &middot; May 2025</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>May 2025</div>
             <div class="student-links-row">
               <a href="mailto:sayantan24161@iiitd.ac.in" class="slink" title="Email">&#9993;</a>
               <a href="https://www.linkedin.com/in/dasguptas/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1035,7 +1070,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Kushal.jpeg" alt="Kushal Mitra"></div>
           <div>
             <div class="student-name">Kushal Mitra</div>
-            <div class="student-since">MTech &middot; May 2025</div>
+            <div class="student-since"><span class="deg deg-mtech">MTech</span>May 2025</div>
             <div class="student-links-row"><a href="mailto:kushal24151@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
               </div>
@@ -1044,15 +1079,15 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
       </div> 
       <div class="team-group-label">BTech Thesis</div>
       <div class="students-grid fade-up">
-        <!-- <div class="student-card"><div class="student-av">VS</div><div><div class="student-name">Vaishnavi Srivastava</div><div class="student-since">BTech &middot; Jan 2026</div><div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">DY</div><div><div class="student-name">Divyanshu Yadav</div><div class="student-since">BTech &middot; Jan 2026</div><div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
-      <div class="student-card"><div class="student-av">SS</div><div><div class="student-name">Surat Sathi Samanta</div><div class="student-since">BTech &middot; Aug 2025</div><div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
+        <!-- <div class="student-card"><div class="student-av">VS</div><div><div class="student-name">Vaishnavi Srivastava</div><div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2026</div><div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
+      <div class="student-card"><div class="student-av">DY</div><div><div class="student-name">Divyanshu Yadav</div><div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2026</div><div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
+      <div class="student-card"><div class="student-av">SS</div><div><div class="student-name">Surat Sathi Samanta</div><div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2025</div><div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink" title="Email">&#9993;</a></div></div></div>
        -->
         <div class="student-card">
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Vaishnavi.jpeg" alt="Vaishnavi Srivastava"></div>
           <div>
             <div class="student-name">Vaishnavi Srivastava</div>
-            <div class="student-since">BTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2026</div>
             <div class="student-links-row"><a href="mailto:vaishnavi22593@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/vaishnavi-srivastava-483369288" class="slink" title="LinkedIn"
@@ -1065,7 +1100,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/Divyanshu_Yadav.jpeg" alt="Divyanshu Yadav"></div>
           <div>
             <div class="student-name">Divyanshu Yadav</div>
-            <div class="student-since">BTech &middot; Jan 2026</div>
+            <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2026</div>
             <div class="student-links-row"><a href="mailto:divyanshu22232@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/scapesfear/" class="slink" title="LinkedIn"
@@ -1410,9 +1445,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
                 Sayantan Dasgupta
 
               </div>
-              <div class="student-since">
-                MTech &middot; May 2025 - Dec 2025
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>May 2025 - Dec 2025</div>
 
               <div class="student-links-row">
                 <a href="mailto:sayantan24161@iiitd.ac.in"
@@ -1441,9 +1474,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Kushal Mitra
               </div>
-              <div class="student-since">
-                MTech &middot; May 2025 - Dec 2025
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>May 2025 - Dec 2025</div>
               <div class="student-links-row">
                 <a href="mailto:kushal24151@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1464,9 +1495,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Arjun Temura
               </div>
-              <div class="student-since">
-                MTech &middot; Jul 2023 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>Jul 2023 - May 2025</div>
               <div class="student-links-row">
                 <a href="mailto:arjun20497@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1491,9 +1520,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Shambhavi Pathak
               </div>
-              <div class="student-since">
-                MTech &middot; May 2023 - May 2024
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>May 2023 - May 2024</div>
               <div class="student-links-row">
                 <a href="mailto:shambhavi22067@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1517,9 +1544,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Siddharth Nayak
               </div>
-              <div class="student-since">
-                MTech &middot; Jan 2023 - May 2024
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2023 - May 2024</div>
               <div class="student-links-row">
                 <a href="mailto:siddharth22128@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1543,9 +1568,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Lasani Hussain
               </div>
-              <div class="student-since">
-                MTech &middot; Jan 2022 - Dec 2022
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>Jan 2022 - Dec 2022</div>
               <div class="student-links-row">
                 <a href="mailto:klasani21042@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1570,9 +1593,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
               <div class="student-name">
                 Shaguftha Kottur
               </div>
-              <div class="student-since">
-                MTech &middot; Jul 2021 - May 2023
-              </div>
+              <div class="student-since"><span class="deg deg-mtech">MTech</span>Jul 2021 - May 2023</div>
               <div class="student-links-row">
                 <a href="mailto:kushal24151@iiitd.ac.in"
                   class="slink" title="Email">
@@ -1622,7 +1643,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
           <div class="student-av"><img loading="lazy" decoding="async" src="images/surat.jpeg" alt="Surat Sathi Samanta"></div>
           <div>
             <div class="student-name">Surat Sathi Samanta</div>
-            <div class="student-since">BTech &middot; Aug 2025 - Dec 2025</div>
+            <div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2025 - Dec 2025</div>
             <div class="student-links-row"><a href="mailto:surat25507@iiitd.ac.in" class="slink"
                 title="Email">&#9993;</a>
                 <a href="https://www.linkedin.com/in/surat-sathi-samanta-01b973263/" class="slink" title="LinkedIn"
@@ -1637,9 +1658,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Ramanjeet Singh</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2024 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2024 - May 2025</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/ramanjeet-singh-340754229/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1654,9 +1673,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Tushar Gupta</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2024 - Dec 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2024 - Dec 2025</div>
         
               <div class="student-links-row">
               </div>
@@ -1671,9 +1688,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Rohan Basugade</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2024 - Dec 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2024 - Dec 2025</div>
         
               <div class="student-links-row">
               </div>
@@ -1688,9 +1703,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Agamdeep Singh</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2024 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2024 - May 2025</div>
         
               <div class="student-links-row">
               </div>
@@ -1708,9 +1721,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Siddhant</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2024 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2024 - May 2025</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/siddhant1103/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1726,9 +1737,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Rajorshi Mondal</div>
         
-              <div class="student-since">
-                BTech &middot; Jan 2024 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2024 - May 2025</div>
         
               <div class="student-links-row">
               </div>
@@ -1746,9 +1755,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Kartikay Dubey</div>
         
-              <div class="student-since">
-                BTech &middot; Jan 2024 - May 2025
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2024 - May 2025</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/kartikay-dubey/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1767,9 +1774,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Prateek Kumar</div>
         
-              <div class="student-since">
-                BTech &middot; Aug 2023 - Dec 2024
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2023 - Dec 2024</div>
         
               <div class="student-note">
                 Coadvised with Sumit Darak
@@ -1792,9 +1797,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Yukti Rao</div>
         
-              <div class="student-since">
-                BTech &middot; Aug 2023 - May 2024
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2023 - May 2024</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/yukti-rao-9843a4212/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1813,9 +1816,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Vishesh Rangwani</div>
         
-              <div class="student-since">
-                BTech &middot; Aug 2023 - May 2024
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2023 - May 2024</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/vishesh-rangwani-6ba263241/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1834,9 +1835,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Vedant Bothra</div>
         
-              <div class="student-since">
-                BTech &middot; Aug 2023 - May 2024
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Aug 2023 - May 2024</div>
         
               <div class="student-links-row">
                 <a href="https://www.linkedin.com/in/vedantbothra/" class="slink" title="LinkedIn" target="_blank" rel="noopener"><svg class="ico" aria-hidden="true"><use href="#i-linkedin"/></svg></a>
@@ -1855,9 +1854,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Mohammed Kaif</div>
         
-              <div class="student-since">
-                BTech &middot; Jan 2023 - Dec 2023
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2023 - Dec 2023</div>
         
               <div class="student-note">
                 Coadvised with Sujay Deb
@@ -1880,9 +1877,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Ritika Nagar</div>
         
-              <div class="student-since">
-                BTech &middot; Jan 2023 - Dec 2023
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jan 2023 - Dec 2023</div>
         
               <div class="student-note">
                 Coadvised with Sumit Darak
@@ -1905,9 +1900,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Shivansh Mittal</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2022 - Dec 2023
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2022 - Dec 2023</div>
         
               <div class="student-note">
                 Coadvised with Sujay Deb
@@ -1930,9 +1923,7 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
             <div>
               <div class="student-name">Yashasvi Chaurasia</div>
         
-              <div class="student-since">
-                BTech &middot; Jul 2022 - Dec 2023
-              </div>
+              <div class="student-since"><span class="deg deg-btech">BTech</span>Jul 2022 - Dec 2023</div>
         
               <div class="student-note">
                 Coadvised with Sumit Darak
