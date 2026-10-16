@@ -308,6 +308,25 @@ h2{font-family:var(--display);font-size:clamp(2.2rem,4.6vw,3.5rem);font-weight:7
 .team-group-label::after,.alumni-title::after{content:'';flex:1;height:1px;background:var(--border2)}
 .students-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:1rem}
 .alumni-grid{grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+/* alumni carousel: one sliding row per group, so the list can keep growing */
+.alumni-carousel{position:relative}
+.alumni-carousel .alumni-grid{
+  grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:220px;
+  overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;
+  padding:8px 4px 16px;scroll-padding:0 4px;scrollbar-width:none;
+}
+.alumni-carousel .alumni-grid::-webkit-scrollbar{display:none}
+.alumni-carousel .student-card{scroll-snap-align:start}
+.car-btn{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:2;
+  width:44px;height:44px;border-radius:50%;border:1px solid var(--border2);
+  background:var(--card);color:var(--navy);font-size:1.4rem;line-height:1;cursor:pointer;
+  box-shadow:var(--shadow2);transition:opacity .2s,background .2s;
+}
+.car-btn:hover{background:var(--tint)}
+.car-btn:disabled{opacity:0;pointer-events:none}
+.car-prev{left:-18px}
+.car-next{right:-18px}
 .student-card{
   display:flex;flex-direction:column;align-items:center;text-align:center;gap:.9rem;
   padding:1.75rem 1.25rem 1.5rem;border-radius:var(--radius);
@@ -550,6 +569,11 @@ footer{position:relative;z-index:1;background:var(--ink);color:rgba(255,255,255,
   .student-card{flex-direction:row;text-align:left;padding:14px;gap:14px}
   .student-links-row{justify-content:flex-start}
   .student-av,.alumni-grid .student-av{width:72px;height:72px;font-size:1rem}
+  .alumni-carousel .alumni-grid{grid-template-columns:none;grid-auto-columns:72%;gap:.75rem}
+  .alumni-carousel .student-card{flex-direction:column;text-align:center;padding:1.25rem 1rem}
+  .alumni-carousel .student-links-row{justify-content:center}
+  .car-prev{left:-6px}
+  .car-next{right:-6px}
   .pub-card{padding:1.25rem}
   .pub-title{font-size:1.06rem}
   .gallery-grid{grid-auto-rows:140px;gap:8px}
@@ -2102,6 +2126,32 @@ var io = new IntersectionObserver(function(entries){
   });
 }, {threshold: 0.08});
 document.querySelectorAll('.fade-up').forEach(function(el){ io.observe(el); });
+
+// Alumni: wrap each group in a carousel with prev/next buttons
+document.querySelectorAll('#alumni .alumni-grid').forEach(function(grid){
+  var wrap = document.createElement('div');
+  wrap.className = 'alumni-carousel';
+  grid.parentNode.insertBefore(wrap, grid);
+  wrap.appendChild(grid);
+  function btn(cls, label, html, dir){
+    var b = document.createElement('button');
+    b.className = 'car-btn ' + cls;
+    b.setAttribute('aria-label', label);
+    b.innerHTML = html;
+    b.addEventListener('click', function(){ grid.scrollBy({left: dir * grid.clientWidth * 0.8}); });
+    wrap.appendChild(b);
+    return b;
+  }
+  var prev = btn('car-prev', 'Previous alumni', '&#8249;', -1);
+  var next = btn('car-next', 'Next alumni', '&#8250;', 1);
+  function update(){
+    prev.disabled = grid.scrollLeft <= 8;
+    next.disabled = grid.scrollLeft + grid.clientWidth >= grid.scrollWidth - 8;
+  }
+  grid.addEventListener('scroll', update, {passive: true});
+  window.addEventListener('resize', update);
+  update();
+});
 
 // News: show the latest few, reveal the rest on demand
 (function(){
